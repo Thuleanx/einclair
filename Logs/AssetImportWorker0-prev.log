@@ -1,0 +1,531 @@
+Using pre-set license
+Pro License: NO
+
+ COMMAND LINE ARGUMENTS:
+/Applications/Unity/Hub/Editor/2021.1.17f1/Unity.app/Contents/MacOS/Unity
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+/Users/anvilnguyen/Documents/GithubLocal/einclair
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+51606
+Successfully changed project path to: /Users/anvilnguyen/Documents/GithubLocal/einclair
+/Users/anvilnguyen/Documents/GithubLocal/einclair
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 147.20 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.1.17f1 (03b40fe07a36)
+[Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2021.1.17f1/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/anvilnguyen/Documents/GithubLocal/einclair/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+2021-11-22 22:57:21.636 Unity[8756:200267] DELL S2719DM preferred device: AMD Radeon Pro 560 (high power)
+2021-11-22 22:57:21.636 Unity[8756:200267] Metal devices available: 2
+2021-11-22 22:57:21.636 Unity[8756:200267] 0: AMD Radeon Pro 560 (high power)
+2021-11-22 22:57:21.636 Unity[8756:200267] 1: Intel(R) HD Graphics 630 (low power)
+2021-11-22 22:57:21.637 Unity[8756:200267] Using device AMD Radeon Pro 560 (high power)
+Initializing Metal device caps: AMD Radeon Pro 560
+Initialize mono
+Mono path[0] = '/Applications/Unity/Hub/Editor/2021.1.17f1/Unity.app/Contents/Managed'
+Mono path[1] = '/Applications/Unity/Hub/Editor/2021.1.17f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = '/Applications/Unity/Hub/Editor/2021.1.17f1/Unity.app/Contents/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56756
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/Unity/Hub/Editor/2021.1.17f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Register platform support module: /Applications/Unity/Hub/Editor/2021.1.17f1/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.007239 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 120.16 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.861 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2862ms)
+		BeginReloadAssembly (126ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (726ms)
+			LoadAssemblies (127ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (276ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (50ms)
+			SetupLoadedEditorAssemblies (342ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (8ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (120ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (167ms)
+				ProcessInitializeOnLoadMethodAttributes (45ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.007718 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /Users/anvilnguyen/Documents/GithubLocal/einclair/Library/PackageCache/com.unity.visualscripting@1.6.1/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /Users/anvilnguyen/Documents/GithubLocal/einclair/Library/PackageCache/com.unity.visualscripting@1.6.1/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 112.34 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.927 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1927ms)
+		BeginReloadAssembly (208ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (44ms)
+		EndReloadAssembly (1637ms)
+			LoadAssemblies (154ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (557ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (87ms)
+			SetupLoadedEditorAssemblies (674ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (112ms)
+				BeforeProcessingInitializeOnLoad (88ms)
+				ProcessInitializeOnLoadAttributes (444ms)
+				ProcessInitializeOnLoadMethodAttributes (23ms)
+				AfterProcessingInitializeOnLoad (1ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launching external process: /Applications/Unity/Hub/Editor/2021.1.17f1/Unity.app/Contents/Tools/UnityShaderCompiler
+Launched and connected shader compiler UnityShaderCompiler after 0.03 seconds
+Refreshing native plugins compatible for Editor in 0.79 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3675 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 252.1 MB.
+System memory in use after: 252.3 MB.
+
+Unloading 32 unused Assets to reduce memory usage. Loaded Objects now: 4124.
+Total: 4.285457 ms (FindLiveObjects: 0.379942 ms CreateObjectMapping: 0.251106 ms MarkObjects: 3.593404 ms  DeleteObjects: 0.060034 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: b23960f63f64bdc6ff669e2cdcee2391 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/Scenes
+  artifactKey: Guid(131a6b21c8605f84396be9f6751fb6e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes using Guid(131a6b21c8605f84396be9f6751fb6e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df75b7d1a31c5b4f73fd45661b403b04') in 0.007087 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.621790 seconds.
+  path: Assets/_Core
+  artifactKey: Guid(7c1a3b1f0591f41ec8c42df7cd8faed3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Core using Guid(7c1a3b1f0591f41ec8c42df7cd8faed3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '056a1cf0198d99cb9bbacf9b9508991f') in 0.002589 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.068248 seconds.
+  path: Assets/Third Party
+  artifactKey: Guid(7efbc55f8e907493f86f6787d4fb47da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party using Guid(7efbc55f8e907493f86f6787d4fb47da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fe48a17a5a24b38d27c6792e178d566') in 0.003711 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.312548 seconds.
+  path: Assets
+  artifactKey: Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets using Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68a4034d3d715da871e781da702f0bc5') in 0.006736 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 59.484238 seconds.
+  path: Assets/_Core/Resources
+  artifactKey: Guid(4f945d22f3af54b0d801c72999b42a58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Core/Resources using Guid(4f945d22f3af54b0d801c72999b42a58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '237eddd53da8ce32cfc1eee8680ed677') in 0.002191 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 39.756847 seconds.
+  path: Assets/Editor
+  artifactKey: Guid(a262a0f0cdb13404b82d4f6aedbee688) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor using Guid(a262a0f0cdb13404b82d4f6aedbee688) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '508f7d82aa24e7a47f4b1d93395c41d9') in 0.003539 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.613733 seconds.
+  path: Assets/_Core/Scenes
+  artifactKey: Guid(a1bbb915ce7d1482a8af8018abe0813f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Core/Scenes using Guid(a1bbb915ce7d1482a8af8018abe0813f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0084d7a8728d68ab9a26af99a1bc84f') in 0.003616 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 44.404973 seconds.
+  path: Assets/_Core/Scripts
+  artifactKey: Guid(9a8812ff920f746c78253a3cf881f984) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Core/Scripts using Guid(9a8812ff920f746c78253a3cf881f984) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9a1394c3f368c786b6b7cb47c5241e8') in 0.003744 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.829159 seconds.
+  path: Assets/Art
+  artifactKey: Guid(f598c2b72f85144ccbbc0b8016e6a73b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art using Guid(f598c2b72f85144ccbbc0b8016e6a73b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e99b92c54edd73d64a07c75d92bab886') in 0.003912 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.117399 seconds.
+  path: Assets/Art/Aseprite
+  artifactKey: Guid(ad9e011f3e9af4159bc966b5952f6aaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Aseprite using Guid(ad9e011f3e9af4159bc966b5952f6aaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98d4f1e749fe53f9a161c0723d0cfdb7') in 0.004041 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 15.546468 seconds.
+  path: Assets/Art/Assets
+  artifactKey: Guid(2b8240cd03ebb487783af9c97ae8e0d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Assets using Guid(2b8240cd03ebb487783af9c97ae8e0d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db61d4931eab5f8bab84ab6051791d67') in 0.003512 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 706.042674 seconds.
+  path: Assets/Third Party/Treasure Hunters
+  artifactKey: Guid(3a3e55d45c62a4a7ebd9dd78b7ddafeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters using Guid(3a3e55d45c62a4a7ebd9dd78b7ddafeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5feb0cede8270e62e00cc26428064261') in 0.002190 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 145.495293 seconds.
+  path: Assets/Dump Assets
+  artifactKey: Guid(dc977d51c67704f5494895b04c987dca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dump Assets using Guid(dc977d51c67704f5494895b04c987dca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98c637b35d1d6cd99c39e0e51398f447') in 0.003402 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.811542 seconds.
+  path: Assets/#j
+  artifactKey: Guid(dc977d51c67704f5494895b04c987dca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/#j using Guid(dc977d51c67704f5494895b04c987dca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6693f745bfeb8cc9672521d1610173b8') in 0.002613 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.109139 seconds.
+  path: Assets/;
+  artifactKey: Guid(dc977d51c67704f5494895b04c987dca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/; using Guid(dc977d51c67704f5494895b04c987dca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2735c660750c0dd44205a3f2680d546c') in 0.003026 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.255764 seconds.
+  path: Assets/`
+  artifactKey: Guid(dc977d51c67704f5494895b04c987dca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/` using Guid(dc977d51c67704f5494895b04c987dca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd131fe341db4d6802a211024ff43c4c3') in 0.001432 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.648316 seconds.
+  path: Assets/[]
+  artifactKey: Guid(dc977d51c67704f5494895b04c987dca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/[] using Guid(dc977d51c67704f5494895b04c987dca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f0284aefa5452e21e3abc9981a0c3a7') in 0.001166 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.110441 seconds.
+  path: Assets/[dump]
+  artifactKey: Guid(dc977d51c67704f5494895b04c987dca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/[dump] using Guid(dc977d51c67704f5494895b04c987dca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03e9b58cabc95bda2c7df810cb748f9f') in 0.001459 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.533540 seconds.
+  path: Assets/[dump]/Tiles
+  artifactKey: Guid(c4ac805de56e34c31b5268b2f2d6d547) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/[dump]/Tiles using Guid(c4ac805de56e34c31b5268b2f2d6d547) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a824d34a12123948bcb12a4c76c11e51') in 0.003525 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 33.949112 seconds.
+  path: Assets/_Core/New Folder
+  artifactKey: Guid(40a3d5ad4f7cb445aad02803bd9e3366) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Core/New Folder using Guid(40a3d5ad4f7cb445aad02803bd9e3366) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '068f67ff72e1efe5bf04e284d94e840f') in 0.002700 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.686971 seconds.
+  path: Assets/_Core/USA
+  artifactKey: Guid(40a3d5ad4f7cb445aad02803bd9e3366) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Core/USA using Guid(40a3d5ad4f7cb445aad02803bd9e3366) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd82667f6ae938e08d9264480cc77fd69') in 0.002913 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.341066 seconds.
+  path: Assets/_Core/USA/Tile Palette
+  artifactKey: Guid(75f264a4747004ce29b7f2adad4e86cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Core/USA/Tile Palette using Guid(75f264a4747004ce29b7f2adad4e86cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93db5a8da629b3bb9dd8157142f424bd') in 0.003729 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.595208 seconds.
+  path: Assets/_Core/USA/Tile Palettes
+  artifactKey: Guid(75f264a4747004ce29b7f2adad4e86cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Core/USA/Tile Palettes using Guid(75f264a4747004ce29b7f2adad4e86cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03c1b1efd5bdd2492a0c000cd20b7f04') in 0.001325 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 91.432445 seconds.
+  path: Assets/_Core/USA/Tile Palettes/ThirdParty.prefab
+  artifactKey: Guid(c5e197c10f8874e3abc82407de2b6be1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Core/USA/Tile Palettes/ThirdParty.prefab using Guid(c5e197c10f8874e3abc82407de2b6be1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c098444964309b8dbbf24ab6e69d74ba') in 0.632084 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.662372 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites
+  artifactKey: Guid(922b2c61fb9e2449698a8cc284613e4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites using Guid(922b2c61fb9e2449698a8cc284613e4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd356f9e3beba51d4afce0095c75bc6d') in 0.006655 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.894199 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees
+  artifactKey: Guid(2fdbabe8c9a754369a9a45279e182cba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees using Guid(2fdbabe8c9a754369a9a45279e182cba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f90da211313c016f5fd9e291b2dcc1fb') in 0.006559 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.055727 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Left 01.png
+  artifactKey: Guid(3c96f2c7bb6d84f479655f579324d533) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Left 01.png using Guid(3c96f2c7bb6d84f479655f579324d533) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9e733d5b134deae3d39177a17ed8b33') in 0.542848 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Right 03.png
+  artifactKey: Guid(96d263a847e2348d3b729ac9a91a654d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Right 03.png using Guid(96d263a847e2348d3b729ac9a91a654d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a21d4924292f27808587fa26f9b680b') in 0.016197 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000267 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Right 02.png
+  artifactKey: Guid(bcf7106af916f4e44824342fafc122e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Right 02.png using Guid(bcf7106af916f4e44824342fafc122e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '255098d2d93dbd30820a03d59a897677') in 0.018195 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000301 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Right 01.png
+  artifactKey: Guid(2555046b43e2e46debfa493b79c84504) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Right 01.png using Guid(2555046b43e2e46debfa493b79c84504) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e31e661309323ca633bb867cd08e66dc') in 0.017440 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000311 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Regular 02.png
+  artifactKey: Guid(ee95deebc72644f2885395c12b5e2958) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Regular 02.png using Guid(ee95deebc72644f2885395c12b5e2958) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6cf79bbd12b49379eb4199e858cfd47a') in 0.019597 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000336 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Left 04.png
+  artifactKey: Guid(d4075d0e040a341ac86085766580212e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Left 04.png using Guid(d4075d0e040a341ac86085766580212e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf534a1c681064cbd64f681f3c5a59fd') in 0.014117 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000222 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Right 04.png
+  artifactKey: Guid(b1c5ffd44878c487dbba8c3c6d41621a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Right 04.png using Guid(b1c5ffd44878c487dbba8c3c6d41621a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dffeb8151248579c284e653ee3729294') in 0.016541 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000254 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Regular 04.png
+  artifactKey: Guid(c819408684987486cb0bb891b8ee58c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Regular 04.png using Guid(c819408684987486cb0bb891b8ee58c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '777a272e2637619f6f0491d0126cd5f6') in 0.018405 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000214 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Left 02.png
+  artifactKey: Guid(86f61347e7781435e9276bd3e2a83a03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Left 02.png using Guid(86f61347e7781435e9276bd3e2a83a03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6e5ed53695dd61c0c136612b96a0738') in 0.014573 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000282 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Regular 03.png
+  artifactKey: Guid(e77ff2cdee9d74df792e6ebb888830ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Regular 03.png using Guid(e77ff2cdee9d74df792e6ebb888830ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05a8e3d10dccd2de5048eaa38c129648') in 0.012862 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000318 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Regular 01.png
+  artifactKey: Guid(a12b9afda95454f48ace4314dedb6408) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Regular 01.png using Guid(a12b9afda95454f48ace4314dedb6408) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52101bcb2aa1ed121a0ea50d63c999e6') in 0.014124 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000197 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Left 03.png
+  artifactKey: Guid(25208a33170c747fcbe38f5ab0f26a7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Left 03.png using Guid(25208a33170c747fcbe38f5ab0f26a7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9fb1c875ee078a5a4ddb0dfacc9eae2') in 0.014690 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.625463 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Additional Sky.png
+  artifactKey: Guid(0c704937ca71d4d1b97a34856f13cfb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Additional Sky.png using Guid(0c704937ca71d4d1b97a34856f13cfb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e32da3b57be1928b5fc962192723a069') in 0.017709 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000243 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Small Cloud 2.png
+  artifactKey: Guid(d9e952a609a214463b01df1f2457ef86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Small Cloud 2.png using Guid(d9e952a609a214463b01df1f2457ef86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3ad945cf777bb1f1451efcfb51c6318') in 0.019133 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000311 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 04.png
+  artifactKey: Guid(c58382db211dc47f3936b70184493aac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 04.png using Guid(c58382db211dc47f3936b70184493aac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01d043f07f76928f7bd85e0f3afb7237') in 0.018203 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000272 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 03.png
+  artifactKey: Guid(179f13cab9e0a467a903e7ee06d67e26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 03.png using Guid(179f13cab9e0a467a903e7ee06d67e26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e07cca8b370ccfc29fece45a14c5dd2') in 0.016253 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000278 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Small 02.png
+  artifactKey: Guid(8fb57ed2c925647f1b3ed29711518b0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Small 02.png using Guid(8fb57ed2c925647f1b3ed29711518b0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6de29b45dbe1276db6be2a604fcdb030') in 0.015475 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Small 03.png
+  artifactKey: Guid(3cf184cfc294b48909b70de170f7612e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Small 03.png using Guid(3cf184cfc294b48909b70de170f7612e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8813d25c6a25b06c69f13cabe190650') in 0.014271 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Small 01.png
+  artifactKey: Guid(52e48bed9f86c43a3bf71b967014c512) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Small 01.png using Guid(52e48bed9f86c43a3bf71b967014c512) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '602d26630432aba0dbc18140dc81326d') in 0.011613 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000266 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Medium 02.png
+  artifactKey: Guid(a0136dcfdf78948e597f37f0a01caaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Medium 02.png using Guid(a0136dcfdf78948e597f37f0a01caaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a88d75a239f2eb9a264c655161936167') in 0.012794 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000330 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 01.png
+  artifactKey: Guid(51f77c62564d148198ae2b4e10aa6dd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 01.png using Guid(51f77c62564d148198ae2b4e10aa6dd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd70bb7f044f2c714433e7f08ae4cd000') in 0.013294 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000283 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Additional Water.png
+  artifactKey: Guid(79b27086454a040cca5dbc0c7f12a26d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Additional Water.png using Guid(79b27086454a040cca5dbc0c7f12a26d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e903553b9e3574f4db232d2130e85eda') in 0.013347 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000175 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Small Cloud 3.png
+  artifactKey: Guid(771e6ded3169748a3b38603cc43ca759) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Small Cloud 3.png using Guid(771e6ded3169748a3b38603cc43ca759) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13d66de3c7bb218d94aebf788ba25414') in 0.013601 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000247 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Medium 01.png
+  artifactKey: Guid(5e310222bb4ee48b6b63745c50c33f72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Medium 01.png using Guid(5e310222bb4ee48b6b63745c50c33f72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e2b4bde23cb8642738c0181b2e62d20') in 0.011752 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000202 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Medium 04.png
+  artifactKey: Guid(486954cc2b1e64817bfcaa665dd4cd0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Medium 04.png using Guid(486954cc2b1e64817bfcaa665dd4cd0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10be47cc85ca1a9eb26f8de96e56dedc') in 0.012053 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Medium 03.png
+  artifactKey: Guid(37540944125414316b866a579c0b409b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Medium 03.png using Guid(37540944125414316b866a579c0b409b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fed4cc272706e67316a46a3cb29060e7') in 0.010383 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000229 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Small 04.png
+  artifactKey: Guid(cd5d7172e482c45c99de8411100fc524) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Small 04.png using Guid(cd5d7172e482c45c99de8411100fc524) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bca1bb97edc1dacc49ef446238b2471a') in 0.011831 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000202 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Big Clouds.png
+  artifactKey: Guid(470d5e827859344258ffc6535b78d646) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Big Clouds.png using Guid(470d5e827859344258ffc6535b78d646) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64698c9a01b2a488e88a99a8d42abaac') in 0.013722 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Small Cloud 1.png
+  artifactKey: Guid(4b763f3119974476e9cba70df7cd8819) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Small Cloud 1.png using Guid(4b763f3119974476e9cba70df7cd8819) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae0e3ed5cc99ffc2df703252f39f3ec6') in 0.014702 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000183 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 02.png
+  artifactKey: Guid(244b57141ad37490aa6a23bc302384c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 02.png using Guid(244b57141ad37490aa6a23bc302384c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a88b292437d8584d705795d3f71c1c01') in 0.014305 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000211 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/BG Image.png
+  artifactKey: Guid(b725dee95e3ee4ad8a316de4a5a2a526) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Background/BG Image.png using Guid(b725dee95e3ee4ad8a316de4a5a2a526) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fa593ff17abf27f243dde44e785d4ba') in 0.012096 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.184057 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Bottom and Grass (32x32).png
+  artifactKey: Guid(e6cbc3381c6274d3ebe997a5ba97468f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Bottom and Grass (32x32).png using Guid(e6cbc3381c6274d3ebe997a5ba97468f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd0d67400798fa3aa8a940e50e97a78a') in 0.013665 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000287 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Tree Top 02.png
+  artifactKey: Guid(739f5771fe12a4ec9b2f5e8280772600) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Tree Top 02.png using Guid(739f5771fe12a4ec9b2f5e8280772600) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8acfe62f0c6fe01c62c92db332fae9e') in 0.014288 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000334 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Tree Top 03.png
+  artifactKey: Guid(7a9f1d9f336304c3ebca2816005496a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Tree Top 03.png using Guid(7a9f1d9f336304c3ebca2816005496a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a031001c2d98279b39cd0f4d470f3ac') in 0.014186 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000267 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Tree Top 04.png
+  artifactKey: Guid(cd85739acd5ec40d687c4e6405bcf7e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Tree Top 04.png using Guid(cd85739acd5ec40d687c4e6405bcf7e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11a4f723da0038b8c9a95189bc6006cc') in 0.012973 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000217 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Tree Top 01.png
+  artifactKey: Guid(be569c9bb02a14ce3a6dba9f54f42ab3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Tree Top 01.png using Guid(be569c9bb02a14ce3a6dba9f54f42ab3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b68e1e3c500e4cc0dee268ea088a9a23') in 0.012757 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.845537 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png
+  artifactKey: Guid(ccbbd9fc9c5604a508a15472ca650e83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png using Guid(ccbbd9fc9c5604a508a15472ca650e83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b88012472ef0f326cef538151c6fac21') in 0.021036 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.207303 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png
+  artifactKey: Guid(ccbbd9fc9c5604a508a15472ca650e83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png using Guid(ccbbd9fc9c5604a508a15472ca650e83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b815361f1e312f482db399446621d0f6') in 0.014704 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.240053 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png
+  artifactKey: Guid(ccbbd9fc9c5604a508a15472ca650e83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png using Guid(ccbbd9fc9c5604a508a15472ca650e83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35028cd2114cc53efbca8cea29adb9d4') in 0.012200 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 25.318068 seconds.
+  path: Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png
+  artifactKey: Guid(ccbbd9fc9c5604a508a15472ca650e83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Third Party/Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png using Guid(ccbbd9fc9c5604a508a15472ca650e83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aac1d145b3abeae37345208b963c1edc') in 0.109656 seconds 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
