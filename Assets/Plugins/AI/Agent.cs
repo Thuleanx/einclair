@@ -9,9 +9,6 @@ namespace Thuleanx.AI {
 		public virtual void Awake() {
 			Body = GetComponent<PhysicsObject>();
 			StateMachineSetup();
-		}
-
-		public virtual void Start() {
 			ObjectSetup();
 		}
 
@@ -24,6 +21,9 @@ namespace Thuleanx.AI {
 
 		public virtual void Update() {
 			StateMachine?.Update();
+		}
+		public virtual void FixedUpdate() {
+			StateMachine?.FixedUpdate();
 		}
 	}
 }

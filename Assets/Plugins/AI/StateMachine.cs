@@ -7,7 +7,7 @@ namespace Thuleanx.AI {
 		int currentState;
 		int defaultState;
 		public Action[] Begins, Ends;
-		public Func<int>[] Updates, Transitions;
+		public Func<int>[] Updates, Transitions, FixUpdates;
 		public Coroutine[] Coroutines;
 		
 		public int State {
@@ -25,18 +25,29 @@ namespace Thuleanx.AI {
 			Begins = new Action[numbers];
 			Ends = new Action[numbers];
 			Updates = new Func<int>[numbers];
+			FixUpdates = new Func<int>[numbers];
 			Transitions = new Func<int>[numbers];
 			Coroutines = new Coroutine[numbers];
 			this.defaultState = defaultState;
 		}
 
-		public void SetCallbacks(int state, Func<int> update, Func<int> transition, Coroutine coroutine, Action begin, Action end) {
-			Coroutines[state] = coroutine;
-			Updates[state] = update;
-			Transitions[state] = transition;
-			Begins[state] = begin;
-			Ends[state] = end;
+		public void SetCallbacks(int state, Func<int> update, Func<int> fixUpdate, Func<int> transition, 
+				Coroutine coroutine, Action begin, Action end) {
+
+			SetCallbackTransition(state, transition);
+			SetCallbackUpdate(state, update);
+			SetCallbackFixUpdate(state, fixUpdate);
+			SetCallbackCoroutine(state, coroutine);
+			SetCallbackBegin(state, begin);
+			SetCallbackEnd(state, end);
 		}
+
+		public void SetCallbackTransition(int state, Func<int> transition)  => Transitions[state] = transition;
+		public void SetCallbackUpdate(int state, Func<int> update)  		=> Updates[state] = update;
+		public void SetCallbackFixUpdate(int state, Func<int> update) 		=> FixUpdates[state] = update;
+		public void SetCallbackCoroutine(int state, Coroutine coroutine)  	=> Coroutines[state] = coroutine;
+		public void SetCallbackBegin(int state, Action begin)  				=> Begins[state] = begin;
+		public void SetCallbackEnd(int state, Action end)  					=> Ends[state] = end;
 
 		public void Init() {
 			currentState = defaultState;
@@ -51,6 +62,13 @@ namespace Thuleanx.AI {
 			}
 			if (Updates[State] != null) {
 				int nxt = Updates[State].Invoke();
+				if (nxt != -1) State = nxt;
+			}
+		}
+
+		public void FixedUpdate() {
+			if (FixUpdates[State] != null) {
+				int nxt = FixUpdates[State].Invoke();
 				if (nxt != -1) State = nxt;
 			}
 		}

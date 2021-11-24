@@ -23,6 +23,7 @@ namespace Thuleanx.Engine {
 
 		public void Stop() => Velocity = Vector2.zero;
 		public void Translate(Vector2 Displacement) => Body.MovePosition(Body.position + Displacement);
+		public void MoveTo(Vector2 pos) => Body.MovePosition(pos);
 		public void SetPosition(Vector2 pos) => transform.position = pos;
 
 		public void SetVelocityX(float vx) => Velocity = new Vector2(vx, Velocity.y);

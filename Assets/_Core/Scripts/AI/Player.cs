@@ -14,6 +14,7 @@ namespace Thuleanx.AI._Core {
 	public class Player : Agent {
 		[Header("General")]
 		[SerializeField] LayerMask groundLayer;
+		[SerializeField] LayerMask platformLayer;
 
 		[Header("Movement")]
 		[SerializeField] bool defaultLeftFacing;
@@ -34,6 +35,8 @@ namespace Thuleanx.AI._Core {
 		#region Object Scope
 
 		bool _isFacingRight = true;
+		bool _isOnPlatform = false;
+		Transform _platform = null;
 		Timer _jumpCoyote;
 		Timer _variableJump;
 
@@ -41,8 +44,7 @@ namespace Thuleanx.AI._Core {
 
 		public override void StateMachineSetup() {
 			StateMachine = new StateMachine(Enum.GetNames(typeof(PlayerState)).Length, (int) PlayerState.Normal);
-			StateMachine.SetCallbacks((int) PlayerState.Normal, NormalUpdate, null, null, null, null);
-
+			StateMachine.SetCallbackUpdate((int) PlayerState.Normal, NormalUpdate);
 		}
 
 		public override void ObjectSetup() {
@@ -53,8 +55,9 @@ namespace Thuleanx.AI._Core {
 		int NormalUpdate() {
 			float Movement = InputManager.Instance.Movement;
 
-			// Apply gravity
-			// Body.Velocity += Time.deltaTime * Physics2D.gravity;
+			// Platform code
+			_isOnPlatform = PlatformCheck();
+			transform.parent = _platform;
 
 			// Horizontal
 			{
@@ -72,7 +75,7 @@ namespace Thuleanx.AI._Core {
 			}
 
 			{
-				if (OnGround()) _jumpCoyote.Start();
+				if (OnGround() || _isOnPlatform) _jumpCoyote.Start();
 				else {
 					if (Body.Velocity.y < -fallMaxVelocity)
 						Body.SetVelocityY(-fallMaxVelocity);
@@ -105,14 +108,25 @@ namespace Thuleanx.AI._Core {
 
 		#endregion
 
+		#region Utils
 		public void Flip() {
 			_isFacingRight = !_isFacingRight;
 			Vector3 transformScale = transform.localScale;
 			transformScale.x *= -1;
 			transform.localScale = transformScale;
 		}
-
 		public bool OnGround()
-			=> (bool) Physics2D.CircleCast(Body.Collider.bounds.center, Body.Collider.bounds.size.y/2, Vector2.down, .1f, groundLayer);
+			=> (bool) Physics2D.CircleCast(Body.Collider.bounds.center, Body.Collider.bounds.size.y / 2, 
+				Vector2.down, .1f, groundLayer);
+		public bool PlatformCheck() {
+			RaycastHit2D hit = Physics2D.CircleCast(Body.Collider.bounds.center, Body.Collider.bounds.size.y / 2,  
+				Vector2.down, .1f, platformLayer);
+			if (hit && _isOnPlatform) _isOnPlatform = true;
+			if (hit) 	this._platform = hit.collider.gameObject.transform;
+			else 		this._platform = null;
+			return hit;
+		}
+
+		#endregion
 	}
 }
