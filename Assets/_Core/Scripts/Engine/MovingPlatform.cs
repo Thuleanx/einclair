@@ -32,7 +32,7 @@ namespace Thuleanx.Engine.Core {
 			get {
 				int n = checkpoints.Count;
 				if (loopingMode == LoopMode.PINGPONG) {
-					int x = _checkpointID % (2*n - 1);
+					int x = _checkpointID % (2*(n - 1));
 					return (n-1) - Mathf.Abs(n - 1 - x);
 				} else if (loopingMode == LoopMode.LOOP) {
 					return _checkpointID % n;

@@ -11,10 +11,21 @@ namespace Thuleanx.AI._Core {
 		Dead = 1
 	}
 
+	enum PlayerAnimationState {
+		Grounded = 0,
+		Airborne = 1
+	}
+
+	[RequireComponent(typeof(Animator))]
 	public class Player : Agent {
+		#region Components
+		public Animator Anim {get; private set;}
+		#endregion
+
 		[Header("General")]
 		[SerializeField] LayerMask groundLayer;
 		[SerializeField] LayerMask platformLayer;
+
 
 		[Header("Movement")]
 		[SerializeField] bool defaultLeftFacing;
@@ -40,6 +51,13 @@ namespace Thuleanx.AI._Core {
 		Timer _jumpCoyote;
 		Timer _variableJump;
 
+		PlayerAnimationState _AnimState {
+			get => (PlayerAnimationState) Anim.GetInteger("State"); 
+			set {
+				Anim.SetInteger("State", (int) value);
+			}
+		}
+
 		#endregion
 
 		public override void StateMachineSetup() {
@@ -48,8 +66,20 @@ namespace Thuleanx.AI._Core {
 		}
 
 		public override void ObjectSetup() {
+			Anim = GetComponent<Animator>();
+			_AnimState = PlayerAnimationState.Grounded;
 			_jumpCoyote = new Timer(coyoteTime);
 			_variableJump = new Timer(varJumpTime);
+		}
+
+		public override void Update() {
+			base.Update();
+			AnimationUpdate();
+		}
+
+		public void AnimationUpdate() {
+			Anim.SetFloat("VelocityX", Body.Velocity.x);
+			Anim.SetFloat("VelocityY", Body.Velocity.y);
 		}
 
 		int NormalUpdate() {
@@ -75,10 +105,13 @@ namespace Thuleanx.AI._Core {
 			}
 
 			{
-				if (OnGround() || _isOnPlatform) _jumpCoyote.Start();
-				else {
+				if (OnGround() || _isOnPlatform) {
+					_jumpCoyote.Start();
+					_AnimState = PlayerAnimationState.Grounded;
+				} else {
 					if (Body.Velocity.y < -fallMaxVelocity)
 						Body.SetVelocityY(-fallMaxVelocity);
+					_AnimState = PlayerAnimationState.Airborne;
 				}
 
 				if (InputManager.Instance.Jump && _jumpCoyote)
@@ -126,7 +159,6 @@ namespace Thuleanx.AI._Core {
 			else 		this._platform = null;
 			return hit;
 		}
-
 		#endregion
 	}
 }

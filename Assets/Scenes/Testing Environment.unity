@@ -2765,6 +2765,7 @@ GameObject:
   - component: {fileID: 2059595756}
   - component: {fileID: 2059595757}
   - component: {fileID: 2059595758}
+  - component: {fileID: 2059595762}
   - component: {fileID: 2059595759}
   - component: {fileID: 2059595760}
   - component: {fileID: 2059595761}
@@ -2857,7 +2858,7 @@ MonoBehaviour:
     m_Bits: 128
   defaultLeftFacing: 0
   baseMovementSpeed: 5
-  groundAccelLambda: 16
+  groundAccelLambda: 32
   fallMaxVelocity: 30
   airMult: 0.8
   jumpHeight: {x: 1, y: 2.5}
@@ -2900,3 +2901,22 @@ MonoBehaviour:
   fontStyle: 0
   alignment: 0
   textDropShadow: 0
+--- !u!95 &2059595762
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059595755}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f0537225dfc3c4039bb92ff125c884f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
