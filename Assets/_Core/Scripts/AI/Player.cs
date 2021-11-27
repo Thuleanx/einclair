@@ -2,8 +2,8 @@ using UnityEngine;
 using System;
 using NaughtyAttributes;
 
-using Thuleanx.Controls.Core;
 using Thuleanx.Utils;
+using Thuleanx.Input.Core;
 
 namespace Thuleanx.AI._Core {
 	enum PlayerState {
@@ -25,6 +25,7 @@ namespace Thuleanx.AI._Core {
 		[Header("General")]
 		[SerializeField] LayerMask groundLayer;
 		[SerializeField] LayerMask platformLayer;
+		[SerializeField] PlayerInputProvider Provider;
 
 
 		[Header("Movement")]
@@ -43,23 +44,6 @@ namespace Thuleanx.AI._Core {
 		public float MinJumpVelocity => Mathf.Sqrt(jumpHeight.x * 2 * App.Gravity);
 
 
-		#region Object Scope
-
-		bool _isFacingRight = true;
-		bool _isOnPlatform = false;
-		Transform _platform = null;
-		Timer _jumpCoyote;
-		Timer _variableJump;
-
-		PlayerAnimationState _AnimState {
-			get => (PlayerAnimationState) Anim.GetInteger("State"); 
-			set {
-				Anim.SetInteger("State", (int) value);
-			}
-		}
-
-		#endregion
-
 		public override void StateMachineSetup() {
 			StateMachine = new StateMachine(Enum.GetNames(typeof(PlayerState)).Length, (int) PlayerState.Normal);
 			StateMachine.SetCallbackUpdate((int) PlayerState.Normal, NormalUpdate);
@@ -73,6 +57,7 @@ namespace Thuleanx.AI._Core {
 		}
 
 		public override void Update() {
+			InputState = Provider.GetState() as PlayerInputState;
 			base.Update();
 			AnimationUpdate();
 		}
@@ -82,8 +67,33 @@ namespace Thuleanx.AI._Core {
 			Anim.SetFloat("VelocityY", Body.Velocity.y);
 		}
 
+		#region Object Scope
+
+		PlayerInputState InputState;
+
+		bool _isFacingRight = true;
+		bool _isOnPlatform = false;
+		bool _isNearLadder = false;
+		bool _onLadder = false;
+
+		Transform _platform = null;
+		Transform _ladder = null;
+
+		Timer _jumpCoyote;
+		Timer _variableJump;
+
+		PlayerAnimationState _AnimState {
+			get => (PlayerAnimationState) Anim.GetInteger("State"); 
+			set {
+				Anim.SetInteger("State", (int) value);
+			}
+		}
+
+		#endregion
+
+		#region Normal
 		int NormalUpdate() {
-			float Movement = InputManager.Instance.Movement;
+			Vector2 Movement = InputState.Movement;
 
 			// Platform code
 			_isOnPlatform = PlatformCheck();
@@ -92,16 +102,16 @@ namespace Thuleanx.AI._Core {
 			// Horizontal
 			{
 				// Turn around for free
-				if (Movement != 0 && Mathf.Sign(Body.Velocity.x) != Movement)
+				if (Movement.x != 0 && Mathf.Sign(Body.Velocity.x) != Movement.x)
 					Body.SetVelocityX(-Body.Velocity.x);
 
 				float current = Body.Velocity.x;
-				float intention = InputManager.Instance.Movement * baseMovementSpeed;
+				float intention = Movement.x * baseMovementSpeed;
 
 				Body.SetVelocityX(Calc.Damp(current, intention, groundAccelLambda, Time.deltaTime));
 
-				if (Movement < 0 && (_isFacingRight ^ defaultLeftFacing)) Flip();
-				else if (Movement > 0 && (!_isFacingRight ^ defaultLeftFacing)) Flip();
+				if (Movement.x < 0 && (_isFacingRight ^ defaultLeftFacing)) Flip();
+				else if (Movement.x > 0 && (!_isFacingRight ^ defaultLeftFacing)) Flip();
 			}
 
 			{
@@ -114,31 +124,49 @@ namespace Thuleanx.AI._Core {
 					_AnimState = PlayerAnimationState.Airborne;
 				}
 
-				if (InputManager.Instance.Jump && _jumpCoyote)
+				if (InputState.Jump && _jumpCoyote)
 					Jump();
-				if (InputManager.Instance.JumpReleased && _variableJump)
+				if (InputState.JumpReleased && _variableJump)
 					VarJump();
 
 			}
 			return -1;
 		}
+		#endregion 
+		#region Climb
+		void ClimbEnter() {
+
+		}
+		void ClimbExit() {
+
+		}
+		#endregion
 
 		#region Jump
 
 		void Jump() {
-			InputManager.Instance.Jump.Stop();
 			_jumpCoyote.Stop();
 			_variableJump.Start();
 
 			Body.SetVelocityY(MaxJumpVelocity);
+			Provider.Feedback.JumpExecuted = true;
 		}
 
 		void VarJump() {
-			InputManager.Instance.JumpReleased.Stop();
 			_variableJump.Stop();
 			Body.SetVelocityY(Mathf.Min(MinJumpVelocity, Body.Velocity.y));
+			Provider.Feedback.JumpReleaseExecuted = true;
 		}
 
+		#endregion
+
+		#region Collisions
+		void OnTriggerStay2D(Collider2D other) {
+			if (other.gameObject.CompareTag("Ladder")) {
+				_isNearLadder = true;
+				_ladder = other.transform;
+			}
+		}
 		#endregion
 
 		#region Utils
