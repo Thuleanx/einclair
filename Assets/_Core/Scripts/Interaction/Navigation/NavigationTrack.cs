@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Timeline;
 
-namespace Thuleanx.Interaction {
+namespace Thuleanx.Interaction.Core {
 	public class NavigationTrack : TrackAsset {
 
 	}

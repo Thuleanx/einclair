@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 using Thuleanx.Input.Core;
 
-namespace Thuleanx.Interaction {
+namespace Thuleanx.Interaction.Core {
 	public class NavigationClip : PlayableAsset {
 		public PlayerInputProvider InputProvider;
 		public Vector2 Offset;

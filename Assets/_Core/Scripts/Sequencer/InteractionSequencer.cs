@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Timeline;
 
-using Thuleanx.Interaction;
+using Thuleanx.Interaction.Core;
 
 namespace Thuleanx.Sequencer.Core {
 	[TrackBindingType(typeof(GameObject))]

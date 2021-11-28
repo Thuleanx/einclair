@@ -6,7 +6,7 @@ using Thuleanx.Navigation;
 using Thuleanx.Input;
 using Thuleanx.Input.Core;
 
-namespace Thuleanx.Interaction {
+namespace Thuleanx.Interaction.Core {
 	public class NavigationBehaviour : PlayableBehaviour, InputMiddleware {
 		public Vector2 Position;
 		public PlayerInputProvider InputProvider;

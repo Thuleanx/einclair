@@ -25,7 +25,6 @@ namespace Thuleanx.Input.Core {
 		}
 
 		public void AddMiddleware(InputMiddleware middleware, int priority) {
-			Debug.Log(Middlewares.Count);
 			Middlewares.Add(new KeyValuePair<int,InputMiddleware>(priority, middleware));
 			Middlewares.Sort((kvp1, kvp2) => {
 				return kvp1.Key - kvp2.Key;

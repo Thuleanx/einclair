@@ -197,6 +197,9 @@ namespace Thuleanx.AI.Core {
 		}
 		void ClimbExit() {
 			Body.Body.bodyType = RigidbodyType2D.Dynamic;
+			// Prevent Jitter
+			Body.Velocity = Vector2.zero;
+			Body.SetPositionY(Mathf.Round(Body.transform.position.y));
 		}
 		#endregion
 

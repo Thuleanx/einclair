@@ -31,10 +31,7 @@ namespace Thuleanx.Navigation {
 
 		public override InputState Process(InputState state) {
 			if (Active) {
-				PlayerInputState PIS = state as PlayerInputState;
-				PIS.Movement = Vector2.zero;
-				PIS.Jump = false;
-				PIS.JumpReleased = false;
+				PlayerInputState PIS = new PlayerInputState(); // ignore previous input states, completely overriding
 
 				float dx = Destination.x - Context.ReferenceManager.Player.transform.position.x;
 				if (Mathf.Abs(dx) < .1f) {

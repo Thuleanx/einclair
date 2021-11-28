@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 using Thuleanx;
 
-namespace Thuleanx.Interaction {
+namespace Thuleanx.Interaction.Core {
 	public class PlayerDetector : MonoBehaviour {
 		public float Range = 3f;
 		[HideInInspector]

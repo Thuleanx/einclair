@@ -7,5 +7,7 @@ namespace Thuleanx.Input.Core {
 		public Vector2 Movement;
 		public bool Jump;
 		public bool JumpReleased;
+		public bool Interact;
+		public bool CanInteract;
 	}
 }

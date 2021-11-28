@@ -12,7 +12,7 @@ namespace Thuleanx.Input.Core {
 
 		public static InputSystem Instance;
 
-		Timer Jump, JumpReleased;
+		Timer Jump, JumpReleased, Interact;
 		Vector2 Movement;
 
 		void Awake() {
@@ -20,6 +20,7 @@ namespace Thuleanx.Input.Core {
 
 			Jump = new Timer(InputBufferTime);
 			JumpReleased = new Timer(InputBufferTime);
+			Interact = new Timer(InputBufferTime);
 		}
 
 		public void OnMoveInput(InputAction.CallbackContext context) {
@@ -30,6 +31,9 @@ namespace Thuleanx.Input.Core {
 			if (context.started) Jump.Start();
 			if (context.performed) JumpReleased.Start();
 		}
+		public void OnInteract(InputAction.CallbackContext context) {
+			if (context.started) Interact.Start();
+		}
 
 		public override InputState Process(InputState state) {
 			PlayerInputState pis = state as PlayerInputState;
@@ -37,6 +41,9 @@ namespace Thuleanx.Input.Core {
 			pis.Movement = Movement;
 			pis.Jump = Jump;
 			pis.JumpReleased = JumpReleased;
+			pis.Interact = Interact;
+
+			pis.CanInteract = true; // might be overwritten later, kek
 
 			return state;
 		}
@@ -45,6 +52,7 @@ namespace Thuleanx.Input.Core {
 			PlayerInputFeedback pfeedback = feedback as PlayerInputFeedback;
 			if (pfeedback.JumpExecuted) Jump.Stop();
 			if (pfeedback.JumpReleaseExecuted) JumpReleased.Stop();
+			if (pfeedback.InteractExecuted) Interact.Stop();
 		}
 
 
