@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Thuleanx.Utils;
@@ -21,8 +22,10 @@ namespace Thuleanx.Input.Core {
 			JumpReleased = new Timer(InputBufferTime);
 		}
 
-		public void OnMoveInput(InputAction.CallbackContext context)
-			=> Movement = context.ReadValue<Vector2>();
+		public void OnMoveInput(InputAction.CallbackContext context) {
+			if (context.performed) Movement = context.ReadValue<Vector2>();
+			if (context.canceled) Movement = Vector2.zero;
+		}
 		public void OnJumpInput(InputAction.CallbackContext context) {
 			if (context.started) Jump.Start();
 			if (context.performed) JumpReleased.Start();
@@ -44,5 +47,7 @@ namespace Thuleanx.Input.Core {
 			if (pfeedback.JumpReleaseExecuted) JumpReleased.Stop();
 		}
 
+
+		public override int GetPriority() => (int) MiddlewarePriority.INPUT;
 	}
 }

@@ -1,15 +1,13 @@
 using UnityEngine;
 using System;
+using System.Collections.Generic;
 using NaughtyAttributes;
 
+using Thuleanx.Engine.Core;
 using Thuleanx.Utils;
 using Thuleanx.Input.Core;
 
-namespace Thuleanx.AI._Core {
-	enum PlayerState {
-		Normal = 0, 
-		Dead = 1
-	}
+namespace Thuleanx.AI.Core {
 
 	enum PlayerAnimationState {
 		Grounded = 0,
@@ -18,6 +16,12 @@ namespace Thuleanx.AI._Core {
 
 	[RequireComponent(typeof(Animator))]
 	public class Player : Agent {
+		public enum PlayerState {
+			Normal = 0, 
+			Climb = 1, 
+			Dead = 2
+		}
+
 		#region Components
 		public Animator Anim {get; private set;}
 		#endregion
@@ -27,26 +31,15 @@ namespace Thuleanx.AI._Core {
 		[SerializeField] LayerMask platformLayer;
 		[SerializeField] PlayerInputProvider Provider;
 
-
-		[Header("Movement")]
-		[SerializeField] bool defaultLeftFacing;
-		[SerializeField] float baseMovementSpeed;
-		[SerializeField] float groundAccelLambda;
-		[SerializeField] float fallMaxVelocity;
-
-		[Header("Jump")]
-		[SerializeField] float airMult;
-		[SerializeField, MinMaxSlider(0, 10)] Vector2 jumpHeight;
-		[SerializeField] float coyoteTime = .1f;
-		[SerializeField] float varJumpTime = 1f;
-
-		public float MaxJumpVelocity => Mathf.Sqrt(jumpHeight.y * 2 * App.Gravity);
-		public float MinJumpVelocity => Mathf.Sqrt(jumpHeight.x * 2 * App.Gravity);
-
-
 		public override void StateMachineSetup() {
 			StateMachine = new StateMachine(Enum.GetNames(typeof(PlayerState)).Length, (int) PlayerState.Normal);
 			StateMachine.SetCallbackUpdate((int) PlayerState.Normal, NormalUpdate);
+			StateMachine.SetCallbackEnd((int) PlayerState.Normal, NormalExit);
+
+			StateMachine.SetCallbackUpdate((int) PlayerState.Climb, ClimbUpdate);
+			StateMachine.SetCallbackTransition((int) PlayerState.Climb, ClimbTransition);
+			StateMachine.SetCallbackBegin((int) PlayerState.Climb, ClimbEnter);
+			StateMachine.SetCallbackEnd((int) PlayerState.Climb, ClimbExit);
 		}
 
 		public override void ObjectSetup() {
@@ -73,11 +66,8 @@ namespace Thuleanx.AI._Core {
 
 		bool _isFacingRight = true;
 		bool _isOnPlatform = false;
-		bool _isNearLadder = false;
-		bool _onLadder = false;
 
 		Transform _platform = null;
-		Transform _ladder = null;
 
 		Timer _jumpCoyote;
 		Timer _variableJump;
@@ -92,6 +82,12 @@ namespace Thuleanx.AI._Core {
 		#endregion
 
 		#region Normal
+		[Header("Movement")]
+		[SerializeField] bool defaultLeftFacing;
+		[SerializeField] float baseMovementSpeed;
+		[SerializeField] float groundAccelLambda;
+		[SerializeField] float fallMaxVelocity;
+
 		int NormalUpdate() {
 			Vector2 Movement = InputState.Movement;
 
@@ -132,17 +128,23 @@ namespace Thuleanx.AI._Core {
 			}
 			return -1;
 		}
+		void NormalExit() {
+			_isOnPlatform = false;
+			transform.parent = _platform;
+		}
 		#endregion 
-		#region Climb
-		void ClimbEnter() {
-
-		}
-		void ClimbExit() {
-
-		}
-		#endregion
 
 		#region Jump
+
+		[Header("Jump")]
+		[SerializeField] float airMult;
+		[SerializeField, MinMaxSlider(0, 10)] Vector2 jumpHeight;
+		[SerializeField] float coyoteTime = .1f;
+		[SerializeField] float varJumpTime = 1f;
+
+		public float MaxJumpVelocity => Mathf.Sqrt(jumpHeight.y * 2 * App.Gravity);
+		public float MinJumpVelocity => Mathf.Sqrt(jumpHeight.x * 2 * App.Gravity);
+
 
 		void Jump() {
 			_jumpCoyote.Stop();
@@ -160,12 +162,41 @@ namespace Thuleanx.AI._Core {
 
 		#endregion
 
-		#region Collisions
-		void OnTriggerStay2D(Collider2D other) {
-			if (other.gameObject.CompareTag("Ladder")) {
-				_isNearLadder = true;
-				_ladder = other.transform;
+		#region Climb
+		[Header("Climb")]
+		public float ClimbSpeed = 2f;
+
+		Ladder _ladder = null;
+
+		void ClimbEnter() {
+			// Check all colliding objects for a ladder
+			List<Collider2D> results = new List<Collider2D>();
+			ContactFilter2D contactFilter = new ContactFilter2D();
+			contactFilter.SetLayerMask(Calc.GetPhysicsLayerMask(gameObject.layer));
+			Physics2D.OverlapCollider(Body.Collider,contactFilter, results);
+
+			foreach (Collider2D res in results) {
+				Ladder lad = res.GetComponent<Ladder>();
+				if (lad) _ladder = lad;
 			}
+
+			Body.Body.bodyType = RigidbodyType2D.Kinematic;
+		}
+		int ClimbTransition() {
+			if (InputState.Movement.y > 0 && transform.position.y >= _ladder.Top.y)
+				return (int) PlayerState.Normal;
+			if (InputState.Movement.y < 0 && transform.position.y <= _ladder.Bot.y)
+				return (int) PlayerState.Normal;
+			return -1;
+		}
+		int ClimbUpdate() {
+			Vector2 Movement = InputState.Movement;
+			Body.SetPositionX(_ladder.transform.position.x);
+			Body.SetVelocityY(Movement.y * ClimbSpeed);
+			return -1;
+		}
+		void ClimbExit() {
+			Body.Body.bodyType = RigidbodyType2D.Dynamic;
 		}
 		#endregion
 

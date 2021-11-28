@@ -5,7 +5,7 @@ namespace Thuleanx.Input {
 		InputState GetState();
 		void ProcessFeedback();
 
-		void AddMiddleware(InputMiddleware middleware);
-		void RemoveMiddleware(InputMiddleware middleware);
+		void AddMiddleware(InputMiddleware middleware, int priority);
+		void RemoveMiddleware(InputMiddleware middleware, int priority);
 	}
 }

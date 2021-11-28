@@ -25,6 +25,8 @@ namespace Thuleanx.Engine {
 		public void Translate(Vector2 Displacement) => Body.MovePosition(Body.position + Displacement);
 		public void MoveTo(Vector2 pos) => Body.MovePosition(pos);
 		public void SetPosition(Vector2 pos) => transform.position = pos;
+		public void SetPositionX(float x) => transform.position = new Vector3(x, transform.position.y, transform.position.z);
+		public void SetPositionY(float y) => transform.position = new Vector3(transform.position.x, y, transform.position.z);
 
 		public void SetVelocityX(float vx) => Velocity = new Vector2(vx, Velocity.y);
 		public void SetVelocityY(float vy) => Velocity = new Vector2(Velocity.x, vy);
