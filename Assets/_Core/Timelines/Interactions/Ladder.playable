@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39fd2a8fe810940c7981ea44ad3a1cf1, type: 3}
   m_Name: NavigationClip
   m_EditorClassIdentifier: 
-  InputProvider: {fileID: 11400000, guid: 18a5adaafb44c426d86ddb4858331fde, type: 2}
-  Offset: {x: 0, y: 0}
+  InputProvider: {fileID: 11400000, guid: 9cefd20f0ae38415dba40a2119f9f635, type: 2}
+  Offset: {x: -0.64, y: 0}
 --- !u!114 &-8483635593580416553
 MonoBehaviour:
   m_ObjectHideFlags: 1
