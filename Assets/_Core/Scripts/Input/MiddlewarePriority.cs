@@ -1,6 +1,9 @@
-public enum MiddlewarePriority
-{
-	INPUT = 0,
-	OVERRIDE = 1,
-	NAVIGATION = 2
+namespace Thuleanx.Input.Core {
+	public enum MiddlewarePriority
+	{
+		INPUT = 0,
+		PLAYER = 1,
+		OVERRIDE = 2,
+		NAVIGATION = 3
+	}
 }

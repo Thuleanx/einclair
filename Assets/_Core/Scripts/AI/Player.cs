@@ -6,6 +6,7 @@ using NaughtyAttributes;
 
 using Thuleanx.Engine.Core;
 using Thuleanx.Utils;
+using Thuleanx.Input;
 using Thuleanx.Input.Core;
 
 using Thuleanx.Manager.Core;
@@ -20,7 +21,7 @@ namespace Thuleanx.AI.Core {
 	}
 
 	[RequireComponent(typeof(Animator))]
-	public class Player : PlatformerAI{
+	public class Player : PlatformerAI, InputMiddleware {
 		public enum PlayerState {
 			Normal = 0, 
 			Climb = 1, 
@@ -51,6 +52,7 @@ namespace Thuleanx.AI.Core {
 			_AnimState = PlayerAnimationState.Grounded;
 			_jumpCoyote = new Timer(coyoteTime);
 			_variableJump = new Timer(varJumpTime);
+			Attach(Provider);
 		}
 		public override void Update() {
 			InputState = Provider.GetState() as PlayerInputState;
@@ -60,7 +62,6 @@ namespace Thuleanx.AI.Core {
 		public void AnimationUpdate() {
 			Anim.SetFloat("VelocityX", Body.Velocity.x);
 			Anim.SetFloat("VelocityY", Body.Velocity.y);
-
 		}
 
 		#region Object Scope
@@ -236,6 +237,21 @@ namespace Thuleanx.AI.Core {
 		UnityEvent AnimationFinish = new UnityEvent();
 		public void FinishAnimation()=>AnimationFinish?.Invoke();
 
+		public int GetPriority() => (int) MiddlewarePriority.PLAYER;
+
+		public InputState Process(InputState state) {
+			if (state is PlayerInputState) {
+				PlayerInputState PIP = state as PlayerInputState;
+				PIP.CanInteract = StateMachine.State == (int) PlayerState.Normal;
+				return PIP;
+			}
+			return state;
+		}
+
+		public void Review(InputFeedback feedback) {}
+
+		public void Detach(InputProvider provider) => provider.RemoveMiddleware(this, GetPriority());
+		public void Attach(InputProvider provider) => provider.AddMiddleware(this, GetPriority());
 		#endregion
 	}
 }
