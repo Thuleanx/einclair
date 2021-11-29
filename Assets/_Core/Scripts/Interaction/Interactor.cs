@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 using Thuleanx.Input.Core;
-using Thuleanx.Interaction;
+using Thuleanx.Manager.Core;
 
 namespace Thuleanx.Interaction.Core {
 	[RequireComponent(typeof(PlayerDetector))]
@@ -13,15 +13,13 @@ namespace Thuleanx.Interaction.Core {
 			Detector = GetComponent<PlayerDetector>();
 		}
 
-		public PlayerInputProvider InputProvider;
 		public UnityEvent OnInteract;
 
-
 		void Update() {
-			PlayerInputState Input = InputProvider.GetState() as PlayerInputState;
+			PlayerInputState Input = GlobalReferences.PlayerInputProvider.GetState() as PlayerInputState;
 			if (Detector && Detector.Detected && Input.Interact && Input.CanInteract) {
 				OnInteract?.Invoke();
-				InputProvider.Feedback.InteractExecuted = true;
+				GlobalReferences.PlayerInputProvider.Feedback.InteractExecuted = true;
 			}
 		}
 	}

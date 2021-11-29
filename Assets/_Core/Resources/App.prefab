@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c715db67ece1a4ec1b5fcbe3bf8e5e46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InputProvider: {fileID: 11400000, guid: 18a5adaafb44c426d86ddb4858331fde, type: 2}
+  InputProvider: {fileID: 11400000, guid: 9cefd20f0ae38415dba40a2119f9f635, type: 2}
   Middlewares:
   - {fileID: 278795203095600436}
   - {fileID: 1175985853}

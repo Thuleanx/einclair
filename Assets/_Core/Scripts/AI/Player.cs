@@ -7,6 +7,8 @@ using Thuleanx.Engine.Core;
 using Thuleanx.Utils;
 using Thuleanx.Input.Core;
 
+using Thuleanx.Manager.Core;
+
 namespace Thuleanx.AI.Core {
 
 	enum PlayerAnimationState {
@@ -29,7 +31,7 @@ namespace Thuleanx.AI.Core {
 		[Header("General")]
 		[SerializeField] LayerMask groundLayer;
 		[SerializeField] LayerMask platformLayer;
-		[SerializeField] PlayerInputProvider Provider;
+		PlayerInputProvider Provider { get => GlobalReferences.PlayerInputProvider; }
 
 		public override void StateMachineSetup() {
 			StateMachine = new StateMachine(Enum.GetNames(typeof(PlayerState)).Length, (int) PlayerState.Normal);

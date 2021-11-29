@@ -4,21 +4,18 @@ using System.Collections.Generic;
 using Thuleanx.Input;
 
 namespace Thuleanx.Input.Core {
-	[CreateAssetMenu(fileName = "PIP", menuName = "~Einclair/PlayerInputProvider", order = 0)]
-	public class PlayerInputProvider : ScriptableObject, InputProvider {
-		public PlayerInputFeedback Feedback = new PlayerInputFeedback();
+	public abstract class PlatformerInputProvider : ScriptableObject, InputProvider {
+		public PlatformerInputFeedback Feedback = new PlatformerInputFeedback();
+		protected List<KeyValuePair<int, InputMiddleware>> Middlewares = new List<KeyValuePair<int, InputMiddleware>>();
 
-
-		List<KeyValuePair<int, InputMiddleware>> Middlewares = new List<KeyValuePair<int, InputMiddleware>>();
-
-		public InputState GetState() {
-			PlayerInputState InputState = new PlayerInputState();
+		public virtual InputState GetState() {
+			PlatformerInputState InputState = new PlatformerInputState();
 			foreach (var kvp in Middlewares)
-				InputState = kvp.Value.Process(InputState) as PlayerInputState;
+				InputState = kvp.Value.Process(InputState) as PlatformerInputState;
 			return InputState;
 		}
 
-		public void ProcessFeedback() {
+		public virtual void ProcessFeedback() {
 			foreach (var kvp in Middlewares)
 				kvp.Value.Review(Feedback);
 			Feedback.Reset();
