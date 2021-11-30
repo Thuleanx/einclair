@@ -77,7 +77,6 @@ namespace Thuleanx.AI.Core {
 			}
 		}
 		#endregion
-
 		#region Normal
 		int NormalUpdate() {
 			Vector2 Movement = InputState.Movement;
@@ -124,7 +123,6 @@ namespace Thuleanx.AI.Core {
 			transform.parent = _platform;
 		}
 		#endregion 
-
 		#region Jump
 
 		[Header("Jump")]
@@ -152,7 +150,6 @@ namespace Thuleanx.AI.Core {
 		}
 
 		#endregion
-
 		#region Climb
 		[Header("Climb")]
 		public float ClimbSpeed = 2f;
@@ -202,7 +199,6 @@ namespace Thuleanx.AI.Core {
 			Body.SetPositionY(Mathf.Round(Body.transform.position.y));
 		}
 		#endregion
-
 		#region Lock
 		bool _lockAnimFinished;
 		Func<bool, int> _lockTransition = (fin)=>-1;
@@ -232,7 +228,6 @@ namespace Thuleanx.AI.Core {
 
 		public bool IsLocked => StateMachine.State == (int) PlayerState.Lock;
 		#endregion
-
 		#region Utils
 		UnityEvent AnimationFinish = new UnityEvent();
 		public void FinishAnimation()=>AnimationFinish?.Invoke();

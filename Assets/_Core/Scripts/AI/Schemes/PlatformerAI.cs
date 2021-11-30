@@ -1,6 +1,7 @@
 using UnityEngine;
 
-using Thuleanx.Input;
+using Thuleanx.Input.Core;
+using Draggable;
 
 namespace Thuleanx.AI.Core {
 	public class PlatformerAI : Agent {
@@ -11,13 +12,14 @@ namespace Thuleanx.AI.Core {
 		[Header("General")]
 		[SerializeField] protected LayerMask groundLayer;
 		[SerializeField] protected LayerMask platformLayer;
-		[SerializeField] protected InputProvider Provider;
+		public PlatformerInputProvider Provider;
 
 		[Header("Movement")]
 		[SerializeField] protected bool defaultLeftFacing;
 		[SerializeField] protected float baseMovementSpeed;
 		[SerializeField] protected float groundAccelLambda;
 		[SerializeField] protected float fallMaxVelocity;
+		[DraggablePoint(true)] public Vector3 LedgeRightAnchor;
 
 		protected bool _isFacingRight = true;
 		protected bool _isOnPlatform = false;
@@ -45,6 +47,9 @@ namespace Thuleanx.AI.Core {
 			if (hit) 	this._platform = hit.collider.gameObject.transform;
 			else 		this._platform = null;
 			return hit;
+		}
+		public bool LedgeAhead() {
+			return Physics2D.OverlapCircle(transform.position + LedgeRightAnchor, .1f, groundLayer | platformLayer);
 		}
 
 		protected void SetBodyDynamic() {
