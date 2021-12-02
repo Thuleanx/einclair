@@ -35,12 +35,15 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - UI
+  - Hitbox
+  - Hurtbox
   m_SortingLayers:
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Darkwood
     uniqueID: 3537980889
+    locked: 0
+  - name: Top
+    uniqueID: 2777593077
     locked: 0

@@ -7,12 +7,12 @@ namespace Thuleanx.AI.Core {
 	public class Korone : MonoMiddleware {
 		public override int GetPriority() => (int) MiddlewarePriority.AI;
 		public override InputState Process(InputState state) {
-			if (state is PlatformerInputState) {
-				PlatformerInputState PIS = state as PlatformerInputState;
-				PIS.Movement.x = Mathf.Sign((Context.ReferenceManager.Player.transform.position - transform.position).x);
-				return PIS;
-			}
-			return state;
+			if (!(state is PlatformerInputState)) return state;
+
+			PlatformerInputState PIS = state as PlatformerInputState;
+			float dx = (Context.ReferenceManager.Player.transform.position - transform.position).x;
+			PIS.Movement.x = Mathf.Abs(dx) < .1f ? 0 : Mathf.Sign(dx);
+			return PIS;
 		}
 		public override void Review(InputFeedback feedback) {}
 

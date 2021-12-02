@@ -11,6 +11,10 @@ using Thuleanx.Input.Core;
 
 using Thuleanx.Manager.Core;
 
+using Thuleanx.Combat;
+
+using MarkupAttributes;
+
 namespace Thuleanx.AI.Core {
 
 	enum PlayerAnimationState {
@@ -21,7 +25,7 @@ namespace Thuleanx.AI.Core {
 	}
 
 	[RequireComponent(typeof(Animator))]
-	public class Player : PlatformerAI, InputMiddleware {
+	public class Player : LivePlatformerAI, InputMiddleware {
 		public enum PlayerState {
 			Normal = 0, 
 			Climb = 1, 
@@ -125,7 +129,7 @@ namespace Thuleanx.AI.Core {
 		#endregion 
 		#region Jump
 
-		[Header("Jump")]
+		[Box("Air")]
 		[SerializeField] float airMult;
 		[SerializeField, MinMaxSlider(0, 10)] Vector2 jumpHeight;
 		[SerializeField] float coyoteTime = .1f;

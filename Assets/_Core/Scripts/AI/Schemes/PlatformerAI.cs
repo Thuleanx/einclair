@@ -48,8 +48,9 @@ namespace Thuleanx.AI.Core {
 			else 		this._platform = null;
 			return hit;
 		}
-		public bool LedgeAhead() {
-			return Physics2D.OverlapCircle(transform.position + LedgeRightAnchor, .1f, groundLayer | platformLayer);
+		public bool LedgeAhead(bool right) {
+			Vector2 pos = (Vector2) transform.position + (new Vector2(LedgeRightAnchor.x * (right ? 1 : -1), LedgeRightAnchor.y));
+			return !Physics2D.OverlapCircle(pos, .1f, groundLayer | platformLayer);
 		}
 
 		protected void SetBodyDynamic() {

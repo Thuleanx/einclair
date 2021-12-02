@@ -2,9 +2,10 @@ using UnityEngine;
 
 using Thuleanx.Utils;
 using Thuleanx.Input.Core;
+using Thuleanx.Combat;
 
 namespace Thuleanx.AI.Core {
-	public class BasicAI : PlatformerAI {
+	public class BasicAI : LivePlatformerAI {
 		protected PlatformerInputState InputState;
 
 		public override void Update() {
@@ -20,7 +21,7 @@ namespace Thuleanx.AI.Core {
 
 		public override void ObjectSetup() {
 			base.ObjectSetup();
-			Provider = ScriptableObject.CreateInstance<PlatformerInputProvider>();
+			if (Provider == null) Provider = ScriptableObject.CreateInstance<PlatformerInputProvider>();
 		}
 
 		#region Normal
@@ -46,6 +47,8 @@ namespace Thuleanx.AI.Core {
 				else if (Movement.x > 0 && (!_isFacingRight ^ defaultLeftFacing)) Flip();
 
 				// Prevent Edge Falloff
+				if (LedgeAhead(_isFacingRight))
+					Body.SetVelocityX(0f);
 			}
 
 			return -1;
@@ -55,6 +58,5 @@ namespace Thuleanx.AI.Core {
 			transform.parent = _platform;
 		}
 		#endregion
-
 	}
 }
