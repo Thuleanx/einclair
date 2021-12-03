@@ -12,7 +12,16 @@ namespace Thuleanx.Input.Core {
 
 		public static InputSystem Instance;
 
-		Timer Jump, JumpReleased, Interact;
+		Vector2 MouseScreenPos;
+		public Vector2 MouseWorldPos {
+			get {
+				if (Camera.main != null)
+					return Camera.main.ScreenToWorldPoint(MouseScreenPos);
+				return Vector2.zero;
+			}
+		}
+
+		Timer Jump, JumpReleased, Interact, Attack;
 		Vector2 Movement;
 
 		void Awake() {
@@ -21,6 +30,7 @@ namespace Thuleanx.Input.Core {
 			Jump = new Timer(InputBufferTime);
 			JumpReleased = new Timer(InputBufferTime);
 			Interact = new Timer(InputBufferTime);
+			Attack = new Timer(InputBufferTime);
 		}
 
 		public void OnMoveInput(InputAction.CallbackContext context) {
@@ -34,14 +44,21 @@ namespace Thuleanx.Input.Core {
 		public void OnInteract(InputAction.CallbackContext context) {
 			if (context.started) Interact.Start();
 		}
+		public void OnMouseInput(InputAction.CallbackContext ctx) => 
+			MouseScreenPos = ctx.ReadValue<Vector2>();
+		public void OnAttack(InputAction.CallbackContext ctx) {
+			if (ctx.started) Attack.Start();
+		}
 
 		public override InputState Process(InputState state) {
 			PlayerInputState pis = state as PlayerInputState;
 
+			pis.TargetPosition = MouseWorldPos;
 			pis.Movement = Movement;
 			pis.Jump = Jump;
 			pis.JumpReleased = JumpReleased;
 			pis.Interact = Interact;
+			pis.Attack = Attack;
 
 			pis.CanInteract = true; // might be overwritten later, kek
 
@@ -53,6 +70,7 @@ namespace Thuleanx.Input.Core {
 			if (pfeedback.JumpExecuted) Jump.Stop();
 			if (pfeedback.JumpReleaseExecuted) JumpReleased.Stop();
 			if (pfeedback.InteractExecuted) Interact.Stop();
+			if (pfeedback.AttackExecuted) Attack.Stop();
 		}
 
 

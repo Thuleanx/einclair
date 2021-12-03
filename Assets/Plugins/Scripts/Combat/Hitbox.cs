@@ -45,7 +45,6 @@ namespace Thuleanx.Combat {
 				Hurtbox hurtbox = other.gameObject.GetComponent<Hurtbox>();
 
 				if (hurtbox != null && CanCollide(hurtbox) && TimedOut(hurtbox.ID)) {
-					Debug.Log("HIP");
 					hurtbox.ApplyHit(generateHit(other));
 					Refresh(hurtbox.ID);
 				}

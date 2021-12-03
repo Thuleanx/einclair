@@ -52,6 +52,10 @@ namespace Thuleanx.AI.Core {
 			Vector2 pos = (Vector2) transform.position + (new Vector2(LedgeRightAnchor.x * (right ? 1 : -1), LedgeRightAnchor.y));
 			return !Physics2D.OverlapCircle(pos, .1f, groundLayer | platformLayer);
 		}
+		public void ForceDirection(bool right) {
+			if (_isFacingRight ^ right)
+				Flip();
+		}
 
 		protected void SetBodyDynamic() {
 			Body.Body.bodyType = RigidbodyType2D.Dynamic;

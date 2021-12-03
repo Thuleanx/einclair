@@ -12,6 +12,8 @@ using Thuleanx.Input.Core;
 using Thuleanx.Manager.Core;
 
 using Thuleanx.Combat;
+using Thuleanx.Optimization;
+using Thuleanx.Combat.Core;
 
 using MarkupAttributes;
 
@@ -118,8 +120,13 @@ namespace Thuleanx.AI.Core {
 					Jump();
 				if (InputState.JumpReleased && _variableJump)
 					VarJump();
-
 			}
+
+			if (InputState.Attack) {
+				// Attack
+				StartAttack();
+			}
+
 			return -1;
 		}
 		void NormalExit() {
@@ -218,7 +225,7 @@ namespace Thuleanx.AI.Core {
 			SetBodyDynamic();
 			AnimationFinish.RemoveListener(LockAnimationEnds);
 		}
-		void LockAnimationEnds() => _lockAnimFinished = true;
+		public void LockAnimationEnds() => _lockAnimFinished = true;
 
 		public void Lock(string animationTrigger, Func<bool, int> LockTransition) {
 			// TODO: Deal with death state
@@ -251,6 +258,24 @@ namespace Thuleanx.AI.Core {
 
 		public void Detach(InputProvider provider) => provider.RemoveMiddleware(this, GetPriority());
 		public void Attach(InputProvider provider) => provider.AddMiddleware(this, GetPriority());
+		#endregion
+
+		#region Combat
+		[Box("Combat")]
+		public string AttackTrigger;
+		public GameObject Lantern;
+		public BubblePool BulletPool;
+
+		public void Attack() {
+			GameObject obj = BulletPool.Borrow(Lantern.transform.position, Quaternion.identity);
+			obj.GetComponent<Bullet>()?.Init(InputState.TargetPosition - (Vector2) Lantern.transform.position);
+		}
+		public void StartAttack() {
+			Lock(AttackTrigger, (animationFinish) => {
+				return animationFinish ? (int) PlayerState.Normal : -1;
+			});
+			Provider.Feedback.AttackExecuted = true;
+		}
 		#endregion
 	}
 }
