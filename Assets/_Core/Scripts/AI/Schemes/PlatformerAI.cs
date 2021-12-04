@@ -57,6 +57,8 @@ namespace Thuleanx.AI.Core {
 				Flip();
 		}
 
+		public bool IsRightFacing => _isFacingRight ^ defaultLeftFacing;
+
 		protected void SetBodyDynamic() {
 			Body.Body.bodyType = RigidbodyType2D.Dynamic;
 			// Prevent Jitter

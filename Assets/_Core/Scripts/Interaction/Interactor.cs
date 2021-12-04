@@ -19,7 +19,7 @@ namespace Thuleanx.Interaction.Core {
 			PlayerInputState Input = GlobalReferences.PlayerInputProvider.GetState() as PlayerInputState;
 			if (Detector && Detector.Detected && Input.Interact && Input.CanInteract) {
 				OnInteract?.Invoke();
-				GlobalReferences.PlayerInputProvider.Feedback.InteractExecuted = true;
+				(GlobalReferences.PlayerInputProvider.Feedback as PlayerInputFeedback).InteractExecuted = true;
 			}
 		}
 	}

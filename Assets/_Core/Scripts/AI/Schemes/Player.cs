@@ -151,13 +151,13 @@ namespace Thuleanx.AI.Core {
 			_variableJump.Start();
 
 			Body.SetVelocityY(MaxJumpVelocity);
-			Provider.Feedback.JumpExecuted = true;
+			(Provider.Feedback as PlayerInputFeedback).JumpExecuted = true;
 		}
 
 		void VarJump() {
 			_variableJump.Stop();
 			Body.SetVelocityY(Mathf.Min(MinJumpVelocity, Body.Velocity.y));
-			Provider.Feedback.JumpReleaseExecuted = true;
+			(Provider.Feedback as PlayerInputFeedback).JumpReleaseExecuted = true;
 		}
 
 		#endregion
@@ -274,7 +274,7 @@ namespace Thuleanx.AI.Core {
 			Lock(AttackTrigger, (animationFinish) => {
 				return animationFinish ? (int) PlayerState.Normal : -1;
 			});
-			Provider.Feedback.AttackExecuted = true;
+			(Provider.Feedback as PlayerInputFeedback).AttackExecuted = true;
 		}
 		#endregion
 	}

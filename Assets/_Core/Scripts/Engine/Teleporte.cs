@@ -6,10 +6,8 @@ namespace Thuleanx.Engine {
 		public Teleporte Destination;
 
 		public void Teleport() {
-			if (Destination != null && Context.ReferenceManager.Player) {
-				Debug.Log("HI");
+			if (Destination != null && Context.ReferenceManager.Player)
 				Context.ReferenceManager.Player.Body.SetPosition(Destination.transform.position);
-			}
 		}
 	}
 }

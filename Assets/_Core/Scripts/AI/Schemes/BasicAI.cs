@@ -25,7 +25,7 @@ namespace Thuleanx.AI.Core {
 		}
 
 		#region Normal
-		protected int NormalUpdate() {
+		public virtual int NormalUpdate() {
 			Vector2 Movement = InputState.Movement;
 
 			// Platform code
@@ -43,11 +43,11 @@ namespace Thuleanx.AI.Core {
 
 				Body.SetVelocityX(Calc.Damp(current, intention, groundAccelLambda, Time.deltaTime));
 
-				if (Movement.x < 0 && (_isFacingRight ^ defaultLeftFacing)) Flip();
-				else if (Movement.x > 0 && (!_isFacingRight ^ defaultLeftFacing)) Flip();
+				if (Movement.x < 0 && IsRightFacing) Flip();
+				else if (Movement.x > 0 && !IsRightFacing) Flip();
 
 				// Prevent Edge Falloff
-				if (LedgeAhead(_isFacingRight))
+				if (LedgeAhead(IsRightFacing))
 					Body.SetVelocityX(0f);
 			}
 
