@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Thuleanx.Engine {
+namespace Thuleanx.Engine.Core {
 	[DisallowMultipleComponent]
 	public class Teleporte : MonoBehaviour {
 		public Teleporte Destination;

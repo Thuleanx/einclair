@@ -15,9 +15,11 @@ namespace Thuleanx.Interaction.Core {
 
 		public UnityEvent OnInteract;
 
+		public virtual bool CanInteract() => true;
+
 		void Update() {
 			PlayerInputState Input = GlobalReferences.PlayerInputProvider.GetState() as PlayerInputState;
-			if (Detector && Detector.Detected && Input.Interact && Input.CanInteract) {
+			if (Detector && Detector.Detected && CanInteract() && Input.Interact && Input.CanInteract) {
 				OnInteract?.Invoke();
 				(GlobalReferences.PlayerInputProvider.Feedback as PlayerInputFeedback).InteractExecuted = true;
 			}

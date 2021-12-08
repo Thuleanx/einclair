@@ -96,8 +96,13 @@ namespace UnityEngine.Experimental.Rendering.Universal
             else
             {
                 Collider2D collider = GetComponent<Collider2D>();
-                if (collider != null)
-                    bounds = collider.bounds;
+				// Enable Polygon Collider Caster
+				if (collider.GetType() == typeof(PolygonCollider2D)) {
+					m_ShapePath = Array.ConvertAll<Vector2, Vector3>(((PolygonCollider2D)collider).GetPath(0), vec2To3);
+					m_UseRendererSilhouette = false;
+				} else {
+					bounds = collider.bounds;
+				}
             }
 #endif
             Vector3 inverseScale = Vector3.zero;
@@ -120,6 +125,11 @@ namespace UnityEngine.Experimental.Rendering.Universal
                 };
             }
         }
+
+		// Enable Polygon Collider Caster
+		Vector3 vec2To3(Vector2 inputVector) {
+			return new Vector3(inputVector.x, inputVector.y, 0);
+		}
 
         protected void OnEnable()
         {

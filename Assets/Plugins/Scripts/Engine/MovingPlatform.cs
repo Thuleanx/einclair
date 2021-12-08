@@ -2,11 +2,10 @@ using UnityEngine;
 using System.Collections.Generic;
 using System;
 
-using Thuleanx.Engine;
 using Thuleanx.AI;
 using Thuleanx.Utils;
 
-namespace Thuleanx.Engine.Core {
+namespace Thuleanx.Engine {
 	[RequireComponent(typeof(PlatformEffector2D))]
 	[RequireComponent(typeof(Collider2D))]
 	public class MovingPlatform : Agent {

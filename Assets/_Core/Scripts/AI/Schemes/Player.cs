@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using NaughtyAttributes;
 
-using Thuleanx.Engine.Core;
+using Thuleanx.Engine;
 using Thuleanx.Utils;
 using Thuleanx.Input;
 using Thuleanx.Input.Core;
@@ -63,6 +63,8 @@ namespace Thuleanx.AI.Core {
 		public override void Update() {
 			InputState = Provider.GetState() as PlayerInputState;
 			base.Update();
+		}
+		void LateUpdate() {
 			AnimationUpdate();
 		}
 		public void AnimationUpdate() {

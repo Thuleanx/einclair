@@ -377,7 +377,7 @@ Transform:
   - {fileID: 1665642745}
   - {fileID: 683081736}
   m_Father: {fileID: 1364932649}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &560525422
 BoxCollider2D:
@@ -581,7 +581,7 @@ Transform:
   m_Children:
   - {fileID: 322557420}
   m_Father: {fileID: 800640347}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &572007600
 MonoBehaviour:
@@ -847,6 +847,7 @@ GameObject:
   m_Component:
   - component: {fileID: 800640347}
   - component: {fileID: 800640346}
+  - component: {fileID: 800640348}
   m_Layer: 0
   m_Name: Essentials
   m_TagString: Untagged
@@ -890,10 +891,23 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 2059595756}
   - {fileID: 572007599}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &800640348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800640345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a933792cbd9d4fb4aa0ee48435198ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &921064986
 GameObject:
   m_ObjectHideFlags: 0
@@ -3280,7 +3294,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7779292, y: 1}
+    m_SensorSize: {x: 2.0347593, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -3369,7 +3383,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2059595756}
   - {fileID: 4684110997220338846}
   - {fileID: 560525421}
   - {fileID: 505568338}
@@ -3969,7 +3982,7 @@ Transform:
   - {fileID: 1031006504}
   - {fileID: 616621117}
   - {fileID: 921064987}
-  m_Father: {fileID: 1364932649}
+  m_Father: {fileID: 800640347}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2059595757
@@ -4406,5 +4419,5 @@ Transform:
   m_Children:
   - {fileID: 4684110996918297562}
   m_Father: {fileID: 1364932649}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

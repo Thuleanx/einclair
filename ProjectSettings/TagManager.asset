@@ -41,8 +41,26 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 1166530417
+    locked: 0
+  - name: Wall
+    uniqueID: 2063653347
+    locked: 0
+  - name: Ground
+    uniqueID: 2072012367
+    locked: 0
+  - name: World
+    uniqueID: 1039630963
+    locked: 0
   - name: Darkwood
     uniqueID: 3537980889
+    locked: 0
+  - name: Player
+    uniqueID: 3690669569
+    locked: 0
+  - name: Forground
+    uniqueID: 847947449
     locked: 0
   - name: Top
     uniqueID: 2777593077

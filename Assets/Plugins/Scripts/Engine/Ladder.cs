@@ -1,11 +1,12 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-namespace Thuleanx.Engine.Core {
+namespace Thuleanx.Engine {
 	[ExecuteAlways]
 	[DisallowMultipleComponent]
 	[RequireComponent(typeof(BoxCollider2D))]
 	public class Ladder : MonoBehaviour {
+		bool dirty;
 		public float Height = 2f;
 		public float Extension = 1f;
 
@@ -20,13 +21,18 @@ namespace Thuleanx.Engine.Core {
 			Collider = GetComponent<BoxCollider2D>();
 		}
 
+		void Update() {
+			if (dirty) {
+				dirty = false;
+				AdjustSizes();
+			}
+		}
+
 		void Start() {
 			AdjustSizes();
 		}
 
-		void OnValidate() {
-			AdjustSizes();
-		}
+		void OnValidate() => dirty = true;
 
 		public void AdjustSizes() {
 			if (Collider == null) Collider = GetComponent<BoxCollider2D>();
