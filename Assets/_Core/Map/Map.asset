@@ -241,10 +241,10 @@ MonoBehaviour:
       _dynamic: 0
   name: Shaft 1
   Scene:
-    Scene: {fileID: 0}
-    SceneName: 
-    sceneIndex: -1
-    sceneEnabled: 0
+    Scene: {fileID: 102900000, guid: 7978c77403ca54aad95ce7a9a9b3cff8, type: 3}
+    SceneName: Shaft1
+    sceneIndex: 4
+    sceneEnabled: 1
   In: 0
   Out: 0
 --- !u!114 &-2955093906710802599
@@ -672,10 +672,10 @@ MonoBehaviour:
       _dynamic: 0
   name: Root
   Scene:
-    Scene: {fileID: 0}
-    SceneName: 
-    sceneIndex: -1
-    sceneEnabled: 0
+    Scene: {fileID: 102900000, guid: 268fa69b29cb14846b5d1c3e8ac1e610, type: 3}
+    SceneName: Root
+    sceneIndex: 3
+    sceneEnabled: 1
   In: 0
   Out: 0
 --- !u!114 &1334347322818610538
@@ -968,7 +968,7 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
-  name: 
+  name: To Elevator
   LoadBoth: 1
   In: 0
   Out: 0

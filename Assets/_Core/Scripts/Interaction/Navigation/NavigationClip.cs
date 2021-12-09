@@ -14,7 +14,12 @@ namespace Thuleanx.Interaction.Core {
 			var playable = ScriptPlayable<NavigationBehaviour>.Create(graph);
 
 			NavigationBehaviour behaviour = playable.GetBehaviour();
-			behaviour.Position = (Vector2) owner.transform.position + Offset;
+
+			Vector2 scaledOffset = Offset;
+			scaledOffset.x *= owner.transform.lossyScale.x;
+			scaledOffset.y *= owner.transform.lossyScale.y;
+
+			behaviour.Position = (Vector2) owner.transform.position + scaledOffset;
 			behaviour.InputProvider = InputProvider;
 
 			return playable;

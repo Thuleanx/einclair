@@ -12,6 +12,7 @@ namespace Thuleanx.SceneManagement {
 			Ending,
 			Ended
 		}
+		[HideInInspector]
 		public State _state = State.Loading;
 		
 		public virtual IEnumerator OnStart() { yield return null; }

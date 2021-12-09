@@ -13,5 +13,9 @@ namespace Thuleanx.SceneManagement {
 				child.gameObject.SetActive(next == gameObject.scene);
 			}
 		}
+
+		void OnDisable() {
+			SceneManager.activeSceneChanged -= ChangeActiveScene;
+		}
 	}
 }

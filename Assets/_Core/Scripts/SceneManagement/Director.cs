@@ -21,6 +21,9 @@ namespace Thuleanx.SceneManagement.Core {
 
 		void Awake() {
 			Instance = this;
+		}
+
+		void Start() {
 			Boot();
 		}
 

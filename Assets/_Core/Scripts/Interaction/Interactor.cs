@@ -9,7 +9,7 @@ namespace Thuleanx.Interaction.Core {
 	public class Interactor : MonoBehaviour {
 		public PlayerDetector Detector {get; private set;}
 
-		void Awake() {
+		public virtual void Awake() {
 			Detector = GetComponent<PlayerDetector>();
 		}
 

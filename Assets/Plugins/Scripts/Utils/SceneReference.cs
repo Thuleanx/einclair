@@ -48,8 +48,9 @@ namespace Thuleanx.Utils {
 				throw new SceneLoadException("Scene " + SceneName + " is not enabled in the build settings");
 		}
 
+		public bool Validated() => Scene || !string.IsNullOrEmpty(SceneName);
+
 		public void UnloadScene() {
-			ValidateScene();
 			SceneManager.UnloadSceneAsync(SceneName);
 		}
 
