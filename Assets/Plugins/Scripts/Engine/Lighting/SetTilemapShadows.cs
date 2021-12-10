@@ -4,12 +4,11 @@ using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
 namespace Thuleanx.Engine {
-	[ExecuteAlways]
 	[DisallowMultipleComponent]
 	[RequireComponent(typeof(CompositeCollider2D))]
 	public class SetTilemapShadows : MonoBehaviour {
 		private CompositeCollider2D tilemapCollider;
-		private GameObject shadowCasterContainer;
+		private GameObject shadowCasterContainer => gameObject;
 		private List<GameObject> shadowCasters = new List<GameObject>();
 		private List<PolygonCollider2D> shadowPolygons = new List<PolygonCollider2D>();
 		private List<ShadowCaster2D> shadowCasterComponents = new List<ShadowCaster2D>();
@@ -22,11 +21,13 @@ namespace Thuleanx.Engine {
 		}
 
 		public void Start() {
-			shadowCasterContainer = gameObject;
 			UpdateShadows();
 		}
 
 		private void Reset() {
+			if (!tilemapCollider)
+				tilemapCollider = GetComponent<CompositeCollider2D>();
+
 			shadowCasters.Clear();
 			shadowPolygons.Clear();
 			shadowCasterComponents.Clear();

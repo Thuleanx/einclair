@@ -59,6 +59,9 @@ TagManager:
   - name: Player
     uniqueID: 3690669569
     locked: 0
+  - name: VFX
+    uniqueID: 2798627627
+    locked: 0
   - name: Forground
     uniqueID: 847947449
     locked: 0
