@@ -10,5 +10,7 @@ namespace Thuleanx.Input.Core {
 		public bool CanInteract;
 		public bool Jump;
 		public bool JumpReleased;
+
+        public override InputFeedback GetFeedbackBlueprint() => new PlayerInputFeedback();
 	}
 }

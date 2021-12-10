@@ -38,7 +38,7 @@ namespace Thuleanx.AI.Core {
 
 		#region Utils
 		public bool OnGround()
-			=> (bool) Physics2D.CircleCast(Body.Collider.bounds.center, Body.Collider.bounds.size.y / 2, 
+			=> (bool) Physics2D.CircleCast(transform.position, .1f, 
 				Vector2.down, .1f, groundLayer);
 		public bool PlatformCheck() {
 			RaycastHit2D hit = Physics2D.CircleCast(Body.Collider.bounds.center, Body.Collider.bounds.size.y / 2,  
@@ -56,6 +56,8 @@ namespace Thuleanx.AI.Core {
 			if (_isFacingRight ^ right)
 				Flip();
 		}
+
+		public bool IsRightFacing => _isFacingRight ^ defaultLeftFacing;
 
 		protected void SetBodyDynamic() {
 			Body.Body.bodyType = RigidbodyType2D.Dynamic;

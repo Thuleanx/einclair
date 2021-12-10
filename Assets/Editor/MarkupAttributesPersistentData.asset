@@ -79,4 +79,8 @@ MonoBehaviour:
     value: 1
   - key: Thuleanx.AI.Core.Player/Combat
     value: 1
+  - key: Thuleanx.AI.Core.Attacker/Status
+    value: 1
+  - key: Thuleanx.AI.Core.Attacker/Attack
+    value: 1
   serializedIntEntries: []

@@ -8,8 +8,13 @@ namespace Thuleanx {
 		public static float Gravity => Mathf.Abs(Physics2D.gravity.y);
 
 		public static App Instance;
+		public bool IsEditor;
 
-		void Awake() { }
+		void Awake() { 
+			#if UNITY_EDITOR
+				IsEditor = true;
+			#endif
+		}
 
 		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
 		public static void Bootstrap() {

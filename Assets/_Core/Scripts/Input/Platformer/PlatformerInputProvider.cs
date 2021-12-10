@@ -5,14 +5,15 @@ using Thuleanx.Input;
 
 namespace Thuleanx.Input.Core {
 	public class PlatformerInputProvider : ScriptableObject, InputProvider {
-		public PlatformerInputFeedback Feedback = new PlatformerInputFeedback();
+		public InputFeedback Feedback;
 		protected List<KeyValuePair<int, InputMiddleware>> Middlewares = new List<KeyValuePair<int, InputMiddleware>>();
 
 		public virtual InputState GetState() {
-			PlatformerInputState InputState = new PlatformerInputState();
+			InputState inputState = BlankState();
 			foreach (var kvp in Middlewares)
-				InputState = kvp.Value.Process(InputState) as PlatformerInputState;
-			return InputState;
+				inputState = kvp.Value.Process(inputState);
+			if (Feedback == null) Feedback = inputState.GetFeedbackBlueprint();
+			return inputState;
 		}
 
 		public virtual void ProcessFeedback() {
@@ -31,5 +32,7 @@ namespace Thuleanx.Input.Core {
 			KeyValuePair<int,InputMiddleware> kvp = new KeyValuePair<int, InputMiddleware>(priority, middleware);
 			Middlewares.Remove(kvp);
 		}
-	}
+
+        public virtual InputState BlankState() => new PlatformerInputState();
+    }
 }
