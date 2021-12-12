@@ -34,9 +34,9 @@ namespace Thuleanx.AI.Core {
 
 			// Horizontal
 			{
-				// Turn around for free
-				if (Movement.x != 0 && Mathf.Sign(Body.Velocity.x) != Movement.x)
-					Body.SetVelocityX(-Body.Velocity.x);
+				// // Turn around for free
+				// if (Movement.x != 0 && Mathf.Sign(Body.Velocity.x) != Movement.x)
+				// 	Body.SetVelocityX(-Body.Velocity.x);
 
 				float current = Body.Velocity.x;
 				float intention = Movement.x * baseMovementSpeed;

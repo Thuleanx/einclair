@@ -83,4 +83,8 @@ MonoBehaviour:
     value: 1
   - key: Thuleanx.AI.Core.Attacker/Attack
     value: 1
+  - key: Thuleanx.AI.Core.Clone/Combat
+    value: 1
+  - key: Thuleanx.AI.Core.Clone/Wander
+    value: 1
   serializedIntEntries: []

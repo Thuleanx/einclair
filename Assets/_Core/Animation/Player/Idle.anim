@@ -48,7 +48,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Chained Lantern
+    path: Body/Chained Lantern
   m_ScaleCurves: []
   m_FloatCurves: []
   m_PPtrCurves:
@@ -71,7 +71,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 1671001535
+      path: 470711810
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -143,7 +143,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Chained Lantern
+    path: Body/Chained Lantern
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -180,7 +180,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Chained Lantern
+    path: Body/Chained Lantern
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -217,7 +217,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Chained Lantern
+    path: Body/Chained Lantern
     classID: 4
     script: {fileID: 0}
   m_EulerEditorCurves: []

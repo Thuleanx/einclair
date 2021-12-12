@@ -23,7 +23,6 @@ namespace Thuleanx.Combat {
 			get => _state;
 			set {
 				_state = value;
-				Collider.enabled = _state == ColliderState.Open;
 			}
 		}
 
@@ -38,17 +37,28 @@ namespace Thuleanx.Combat {
 		void OnDisable() => Reset();
 
 		public void startCheckingCollision() => State = ColliderState.Open;
-		public void stopCheckingCollision() => State = ColliderState.Closed;
+		public void stopCheckingCollision() {
+			State = ColliderState.Closed;
+			HurtboxCD.Clear();
+		} 
 
-		void OnTriggerStay2D(Collider2D other) {
+		void FixedUpdate() {
 			if (State != ColliderState.Closed) {
-				Hurtbox hurtbox = other.gameObject.GetComponent<Hurtbox>();
-
-				if (hurtbox != null && CanCollide(hurtbox) && TimedOut(hurtbox.ID)) {
-					hurtbox.ApplyHit(generateHit(other));
-					Refresh(hurtbox.ID);
+				List<Collider2D> collisions = new List<Collider2D>();
+				ContactFilter2D filter = new ContactFilter2D();
+				filter.layerMask = Physics2D.GetLayerCollisionMask(gameObject.layer);
+				Physics2D.OverlapCollider(Collider, filter, collisions);
+				foreach (var other in collisions) {
+					Hurtbox hurtbox = other.gameObject.GetComponent<Hurtbox>();
+					if (hurtbox != null && CanCollide(hurtbox) && TimedOut(hurtbox.ID)) {
+						hurtbox.ApplyHit(generateHit(other));
+						Refresh(hurtbox.ID);
+					}
 				}
 			}
+		}
+
+		void OnTriggerStay2D(Collider2D other) {
 		}
 
 		protected virtual bool CanCollide(Hurtbox hurtbox) => true;

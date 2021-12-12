@@ -58,6 +58,7 @@ namespace Thuleanx.AI.Core {
 			_AnimState = PlayerAnimationState.Grounded;
 			_jumpCoyote = new Timer(coyoteTime);
 			_variableJump = new Timer(varJumpTime);
+			_originalParent = gameObject.transform.parent;
 			Attach(Provider);
 		}
 		public override void Update() {
@@ -86,12 +87,13 @@ namespace Thuleanx.AI.Core {
 		}
 		#endregion
 		#region Normal
+		Transform _originalParent;
 		int NormalUpdate() {
 			Vector2 Movement = InputState.Movement;
 
 			// Platform code
 			_isOnPlatform = PlatformCheck();
-			transform.parent = _platform;
+			transform.parent = _platform ? _platform : _originalParent;
 
 			// Horizontal
 			{
@@ -218,7 +220,7 @@ namespace Thuleanx.AI.Core {
 
 		void LockEnter() {
 			_lockAnimFinished = false;
-			SetBodyKinematic();
+			// SetBodyKinematic();
 			Body.Velocity = Vector2.zero;
 			AnimationFinish.AddListener(LockAnimationEnds);
 		}
@@ -229,9 +231,10 @@ namespace Thuleanx.AI.Core {
 		}
 		public void LockAnimationEnds() => _lockAnimFinished = true;
 
-		public void Lock(string animationTrigger, Func<bool, int> LockTransition) {
+		public void Lock(string animationTrigger, Func<bool, int> LockTransition, bool setBodyKinematic = true) {
 			// TODO: Deal with death state
 			if (LockTransition != null && !IsLocked) {
+				if (setBodyKinematic) SetBodyKinematic();
 				_AnimState = PlayerAnimationState.Lock;
 				Anim.SetTrigger(animationTrigger);
 				_lockTransition = LockTransition;
@@ -269,14 +272,28 @@ namespace Thuleanx.AI.Core {
 		public BubblePool BulletPool;
 
 		public void Attack() {
-			GameObject obj = BulletPool.Borrow(Lantern.transform.position, Quaternion.identity);
-			obj.GetComponent<Bullet>()?.Init(InputState.TargetPosition - (Vector2) Lantern.transform.position);
+			if (BulletPool) {
+				GameObject obj = BulletPool.Borrow(Lantern.transform.position, Quaternion.identity);
+				obj.GetComponent<Bullet>()?.Init(InputState.TargetPosition - (Vector2) Lantern.transform.position);
+			}
 		}
 		public void StartAttack() {
 			Lock(AttackTrigger, (animationFinish) => {
 				return animationFinish ? (int) PlayerState.Normal : -1;
-			});
+			}, false);
 			(Provider.Feedback as PlayerInputFeedback).AttackExecuted = true;
+		}
+
+
+		public string SpecialAttackTrigger;
+		public BubblePool SpecialAbilityPool;
+		public void StartSpecialAttack() {
+			if (SpecialAbilityPool) {
+				GameObject obj = SpecialAbilityPool.Borrow(Lantern.transform.position, Quaternion.identity);
+			}
+			Lock(SpecialAttackTrigger, (animationFinish) => {
+				return animationFinish ? (int) PlayerState.Normal : -1;
+			}, false);
 		}
 		#endregion
 	}

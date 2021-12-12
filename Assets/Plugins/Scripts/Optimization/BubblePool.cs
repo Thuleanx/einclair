@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
 namespace Thuleanx.Optimization {
@@ -19,6 +20,11 @@ namespace Thuleanx.Optimization {
 		}
 
 		public GameObject Borrow(Vector3 position, Quaternion rotation) {
+			try {
+				SceneManager.activeSceneChanged += OnSceneChange;
+			} catch {
+				Debug.Log("Pool already added");
+			}
 			if (Pool.Count==0) Expand();
 
 			Bubble bubble = Pool.Dequeue();
@@ -35,6 +41,8 @@ namespace Thuleanx.Optimization {
 			Borrowed.Add(bubble);
 			return bubble.gameObject;
 		}
+
+		void OnSceneChange(Scene prev, Scene nxt) => CollectsAll();
 
 		void Expand() => Expand(Mathf.Max(Borrowed.Count, 1));
 		void Expand(int count) {

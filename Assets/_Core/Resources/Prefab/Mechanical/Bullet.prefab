@@ -75,7 +75,7 @@ MonoBehaviour:
   DefaultActive: 1
   Frequency: 0
   Damage: 4
-  HitMask: 2
+  HitMask: 1
   speed: 3
 --- !u!50 &6032900431934854012
 Rigidbody2D:
@@ -168,7 +168,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1517374219
-  m_SortingLayer: 2
+  m_SortingLayer: 9
   m_SortingOrder: 9
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -16,6 +16,7 @@ namespace Thuleanx.Combat.Core {
 
 		public override void Awake() {
 			Body = GetComponent<Rigidbody2D>();
+			base.Awake();
 		}
 
 		public void Init(Vector2 dir) {

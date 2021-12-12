@@ -22,6 +22,7 @@ namespace Thuleanx.AI.Core {
 			StateMachine.SetCallbackTransition((int) AttackerState.Attack, AttackTransition);
 			StateMachine.SetCallbackBegin((int) AttackerState.Attack,AttackEnter);
 			StateMachine.SetCallbackEnd((int) AttackerState.Attack, AttackExit);
+			StateMachine.SetCallbackUpdate((int) AttackerState.Attack, AttackUpdate);
 		}
 
 		public override void ObjectSetup() {
@@ -54,9 +55,12 @@ namespace Thuleanx.AI.Core {
 		}
 
 		#region Attack
+
+		float _lungeVelX;
 		[Box("Attack")]
 		public Vector2 Lunge;
 		public UnityEvent AttackStart;
+		public UnityEvent AttackTrigger;
 		public UnityEvent AttackEnd;
 
 		bool _AttackAnimationFinish = false;
@@ -69,10 +73,18 @@ namespace Thuleanx.AI.Core {
 			AttackStart?.Invoke();
 			Vector2 LungeTowards = Lunge;
 			if (!IsRightFacing) LungeTowards.x *= -1;
-			Body.Velocity += LungeTowards;
+			Body.Velocity = LungeTowards;
+			_lungeVelX = LungeTowards.x;
+		}
+		protected int AttackUpdate() {
+			Body.SetVelocityX(_lungeVelX);
+			return -1;
 		}
 		protected void AttackExit() {
 			AttackEnd?.Invoke();
+		}
+		public void TriggerableAttack() {
+			AttackTrigger?.Invoke();
 		}
 		#endregion
 

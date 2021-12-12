@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using  MarkupAttributes;
 
 using Thuleanx.Combat;
@@ -6,6 +7,7 @@ using Thuleanx.Combat;
 namespace Thuleanx.AI.Core {
 	public class LivePlatformerAI : PlatformerAI, IHurtable {
 		[Box("Status")]
+		public UnityEvent OnHit;
 		public int MaxHealth;
 		public int Health {
 			get => _health;
@@ -22,6 +24,8 @@ namespace Thuleanx.AI.Core {
 		public bool CanTakeHit() => !IsDead;
 		public void ApplyHit(IHit hit) {
 			Health -= hit.damage;
+			Debug.Log("HIT");
+			OnHit?.Invoke();
 		}
 	}
 }
