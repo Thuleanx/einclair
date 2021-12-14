@@ -448,7 +448,7 @@ MonoBehaviour:
   m_RefResolutionY: 768
   m_UpscaleRT: 1
   m_PixelSnapping: 0
-  m_CropFrameX: 1
+  m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
 --- !u!20 &1228180057
@@ -460,7 +460,7 @@ Camera:
   m_GameObject: {fileID: 1228180054}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -996,7 +996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2072953654155951130, guid: ec3eccac8c53b4334b10b9845ef64ef0, type: 3}
       propertyPath: m_ClearFlags
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2072953654155951130, guid: ec3eccac8c53b4334b10b9845ef64ef0, type: 3}
       propertyPath: orthographic
@@ -1006,6 +1006,14 @@ PrefabInstance:
       propertyPath: m_TargetTexture
       value: 
       objectReference: {fileID: 8400000, guid: 8e380e5d05112418ba6fc91d07144f26, type: 2}
+    - target: {fileID: 2072953654155951134, guid: ec3eccac8c53b4334b10b9845ef64ef0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2072953654155951134, guid: ec3eccac8c53b4334b10b9845ef64ef0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2072953654155951134, guid: ec3eccac8c53b4334b10b9845ef64ef0, type: 3}
       propertyPath: m_LocalPosition.z
       value: -10
