@@ -53,6 +53,8 @@ namespace Thuleanx.Input.Core {
 		public override InputState Process(InputState state) {
 			PlayerInputState pis = state as PlayerInputState;
 
+			// Debug.Log(MouseScreenPos + " " + Camera.main.transform.position + " " + MouseWorldPos);
+
 			pis.TargetPosition = MouseWorldPos;
 			pis.Movement = Movement;
 			pis.Jump = Jump;

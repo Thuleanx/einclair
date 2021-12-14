@@ -36,7 +36,6 @@ namespace Thuleanx.AI.Core {
 
 				Vector2 targetPosition = Context.ReferenceManager.Player.transform.position;
 				float dx = targetPosition.x - transform.position.x;
-				Debug.Log(ComfortDistance);
 				if (Mathf.Abs(dx) >= ComfortDistance)
 					InputState.Movement.x = Mathf.Sign(dx);
 				else if (dx > 0 != GetComponent<PlatformerAI>().IsRightFacing) InputState.Movement.x = Mathf.Sign(dx);
