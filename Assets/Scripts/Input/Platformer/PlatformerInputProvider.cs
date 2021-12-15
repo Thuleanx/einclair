@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Thuleanx.Input;
 
 namespace Thuleanx.Input.Core {
+	[System.Serializable]
 	public class PlatformerInputProvider : ScriptableObject, InputProvider {
 		public InputFeedback Feedback;
 		protected List<KeyValuePair<int, InputMiddleware>> Middlewares = new List<KeyValuePair<int, InputMiddleware>>();

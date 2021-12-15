@@ -67,6 +67,7 @@ namespace Thuleanx.AI.Core {
 		}
 		void LateUpdate() {
 			AnimationUpdate();
+			Provider.ProcessFeedback();
 		}
 		public void AnimationUpdate() {
 			Anim.SetFloat("VelocityX", Body.Velocity.x);
@@ -273,7 +274,7 @@ namespace Thuleanx.AI.Core {
 
 		public void Attack() {
 			if (BulletPool) {
-				GameObject obj = BulletPool.Borrow(Lantern.transform.position, Quaternion.identity);
+				GameObject obj = BulletPool.Borrow(gameObject.scene, Lantern.transform.position, Quaternion.identity);
 				obj.GetComponent<Bullet>()?.Init(InputState.TargetPosition - (Vector2) Lantern.transform.position);
 			}
 		}
@@ -289,7 +290,7 @@ namespace Thuleanx.AI.Core {
 		public BubblePool SpecialAbilityPool;
 		public void StartSpecialAttack() {
 			if (SpecialAbilityPool) {
-				GameObject obj = SpecialAbilityPool.Borrow(Lantern.transform.position, Quaternion.identity);
+				GameObject obj = SpecialAbilityPool.Borrow(gameObject.scene, Lantern.transform.position, Quaternion.identity);
 			}
 			Lock(SpecialAttackTrigger, (animationFinish) => {
 				return animationFinish ? (int) PlayerState.Normal : -1;

@@ -7,7 +7,7 @@ using Thuleanx.Utils;
 
 namespace Thuleanx.Input.Core {
 	[DisallowMultipleComponent]
-	public class InputSystem : MonoMiddleware {
+	public class InputSystem : PlatformerMonoMiddleware {
 		public static float InputBufferTime = .2f;
 
 		public static InputSystem Instance;
@@ -24,7 +24,8 @@ namespace Thuleanx.Input.Core {
 		Timer Jump, JumpReleased, Interact, Attack;
 		Vector2 Movement;
 
-		void Awake() {
+		public override void Awake() {
+			base.Awake();
 			Instance = this;
 
 			Jump = new Timer(InputBufferTime);

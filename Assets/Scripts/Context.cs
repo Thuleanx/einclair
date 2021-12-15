@@ -12,6 +12,10 @@ namespace Thuleanx {
 		[SerializeField] ReferenceManager _ReferenceManager;
 		public static ReferenceManager ReferenceManager => Instance._ReferenceManager;
 
+		void Awake() {
+			if (_ReferenceManager == null) _ReferenceManager = GetComponentInChildren<ReferenceManager>();
+		}
+
 		void OnEnable() {
 			ctxs.Add(this);
 		}

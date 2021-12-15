@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 using Thuleanx.Utils;
 
 namespace Thuleanx.Optimization {
@@ -6,9 +8,18 @@ namespace Thuleanx.Optimization {
 		[HideInInspector] public BubblePool Pool;
 		[HideInInspector] public bool InPool = false;
 
+		public virtual void Dispose() {
+			ReturnToPool();
+		}
+		protected void ReturnToPool() {
+			if (!InPool) Pool.Collects(this);
+		}
 		void OnDisable() { 
-			if (this != null && BubbleManager.Instance != null)
-				BubbleManager.Instance?.StartCollect(this); 
+			if (!InPool) StartCoroutine(CollectsAfterOneFrame());
+		}
+		public IEnumerator CollectsAfterOneFrame() {
+			yield return null;
+			if (!InPool) Pool.Collects(this);
 		}
 	}
 }

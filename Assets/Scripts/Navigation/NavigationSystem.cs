@@ -7,10 +7,11 @@ using Thuleanx.Input;
 using Thuleanx.Input.Core;
 
 namespace Thuleanx.Navigation {
-	public class NavigationSystem : MonoMiddleware {
+	public class NavigationSystem : PlatformerMonoMiddleware {
 		public static NavigationSystem Instance;
 
-		void Awake() {
+		public override void Awake() {
+			base.Awake();
 			Instance = this;
 		}
 

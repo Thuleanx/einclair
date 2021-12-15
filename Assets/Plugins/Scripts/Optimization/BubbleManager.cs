@@ -24,21 +24,5 @@ namespace Thuleanx.Optimization {
 				_ShrinkTimer.Start();
 			}
 		}
-
-		public void BeforeNewScene() {
-			foreach (var pool in ActivePools)
-				pool.CollectsAll();
-		}
-
-		public IEnumerator CollectsAfterOneFrame(Bubble bubble) {
-			yield return null;
-			if (!bubble.InPool)
-				bubble.Pool?.Collects(bubble); 
-		}
-
-		public void StartCollect(Bubble bubble) {
-			if (gameObject != null)
-				StartCoroutine(CollectsAfterOneFrame(bubble));
-		}
 	}
 }
