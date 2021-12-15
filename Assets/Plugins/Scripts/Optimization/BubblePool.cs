@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace Thuleanx.Optimization {
@@ -55,18 +56,32 @@ namespace Thuleanx.Optimization {
 			return bubble.gameObject;
 		}
 		public void Collects(Bubble bubble,  bool remove = true) {
-			bubble.transform.SetParent(null);
-			bubble.gameObject.SetActive(false);
-			Pool.Enqueue(bubble);
-			DontDestroyOnLoad(bubble.gameObject);
-			bubble.InPool = true;
-			if (remove) Ledger[bubble.gameObject.scene.name].Remove(bubble);
+			if (!bubble.InPool) {
+				bubble.transform.SetParent(null);
+				bubble.gameObject.SetActive(false);
+				Pool.Enqueue(bubble);
+				DontDestroyOnLoad(bubble.gameObject);
+				bubble.InPool = true;
+				if (remove) Ledger[bubble.gameObject.scene.name].Remove(bubble);
+			}
 		}
 		public void CollectsAll(Scene scene) {
 			foreach (Bubble bubble in Ledger[scene.name])
 				if (!bubble.InPool)
 					Collects(bubble, false);
 			Ledger.Remove(scene.name);
+		}
+		public void BubbleLoss(Bubble bubble) {
+			BubbleManager.Instance.StartCoroutine(_AttemptRecover(bubble));
+		}
+		IEnumerator _AttemptRecover(Bubble bubble) {
+			yield return null;
+			try {
+				Collects(bubble);
+			} catch {
+				// Give up and pop the bubble forever
+				Ledger[bubble.gameObject.scene.name].Remove(bubble);
+			}
 		}
 
 		void Expand() => Expand(Mathf.Max(Borrowed.Count, 1));

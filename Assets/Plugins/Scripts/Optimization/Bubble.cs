@@ -15,7 +15,7 @@ namespace Thuleanx.Optimization {
 			if (!InPool) Pool.Collects(this);
 		}
 		void OnDisable() { 
-			if (!InPool) StartCoroutine(CollectsAfterOneFrame());
+			if (!InPool) Pool.BubbleLoss(this);
 		}
 		public IEnumerator CollectsAfterOneFrame() {
 			yield return null;
