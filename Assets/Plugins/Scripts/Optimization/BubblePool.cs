@@ -49,7 +49,10 @@ namespace Thuleanx.Optimization {
 			foreach (var gameObject in scene.GetRootGameObjects())
 				if (gameObject.name == "_Dynamic")
 					bubble.gameObject.transform.SetParent(gameObject.transform);
+			if (!bubble.gameObject.transform.parent)
+				SceneManager.MoveGameObjectToScene(bubble.gameObject, scene);
 			bubble.InPool = false;
+			bubble.scene = scene;
 
 			Ledger[scene.name].Add(bubble);
 
@@ -62,7 +65,7 @@ namespace Thuleanx.Optimization {
 				Pool.Enqueue(bubble);
 				DontDestroyOnLoad(bubble.gameObject);
 				bubble.InPool = true;
-				if (remove) Ledger[bubble.gameObject.scene.name].Remove(bubble);
+				if (remove) Ledger[bubble.scene.name].Remove(bubble);
 			}
 		}
 		public void CollectsAll(Scene scene) {
@@ -76,11 +79,14 @@ namespace Thuleanx.Optimization {
 		}
 		IEnumerator _AttemptRecover(Bubble bubble) {
 			yield return null;
-			try {
-				Collects(bubble);
-			} catch {
-				// Give up and pop the bubble forever
-				Ledger[bubble.gameObject.scene.name].Remove(bubble);
+			if (!bubble.InPool) {
+				try {
+					Collects(bubble);
+				} catch {
+					// Give up and pop the bubble forever
+					if (Ledger.ContainsKey(bubble.gameObject.scene.name))
+						Ledger[bubble.gameObject.scene.name].Remove(bubble);
+				}
 			}
 		}
 

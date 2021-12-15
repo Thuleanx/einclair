@@ -136,7 +136,7 @@ namespace Thuleanx.AI.Core {
 		}
 		void NormalExit() {
 			_isOnPlatform = false;
-			transform.parent = _platform;
+			transform.parent = _platform ? _platform : _originalParent;
 		}
 		#endregion 
 		#region Jump

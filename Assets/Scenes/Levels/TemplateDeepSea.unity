@@ -215,7 +215,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -343,14 +343,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcdf6c616326c4aaeb610b335fbb67fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useDefaultBackgroundColor: 0
+  useDefaultBackgroundColor: 1
   backgroundColor:
     serializedVersion: 2
     rgba: 4282742846
-  useDefaultTextColor: 0
+  useDefaultTextColor: 1
   textColor:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 4292598747
   font: {fileID: 12800000, guid: 3fc96c42f71764225bc8b564e7bae4d8, type: 3}
   fontSize: 12
   fontStyle: 0
@@ -412,14 +412,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcdf6c616326c4aaeb610b335fbb67fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useDefaultBackgroundColor: 0
+  useDefaultBackgroundColor: 1
   backgroundColor:
     serializedVersion: 2
     rgba: 4283733414
-  useDefaultTextColor: 0
+  useDefaultTextColor: 1
   textColor:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 4292598747
   font: {fileID: 12800000, guid: 3fc96c42f71764225bc8b564e7bae4d8, type: 3}
   fontSize: 12
   fontStyle: 0
@@ -482,14 +482,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcdf6c616326c4aaeb610b335fbb67fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useDefaultBackgroundColor: 0
+  useDefaultBackgroundColor: 1
   backgroundColor:
     serializedVersion: 2
     rgba: 4286070334
-  useDefaultTextColor: 0
+  useDefaultTextColor: 1
   textColor:
     serializedVersion: 2
-    rgba: 4292730333
+    rgba: 4292598747
   font: {fileID: 12800000, guid: 3fc96c42f71764225bc8b564e7bae4d8, type: 3}
   fontSize: 12
   fontStyle: 0
@@ -539,14 +539,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcdf6c616326c4aaeb610b335fbb67fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useDefaultBackgroundColor: 0
+  useDefaultBackgroundColor: 1
   backgroundColor:
     serializedVersion: 2
     rgba: 4284134062
-  useDefaultTextColor: 0
+  useDefaultTextColor: 1
   textColor:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 4292598747
   font: {fileID: 12800000, guid: 3fc96c42f71764225bc8b564e7bae4d8, type: 3}
   fontSize: 12
   fontStyle: 0
@@ -609,14 +609,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcdf6c616326c4aaeb610b335fbb67fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useDefaultBackgroundColor: 0
+  useDefaultBackgroundColor: 1
   backgroundColor:
     serializedVersion: 2
     rgba: 4286070378
-  useDefaultTextColor: 0
+  useDefaultTextColor: 1
   textColor:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 4292598747
   font: {fileID: 12800000, guid: 3fc96c42f71764225bc8b564e7bae4d8, type: 3}
   fontSize: 12
   fontStyle: 0
@@ -916,7 +916,7 @@ GameObject:
   - component: {fileID: 2144041817}
   - component: {fileID: 2144041816}
   m_Layer: 0
-  m_Name: '@Dynamic'
+  m_Name: _Dynamic
   m_TagString: Untagged
   m_Icon: {fileID: 2800000, guid: f1dc04a74b7bc4ce49c371cf7e8ba2a6, type: 3}
   m_NavMeshLayer: 0
@@ -934,14 +934,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcdf6c616326c4aaeb610b335fbb67fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useDefaultBackgroundColor: 0
+  useDefaultBackgroundColor: 1
   backgroundColor:
     serializedVersion: 2
     rgba: 4289878618
-  useDefaultTextColor: 0
+  useDefaultTextColor: 1
   textColor:
     serializedVersion: 2
-    rgba: 4292730333
+    rgba: 4292598747
   font: {fileID: 12800000, guid: 3fc96c42f71764225bc8b564e7bae4d8, type: 3}
   fontSize: 12
   fontStyle: 0
