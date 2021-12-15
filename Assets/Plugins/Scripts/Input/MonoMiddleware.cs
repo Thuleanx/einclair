@@ -1,4 +1,5 @@
 using UnityEngine;
+using Thuleanx.Utils;
 
 namespace Thuleanx.Input {
 	public abstract class MonoMiddleware : MonoBehaviour, InputMiddleware {
