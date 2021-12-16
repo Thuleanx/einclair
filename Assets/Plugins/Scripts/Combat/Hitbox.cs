@@ -7,7 +7,7 @@ using Thuleanx.AI;
 namespace Thuleanx.Combat {
 	[RequireComponent(typeof(Collider2D))]
 	public abstract class Hitbox : MonoBehaviour, IHitbox {
-		enum ColliderState {
+		protected enum ColliderState {
 			Open,
 			Closed
 		}
@@ -19,7 +19,7 @@ namespace Thuleanx.Combat {
 
 		Dictionary<long,float> HurtboxCD = new Dictionary<long,float>();
 		ColliderState _state;
-		ColliderState State {
+		protected ColliderState State {
 			get => _state;
 			set {
 				_state = value;
@@ -67,5 +67,6 @@ namespace Thuleanx.Combat {
 		void Refresh(long hurtboxID) => HurtboxCD[hurtboxID] = Time.time;
 
 		public abstract IHit generateHit(Collider2D collision);
+
 	}
 }

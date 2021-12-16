@@ -87,4 +87,10 @@ MonoBehaviour:
     value: 1
   - key: Thuleanx.AI.Core.Clone/Wander
     value: 1
+  - key: Thuleanx.AI.Core.Hammerdude/Status
+    value: 1
+  - key: Thuleanx.AI.Core.Hammerdude/Bash
+    value: 1
+  - key: Thuleanx.AI.Core.Hammerdude/Slam
+    value: 1
   serializedIntEntries: []

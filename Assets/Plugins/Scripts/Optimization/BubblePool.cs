@@ -75,7 +75,7 @@ namespace Thuleanx.Optimization {
 			Ledger.Remove(scene.name);
 		}
 		public void BubbleLoss(Bubble bubble) {
-			BubbleManager.Instance.StartCoroutine(_AttemptRecover(bubble));
+			BubbleManager.Instance?.StartCoroutine(_AttemptRecover(bubble));
 		}
 		IEnumerator _AttemptRecover(Bubble bubble) {
 			yield return null;

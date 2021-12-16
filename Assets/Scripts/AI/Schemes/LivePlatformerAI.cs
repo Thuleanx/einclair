@@ -3,6 +3,7 @@ using UnityEngine.Events;
 using  MarkupAttributes;
 
 using Thuleanx.Combat;
+using Thuleanx.Combat.Core;
 
 namespace Thuleanx.AI.Core {
 	public class LivePlatformerAI : PlatformerAI, IHurtable {
@@ -23,8 +24,9 @@ namespace Thuleanx.AI.Core {
 
 		public bool CanTakeHit() => !IsDead;
 		public void ApplyHit(IHit hit) {
+			if (hit is PlatformerHit)
+				Body.Knockback((hit as PlatformerHit).KnockbackForce);
 			Health -= hit.damage;
-			Debug.Log("HIT");
 			OnHit?.Invoke();
 		}
 	}

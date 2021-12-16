@@ -4,31 +4,29 @@ namespace Thuleanx.Engine {
 	[RequireComponent(typeof(Collider2D))]
 	[RequireComponent(typeof(Rigidbody2D))]
 	public class PhysicsObject : MonoBehaviour {
-		public Rigidbody2D Body {get; private set; }
+		Rigidbody2D Body;
 		public Collider2D Collider {get; private set; }
-
-		public Vector2 Velocity { get => Body.velocity; set => Body.velocity = value; }
+		public Vector2 Velocity { get => Body.velocity; private set => Body.velocity = value; }
+		public float MaxAccel = .2f, MaxDecel = .2f;
+		public float Mass => Body.mass;
 
 		void Awake() {
 			Body = GetComponent<Rigidbody2D>();
 			Collider = GetComponent<Collider2D>();
 		}
 
-		// void FixedUpdate() {
-		// 	Position = Body.position;
-
-		// 	Vector2 Move = Velocity * Time.fixedDeltaTime;
-		// 	Body.MovePosition((Vector2) Body.position + Move);
-		// }
-
+		public void SetType(RigidbodyType2D type) => Body.bodyType = type;
 		public void Stop() => Velocity = Vector2.zero;
-		public void Translate(Vector2 Displacement) => Body.MovePosition(Body.position + Displacement);
-		public void MoveTo(Vector2 pos) => Body.MovePosition(pos);
 		public void SetPosition(Vector2 pos) => transform.position = pos;
-		public void SetPositionX(float x) => transform.position = new Vector3(x, transform.position.y, transform.position.z);
-		public void SetPositionY(float y) => transform.position = new Vector3(transform.position.x, y, transform.position.z);
-
-		public void SetVelocityX(float vx) => Velocity = new Vector2(vx, Velocity.y);
-		public void SetVelocityY(float vy) => Velocity = new Vector2(Velocity.x, vy);
+		public void Knockback(Vector2 Force, ForceMode2D mode = ForceMode2D.Impulse) => Body.AddForce(Force, mode);
+		public void SetVelocityOverride(Vector2 newVelocity) => Velocity = newVelocity;
+		public void AccelerateTowards(Vector2 targetVelocity) {
+			var velocity = Body.velocity;
+			var deltaV = targetVelocity - velocity;
+			var accel = deltaV / Time.deltaTime;
+			var limit = Vector2.Dot(deltaV, velocity) > 0f ?  MaxAccel: MaxDecel;
+			var force = Body.mass * Vector2.ClampMagnitude(accel, limit);
+			Body.AddForce(force, ForceMode2D.Force);
+		}
 	}
 }

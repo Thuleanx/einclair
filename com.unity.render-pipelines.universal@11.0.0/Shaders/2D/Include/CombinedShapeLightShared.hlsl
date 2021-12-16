@@ -83,7 +83,7 @@ half4 CombinedShapeLightShared(half4 color, half4 mask, half2 lightingUV)
     finalOutput = _HDREmulationScale * (color * finalModulate + finalAdditve);
 #endif
 
-    finalOutput.a = color.a * visionMask;
+    finalOutput.a = color.a * lerp(0, 1, visionMask);
 
     finalOutput = finalOutput *_UseSceneLighting + (1 - _UseSceneLighting)*color;
     return max(0, finalOutput);

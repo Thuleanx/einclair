@@ -73,11 +73,11 @@ namespace Thuleanx.AI.Core {
 			AttackStart?.Invoke();
 			Vector2 LungeTowards = Lunge;
 			if (!IsRightFacing) LungeTowards.x *= -1;
-			Body.Velocity = LungeTowards;
+			Body.SetVelocityOverride(LungeTowards);
 			_lungeVelX = LungeTowards.x;
 		}
 		protected int AttackUpdate() {
-			Body.SetVelocityX(_lungeVelX);
+			Body.AccelerateTowards(new Vector2(_lungeVelX, Body.Velocity.y));
 			return -1;
 		}
 		protected void AttackExit() {

@@ -17,7 +17,6 @@ namespace Thuleanx.AI.Core {
 		[Header("Movement")]
 		[SerializeField] protected bool defaultLeftFacing;
 		[SerializeField] protected float baseMovementSpeed;
-		[SerializeField] protected float groundAccelLambda;
 		[SerializeField] protected float fallMaxVelocity;
 		[DraggablePoint(true)] public Vector3 LedgeRightAnchor;
 
@@ -58,16 +57,6 @@ namespace Thuleanx.AI.Core {
 		}
 
 		public bool IsRightFacing => _isFacingRight ^ defaultLeftFacing;
-
-		protected void SetBodyDynamic() {
-			Body.Body.bodyType = RigidbodyType2D.Dynamic;
-			// Prevent Jitter
-			Body.Velocity = Vector2.zero;
-			Body.SetPositionY(Mathf.Round(Body.transform.position.y));
-		}
-		protected void SetBodyKinematic() {
-			Body.Body.bodyType = RigidbodyType2D.Kinematic;
-		}
 		#endregion
 	}
 }

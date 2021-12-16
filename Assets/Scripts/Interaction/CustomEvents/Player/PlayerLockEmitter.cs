@@ -5,8 +5,8 @@ namespace Thuleanx.Interaction {
         public string AnimTrigger = "Idle";
 
         public override void Execute() {
-            if (Context.ReferenceManager.Player)
-                Context.ReferenceManager.Player.Lock(AnimTrigger, (fin) => fin?(int) Player.PlayerState.Normal : -1);
+            // if (Context.ReferenceManager.Player)
+            //     Context.ReferenceManager.Player.Lock(AnimTrigger, (fin) => fin?(int) Player.PlayerState.Normal : -1);
         }
     }
 }

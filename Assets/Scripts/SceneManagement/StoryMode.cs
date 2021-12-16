@@ -67,9 +67,10 @@ namespace Thuleanx.SceneManagement.Core {
 		}
 
 		public void LoadAdjacents(Room room) {
-			foreach (Passage passage in CurrentRoom.AdjacentPassages)
-				if (passage.LoadBoth && passage.GetOther(room).Scene.Validated())
-					App.Instance.RequestLoadAsync(passage.GetOther(CurrentRoom).Scene.SceneName, LoadSceneMode.Additive);
+			if (room != null)
+				foreach (Passage passage in room.AdjacentPassages)
+					if (passage.LoadBoth && passage.GetOther(room).Scene.Validated())
+						App.Instance.RequestLoadAsync(passage.GetOther(CurrentRoom).Scene.SceneName, LoadSceneMode.Additive);
 		}
 	}
 }

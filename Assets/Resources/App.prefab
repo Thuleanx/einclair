@@ -90,7 +90,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DefaultProvider:
     enabled: 1
-    value: {fileID: 11400000, guid: 9cefd20f0ae38415dba40a2119f9f635, type: 2}
+    value: {fileID: 11400000, guid: 146bb8d93354c40079fc59fc2221203e, type: 2}
   Active: 0
 --- !u!1 &1306507725
 GameObject:
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 310824080533d479c93875e9ca8ab4d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _PlayerInputProvider: {fileID: 11400000, guid: 9cefd20f0ae38415dba40a2119f9f635, type: 2}
+  _PlayerInputProvider: {fileID: 11400000, guid: 146bb8d93354c40079fc59fc2221203e, type: 2}
 --- !u!1 &1912903038
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,7 +293,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8879776441963840399}
   - component: {fileID: 159138321}
-  - component: {fileID: 278795203095600436}
+  - component: {fileID: 966033233197627193}
   m_Layer: 0
   m_Name: '@Input System'
   m_TagString: Untagged
@@ -327,7 +327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: abae523ef6cce4bcea0954c6be104621, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 1fb644f22890146cfb53037e02781f51, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -342,24 +342,8 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 278795203095600436}
-        m_TargetAssemblyTypeName: Thuleanx.Input.Core.InputSystem, Assembly-CSharp
-        m_MethodName: OnJumpInput
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 2d971aa8-7782-4317-9fda-c4b45aa06a0b
-    m_ActionName: Gameplay/Jump[/Keyboard/space]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 278795203095600436}
-        m_TargetAssemblyTypeName: Thuleanx.Input.Core.InputSystem, Assembly-CSharp
+      - m_Target: {fileID: 966033233197627193}
+        m_TargetAssemblyTypeName: Thuleanx.Input.Core.HammerdudeInputSystem, Assembly-CSharp
         m_MethodName: OnMoveInput
         m_Mode: 0
         m_Arguments:
@@ -370,44 +354,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 70923fee-5705-43c6-87c0-e4f68317e408
-    m_ActionName: Gameplay/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+    m_ActionId: bf5ada4a-b3d3-430e-975a-948fdd80a56e
+    m_ActionName: Hammerdude/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 278795203095600436}
-        m_TargetAssemblyTypeName: Thuleanx.Input.Core.InputSystem, Assembly-CSharp
-        m_MethodName: OnInteract
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 97b5d875-efc0-47c1-8794-39a71bf358dd
-    m_ActionName: Gameplay/Interact[/Keyboard/f]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 278795203095600436}
-        m_TargetAssemblyTypeName: Thuleanx.Input.Core.InputSystem, Assembly-CSharp
-        m_MethodName: OnMouseInput
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 657d48cf-bd2b-4515-85ef-3c95a3e60aff
-    m_ActionName: Gameplay/MousePos[/Mouse/position]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 278795203095600436}
-        m_TargetAssemblyTypeName: Thuleanx.Input.Core.InputSystem, Assembly-CSharp
+      - m_Target: {fileID: 966033233197627193}
+        m_TargetAssemblyTypeName: Thuleanx.Input.Core.HammerdudeInputSystem, Assembly-CSharp
         m_MethodName: OnAttack
         m_Mode: 0
         m_Arguments:
@@ -418,14 +370,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 3aa59c9f-92ab-4ffe-acf3-5a1c0bb233af
-    m_ActionName: Gameplay/Attack[/Mouse/leftButton]
+    m_ActionId: 7356a703-56af-407c-9093-390da2efe01d
+    m_ActionName: Hammerdude/Attack[/Keyboard/j]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 966033233197627193}
+        m_TargetAssemblyTypeName: Thuleanx.Input.Core.HammerdudeInputSystem, Assembly-CSharp
+        m_MethodName: OnBash
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 030f9bb6-0972-4609-a8a6-d44432ab3310
+    m_ActionName: Hammerdude/Bash[/Keyboard/k]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Gameplay
+  m_DefaultActionMap: Hammerdude
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &278795203095600436
+--- !u!114 &966033233197627193
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -434,9 +402,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8879776441963840398}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0651556a40c9140deb7ce1f38017dc31, type: 3}
+  m_Script: {fileID: 11500000, guid: 78eebd9757f3941318ffa4f42ad45583, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DefaultProvider:
     enabled: 1
-    value: {fileID: 11400000, guid: 9cefd20f0ae38415dba40a2119f9f635, type: 2}
+    value: {fileID: 11400000, guid: 146bb8d93354c40079fc59fc2221203e, type: 2}

@@ -41,14 +41,14 @@ namespace Thuleanx.AI.Core {
 				float current = Body.Velocity.x;
 				float intention = Movement.x * baseMovementSpeed;
 
-				Body.SetVelocityX(Calc.Damp(current, intention, groundAccelLambda, Time.deltaTime));
+				Body.AccelerateTowards(new Vector2(intention, Body.Velocity.y));
 
 				if (Movement.x < 0 && IsRightFacing) Flip();
 				else if (Movement.x > 0 && !IsRightFacing) Flip();
 
 				// Prevent Edge Falloff
 				if (LedgeAhead(IsRightFacing))
-					Body.SetVelocityX(0f);
+					Body.AccelerateTowards(Vector2.zero);
 			}
 
 			return -1;

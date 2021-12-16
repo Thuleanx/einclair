@@ -6,9 +6,10 @@ namespace Thuleanx.Manager.Core {
 	public class GlobalReferences : MonoBehaviour {
 		public static GlobalReferences Instance;
 
-		[SerializeField] PlayerInputProvider _PlayerInputProvider;
+		[SerializeField] 
+		PlatformerInputProvider _PlayerInputProvider;
 
-		public static PlayerInputProvider PlayerInputProvider => Instance._PlayerInputProvider;
+		public static PlatformerInputProvider PlayerInputProvider => Instance._PlayerInputProvider;
 
 		void Awake() {
 			Instance = this;
