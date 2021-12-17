@@ -46,6 +46,7 @@ namespace Thuleanx.AI.Core {
 
 		public override void ObjectSetup() {
 			base.ObjectSetup();
+			_originalParent = transform.parent;
 		}
 
 		public override void Update() {

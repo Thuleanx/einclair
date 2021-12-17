@@ -57,6 +57,7 @@ namespace Thuleanx.AI.Core {
 		}
 
 		public bool IsRightFacing => _isFacingRight ^ defaultLeftFacing;
+
 		#endregion
 	}
 }

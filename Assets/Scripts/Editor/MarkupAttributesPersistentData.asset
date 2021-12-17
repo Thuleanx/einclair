@@ -93,4 +93,12 @@ MonoBehaviour:
     value: 1
   - key: Thuleanx.AI.Core.Hammerdude/Slam
     value: 1
+  - key: Thuleanx.AI.Core.MonkeyRig/Status
+    value: 1
+  - key: Thuleanx.AI.Core.Monkey/Combat States
+    value: 1
+  - key: Thuleanx.AI.Core.Monkey/Vision
+    value: 1
+  - key: Thuleanx.AI.Core.MonkeyRig/Attack
+    value: 1
   serializedIntEntries: []

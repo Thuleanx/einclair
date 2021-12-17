@@ -15,7 +15,7 @@ namespace Thuleanx.Combat.Core {
 		public HitLayer HitMask;
 
 		public override IHit generateHit(Collider2D collision) {
-			return new PlatformerHit(Damage, KnockbackForce * KnockbackDir);
+			return new PlatformerHit(Damage, KnockbackForce * KnockbackDir * transform.lossyScale);
 		}
 		protected override bool CanCollide(Hurtbox hurtbox)
 			=> (hurtbox is PlatformerHurtbox) && (HitMask & (hurtbox as PlatformerHurtbox).Layer) > 0;

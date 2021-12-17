@@ -21,6 +21,7 @@ namespace Thuleanx.AI.Core {
 
 		public override void ObjectSetup() {
 			base.ObjectSetup();
+			
 			if (Provider == null) Provider = ScriptableObject.CreateInstance<PlatformerInputProvider>();
 		}
 
