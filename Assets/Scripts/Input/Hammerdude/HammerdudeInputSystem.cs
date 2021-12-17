@@ -13,6 +13,7 @@ namespace Thuleanx.Input.Core {
 		public static HammerdudeInputSystem Instance;
 
 		Timer Attack, Bash;
+		bool AttackHold = false;
 		Vector2 Movement;
 
 		public override void Awake() {
@@ -28,7 +29,13 @@ namespace Thuleanx.Input.Core {
 			if (context.canceled) Movement = Vector2.zero;
 		}
 		public void OnAttack(InputAction.CallbackContext ctx) {
-			if (ctx.started) Attack.Start();
+			if (ctx.started) {
+				AttackHold = true;
+			}
+			if (ctx.canceled) {
+				AttackHold = false;
+				Attack.Start();
+			}
 		}
 		public void OnBash(InputAction.CallbackContext ctx) {
 			if (ctx.started) Bash.Start();
@@ -37,7 +44,7 @@ namespace Thuleanx.Input.Core {
 		public override InputState Process(InputState state) {
 			HammerdudeInputState InputState = state as HammerdudeInputState;
 			InputState.Movement = Movement;
-			InputState.Attack = Attack;
+			InputState.Attack = Attack || AttackHold;
 			InputState.Bash = Bash;
 			return state;
 		}

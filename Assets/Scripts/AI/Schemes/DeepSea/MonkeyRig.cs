@@ -4,6 +4,10 @@ using System;
 using Thuleanx.Input.Core;
 using Thuleanx.Combat.Core;
 
+using Thuleanx.Optimization;
+using Thuleanx.Engine;
+using Thuleanx.Utils;
+
 using MarkupAttributes;
 
 namespace Thuleanx.AI.Core {
@@ -36,6 +40,14 @@ namespace Thuleanx.AI.Core {
 			base.ObjectSetup();
 			_originalParent = transform.parent;
 			if (Provider == null) Provider = ScriptableObject.CreateInstance<AttackerInputProvider>();
+			OnDeath.AddListener(() => {
+				if (CorpsePool) {
+					GameObject obj = CorpsePool.Borrow(gameObject.scene, transform.position);
+					obj.transform.localScale = gameObject.transform.localScale;
+					// obj.GetComponent<PhysicsObject>().Knockback(Body.Velocity * Body.Mass);
+				}
+				General.TryDispose(gameObject);
+			});
 		}
 
 		public override void Update() {
@@ -47,6 +59,7 @@ namespace Thuleanx.AI.Core {
 			Anim?.SetInteger("State", StateMachine.State);
 			Anim?.SetFloat("HorizontalVelocity", Body.Velocity.x);
 			Anim?.SetFloat("VerticalVelocity", Body.Velocity.y);
+			Anim?.SetBool("Grounded", OnGround());
 			base.Provider.ProcessFeedback();
 		}
 
@@ -86,6 +99,7 @@ namespace Thuleanx.AI.Core {
 		[Box("Attack")]
 		[Min(0f)] public float Attack_ForwardPush;
 		public PlatformerHitbox AttackHitbox;
+		public BubblePool CorpsePool;
 		[EndGroup("Attack")]
 
 		bool _attackEnded;

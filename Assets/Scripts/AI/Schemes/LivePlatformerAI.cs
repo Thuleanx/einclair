@@ -9,10 +9,12 @@ namespace Thuleanx.AI.Core {
 	public class LivePlatformerAI : PlatformerAI, IHurtable {
 		[Box("Status")]
 		public UnityEvent OnHit;
+		public UnityEvent OnDeath;
+		public UnityEvent<Vector2> OnKnockback;
 		public int MaxHealth;
 		public int Health {
 			get => _health;
-			private set => Mathf.Clamp(value, 0, MaxHealth);
+			private set => _health = Mathf.Clamp(value, 0, MaxHealth);
 		}
 		public bool IsDead => Health == 0;
 		int _health;
@@ -24,10 +26,14 @@ namespace Thuleanx.AI.Core {
 
 		public bool CanTakeHit() => !IsDead;
 		public void ApplyHit(IHit hit) {
-			if (hit is PlatformerHit)
+			if (hit is PlatformerHit) {
 				Body.Knockback((hit as PlatformerHit).KnockbackForce);
+				OnKnockback?.Invoke((hit as PlatformerHit).KnockbackForce);
+			}
 			Health -= hit.damage;
 			OnHit?.Invoke();
+			if (Health == 0)
+				OnDeath?.Invoke();
 		}
 	}
 }

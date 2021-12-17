@@ -94,7 +94,7 @@ AnimatorStateMachine:
   - {fileID: 7881372410218942995}
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 90, y: 20, z: 0}
+  m_AnyStatePosition: {x: 60, y: -60, z: 0}
   m_EntryPosition: {x: -60, y: 180, z: 0}
   m_ExitPosition: {x: 520, y: 190, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
@@ -202,6 +202,12 @@ AnimatorController:
     m_Controller: {fileID: 0}
   - m_Name: VerticalVelocity
     m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: Grounded
+    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0

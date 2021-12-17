@@ -5,6 +5,20 @@ using UnityEngine.Assertions;
 
 namespace Thuleanx.Utils {
 	public class Calc {
+		static System.Random rand;
+		public static System.Random Random {
+			get {
+				if (rand == null) rand = new System.Random();
+				return rand;
+			}
+		}
+
+		public static float RandomRange(float a, float b) 
+			=> (float) Random.NextDouble() * (b-a) + a;
+
+		public static int RandomRange(int a, int b)
+			=> (int) (Random.NextDouble() * (b-a+1)) + a;
+
 		public static float Approach(float cur, float target, float distance) {
 			float amt = Mathf.Clamp(target - cur, -distance, distance);
 			cur += amt;

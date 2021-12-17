@@ -9,6 +9,7 @@ using Thuleanx.Utils;
 using MarkupAttributes;
 
 namespace Thuleanx.AI.Core {
+	[RequireComponent(typeof(LivePlatformerAI))]
 	public class Monkey : MonoMiddleware {
 		enum State {
 			Charge = 0,
@@ -28,18 +29,28 @@ namespace Thuleanx.AI.Core {
 
 			// ====================== Idle ===============================
 			StateMachine.SetCallbackTransition((int) State.Idle, _State_IdleTransition);
+
+			GetComponent<LivePlatformerAI>().OnHit.AddListener(() => {
+				if (_attackCD && !_feared && UnityEngine.Random.Range(0f,1f) < RunAwayProbabilityOnHit) {
+					_feared = new Timer(RunAwayDuration);
+					_feared.Start();
+				}
+			});
 		}
 
 		[Box("Combat States")]
 		[SerializeField] float AttackCooldown = 4f;
 		[SerializeField] float AttackDetectionRange = 3f;
+		[SerializeField] float StayingRange = 3f;
 		[SerializeField] float RunAwayDuration = 5f;
+		[SerializeField, Range(0f,1f)] float RunAwayProbabilityOnHit = .5f;
 		[EndGroup("Combat States")]
 
 		[Box("Vision")]
 		public float VisionRange = 16f;
 		[EndGroup("Vision")]
 
+		float _displacement;
 		Timer _attackCD;
 		Timer _feared;
 
@@ -70,8 +81,19 @@ namespace Thuleanx.AI.Core {
 		#region Charge
 		void _State_ChargeProcess(AttackerInputState InputState) {
 			Vector2 targetPosition = (Vector2) Context.ReferenceManager.Player.transform.position;
+
+			if (_attackCD) {
+				Vector2 position = targetPosition + _displacement * Vector2.right;
+				int cnt = 80;
+				while (Mathf.Abs(position.x - transform.position.x) < .1f && (cnt --> 0)) {
+					_displacement = Calc.RandomRange(-StayingRange, StayingRange);
+					position = targetPosition + _displacement * Vector2.right;
+				}
+				targetPosition = position;
+			}
+
 			float dir = targetPosition.x - transform.position.x;
-			InputState.Movement = (new Vector2(Math.Abs(dir) < AttackDetectionRange ? 0 : Mathf.Sign(dir), 0)) 
+			InputState.Movement = (new Vector2(Math.Abs(dir) < (!_attackCD ? AttackDetectionRange : .1f) ? 0 : Mathf.Sign(dir), 0)) 
 				+ new Vector2(Mathf.Sign(dir) * .01f, 0);
 			if (PlayerAttackable()) InputState.Attack = !_attackCD;
 		}
@@ -100,6 +122,7 @@ namespace Thuleanx.AI.Core {
 
 		bool _playerDetected, _playerAttackable;
 		void Update() {
+			if (!_attackCD) _feared.Stop();
 			TryDetectPlayer();
 			TryDetectPlayerAttackable();
 		}
