@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: StoryMode
   m_EditorClassIdentifier: 
   _state: 2
-  Map: {fileID: 11400000, guid: e49449de16dff4ed7ad02aded9fede30, type: 2}
-  activeRooms: []
+  Map: {fileID: 11400000, guid: 623664182d33a4dd2baa1e10306be527, type: 2}

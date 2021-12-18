@@ -10,6 +10,7 @@ namespace Thuleanx.Interaction.Core {
 	public class NavigationBehaviour : PlayableBehaviour, InputMiddleware {
 		public Vector2 Position;
 		public PlatformerInputProvider InputProvider;
+		public bool PauseTillDone;
 
 		public int GetPriority() => (int)MiddlewarePriority.OVERRIDE;
 
@@ -24,10 +25,13 @@ namespace Thuleanx.Interaction.Core {
 				Attach(InputProvider);
 
 				if (NavigationSystem.Instance != null) {
-					playable.GetGraph().GetRootPlayable(0).SetSpeed(0);
-					NavigationSystem.Instance.Goto(Position, () => {
-						playable.GetGraph().GetRootPlayable(0).SetSpeed(1);
-					});
+					if (PauseTillDone) {
+						playable.GetGraph().GetRootPlayable(0).SetSpeed(0);
+						NavigationSystem.Instance.Goto(Position, () => {
+							playable.GetGraph().GetRootPlayable(0).SetSpeed(1);
+						});
+					} else NavigationSystem.Instance.Goto(Position);
+
 				} else Debug.Log("No navigation system found. Proceed to simply lock input.");
 			}
 		}

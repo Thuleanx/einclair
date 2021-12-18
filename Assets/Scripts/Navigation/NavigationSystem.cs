@@ -32,7 +32,7 @@ namespace Thuleanx.Navigation {
 
 		public override InputState Process(InputState state) {
 			if (Active) {
-				PlatformerInputState PIS = new PlatformerInputState(); // ignore previous input states, completely overriding
+				PlatformerInputState PIS = DefaultProvider.Value.BlankState() as PlatformerInputState; // ignore previous input states, completely overriding
 
 				float dx = Destination.x - Context.ReferenceManager.Player.transform.position.x;
 				if (Mathf.Abs(dx) < .1f) {

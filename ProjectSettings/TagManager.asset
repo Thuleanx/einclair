@@ -34,7 +34,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Interactable
   - Hitbox
   - Hurtbox
   m_SortingLayers:

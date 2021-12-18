@@ -9,6 +9,7 @@ namespace Thuleanx.Interaction.Core {
 	public class NavigationClip : PlayableAsset {
 		public PlatformerInputProvider InputProvider;
 		public Vector2 Offset;
+		public bool PauseTillDone = true;
 
 		public override Playable CreatePlayable(PlayableGraph graph, GameObject owner) {
 			var playable = ScriptPlayable<NavigationBehaviour>.Create(graph);
@@ -21,6 +22,7 @@ namespace Thuleanx.Interaction.Core {
 
 			behaviour.Position = (Vector2) owner.transform.position + scaledOffset;
 			behaviour.InputProvider = InputProvider;
+			behaviour.PauseTillDone = PauseTillDone;
 
 			return playable;
 		}
