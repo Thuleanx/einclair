@@ -1912,7 +1912,7 @@ MonoBehaviour:
   DefaultActive: 0
   Frequency: 0
   Damage: 3
-  KnockbackForce: 20
+  KnockbackForce: 60
   knockbackDir:
     enabled: 1
     value: {x: 1, y: 0}
@@ -2002,6 +2002,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2119174110}
+  - component: {fileID: 2119174111}
   m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
@@ -2023,6 +2024,18 @@ Transform:
   m_Father: {fileID: 1210824985}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!156049354 &2119174111
+Grid:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119174109}
+  m_Enabled: 1
+  m_CellSize: {x: 1, y: 1, z: 1}
+  m_CellGap: {x: 0, y: 0, z: 0}
+  m_CellLayout: 0
+  m_CellSwizzle: 0
 --- !u!1 &2141439399
 GameObject:
   m_ObjectHideFlags: 0
