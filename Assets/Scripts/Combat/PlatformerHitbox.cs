@@ -8,14 +8,20 @@ namespace Thuleanx.Combat.Core {
 	public class PlatformerHitbox : Hitbox {
 		public int Damage;
 		public float KnockbackForce;
-		[SerializeField] Vector2 knockbackDir = Vector2.right;
-		public Vector2 KnockbackDir => (knockbackDir * (Vector2) transform.localScale).normalized;
+		[SerializeField] Optional<Vector2> knockbackDir;
+		public Vector2 KnockbackDir => (knockbackDir.Value * (Vector2) transform.localScale).normalized;
+		public bool Active => State == ColliderState.Open;
 
 		[EnumFlag("Thuleanx.Combat.Core.HitLayer")]
 		public HitLayer HitMask;
 
 		public override IHit generateHit(Collider2D collision) {
-			return new PlatformerHit(Damage, KnockbackForce * KnockbackDir * transform.lossyScale);
+			if (knockbackDir.Enabled) {
+				return new PlatformerHit(Damage, KnockbackForce * KnockbackDir * transform.lossyScale);
+			} else {
+				Vector2 backDir = (collision.gameObject.transform.position - transform.position).normalized;
+				return new PlatformerHit(Damage, KnockbackForce * backDir * transform.lossyScale);
+			}
 		}
 		protected override bool CanCollide(Hurtbox hurtbox)
 			=> (hurtbox is PlatformerHurtbox) && (HitMask & (hurtbox as PlatformerHurtbox).Layer) > 0;
@@ -23,7 +29,7 @@ namespace Thuleanx.Combat.Core {
 		private void OnDrawGizmosSelected() {
 			Gizmos.color = State == Hitbox.ColliderState.Closed ? Color.green : Color.red;
 			Gizmos.DrawCube(transform.position, Vector3.one/4f);
-			DrawArrow.ForGizmo(transform.position, KnockbackDir * (Vector2) transform.lossyScale);
+			if (knockbackDir.Enabled) DrawArrow.ForGizmo(transform.position, KnockbackDir * (Vector2) transform.lossyScale);
 		}
 	}
 }

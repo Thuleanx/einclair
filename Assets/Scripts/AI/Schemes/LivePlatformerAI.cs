@@ -24,6 +24,11 @@ namespace Thuleanx.AI.Core {
 			Health = MaxHealth;
 		}
 
+		public void _Nocall_TakeDamage(int value) {
+			Health -= value;
+			if (Health == 0) OnDeath?.Invoke();
+		}
+
 		public bool CanTakeHit() => !IsDead;
 		public void ApplyHit(IHit hit) {
 			if (hit is PlatformerHit) {

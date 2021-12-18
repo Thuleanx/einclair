@@ -50,7 +50,7 @@ namespace Thuleanx.Combat {
 				Physics2D.OverlapCollider(Collider, filter, collisions);
 				foreach (var other in collisions) {
 					Hurtbox hurtbox = other.gameObject.GetComponent<Hurtbox>();
-					if (hurtbox != null && CanCollide(hurtbox) && TimedOut(hurtbox.ID)) {
+					if (hurtbox != null && hurtbox.CanTakeHit() && CanCollide(hurtbox) && TimedOut(hurtbox.ID)) {
 						hurtbox.ApplyHit(generateHit(other));
 						Refresh(hurtbox.ID);
 					}

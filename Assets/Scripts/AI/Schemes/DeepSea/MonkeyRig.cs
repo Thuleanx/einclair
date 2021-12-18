@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using System;
 
 using Thuleanx.Input.Core;
@@ -100,12 +101,13 @@ namespace Thuleanx.AI.Core {
 		[Min(0f)] public float Attack_ForwardPush;
 		public PlatformerHitbox AttackHitbox;
 		public BubblePool CorpsePool;
+		public UnityEvent OnAttack;
 		[EndGroup("Attack")]
 
 		bool _attackEnded;
 		bool _attackExecuted;
 
-		void _State_AttackEnter() { 
+		protected virtual void _State_AttackEnter() { 
 			_attackEnded = false;
 			_attackExecuted = false;
 		}
@@ -122,6 +124,7 @@ namespace Thuleanx.AI.Core {
 			Body.Knockback(new Vector2(Attack_ForwardPush * (IsRightFacing ? 1 : -1), 0));
 			_attackExecuted = true;
 			(Provider.Feedback as AttackerInputFeedback).AttackExecuted = true;
+			OnAttack?.Invoke();
 		}
 		public void _Animation_OnAttackEnd() {
 			_attackEnded = true;

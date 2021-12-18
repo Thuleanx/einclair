@@ -42,11 +42,18 @@ namespace Thuleanx.AI.Core {
 			StateMachine.SetCallbackTransition((int) State.Bash, _State_BashTransition);
 			StateMachine.SetCallbackUpdate((int) State.Bash, _State_BashUpdate);
 			StateMachine.SetCallbackEnd((int) State.Bash, _State_BashExit);
+
+			// ====================== Death ===============================
+			StateMachine.SetCallbackTransition((int) State.Dead, _State_DeadTransition);
+			StateMachine.SetCallbackBegin((int) State.Dead, _State_DeadEnter);
 		}
 
 		public override void ObjectSetup() {
 			base.ObjectSetup();
 			_originalParent = transform.parent;
+			OnDeath.AddListener(() => {
+				StateMachine.State = (int) State.Dead;
+			});
 		}
 
 		public override void Update() {
@@ -156,6 +163,15 @@ namespace Thuleanx.AI.Core {
 		}
 		public void _Animation_OnBashEnd() {
 			_bashEnd = true;
+		}
+		#endregion
+
+		#region Death
+		int _State_DeadTransition() {
+			return Health > 0 ? (int) State.Normal : -1;
+		}
+		void _State_DeadEnter() {
+			Body.Stop();
 		}
 		#endregion
 

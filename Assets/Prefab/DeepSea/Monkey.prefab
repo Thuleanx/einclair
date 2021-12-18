@@ -234,7 +234,9 @@ MonoBehaviour:
   Frequency: 0
   Damage: 1
   KnockbackForce: 0
-  knockbackDir: {x: -1, y: 0}
+  knockbackDir:
+    enabled: 1
+    value: {x: -1, y: 0}
   HitMask: 2
 --- !u!1 &7627070223566670495
 GameObject:
@@ -387,7 +389,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 2
-  m_LinearDrag: 0
+  m_LinearDrag: 0.2
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -457,6 +459,9 @@ MonoBehaviour:
   Attack_ForwardPush: 40
   AttackHitbox: {fileID: 7627070223260186960}
   CorpsePool: {fileID: 11400000, guid: 8c8f6699af3ea4b2f8c9cc1f9068e8a2, type: 2}
+  OnAttack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7627070224062030570
 MonoBehaviour:
   m_ObjectHideFlags: 0

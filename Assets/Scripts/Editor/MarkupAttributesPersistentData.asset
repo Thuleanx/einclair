@@ -101,4 +101,8 @@ MonoBehaviour:
     value: 1
   - key: Thuleanx.AI.Core.MonkeyRig/Attack
     value: 1
+  - key: Thuleanx.AI.Core.ExplodingMonkeyRig/Status
+    value: 1
+  - key: Thuleanx.AI.Core.ExplodingMonkeyRig/Attack
+    value: 1
   serializedIntEntries: []
