@@ -41,7 +41,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Crack: 0.678
+    - Crack: 0.373
     - Crack_Ease: 3.32
     - Density: 1
     - Distortion: 0.01

@@ -17,11 +17,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7627070224062030564, guid: c4c6056241864400189f906374337c2f, type: 3}
       propertyPath: m_Mass
-      value: 5
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627070224062030564, guid: c4c6056241864400189f906374337c2f, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7627070224062030565, guid: c4c6056241864400189f906374337c2f, type: 3}
       propertyPath: MaxAccel
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627070224062030565, guid: c4c6056241864400189f906374337c2f, type: 3}
+      propertyPath: MaxDecel
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7627070224062030567, guid: c4c6056241864400189f906374337c2f, type: 3}
       propertyPath: m_RootOrder

@@ -9,7 +9,7 @@ using Thuleanx.Input.Core;
 namespace Thuleanx.Interaction.Core {
 	public class NavigationBehaviour : PlayableBehaviour, InputMiddleware {
 		public Vector2 Position;
-		public PlayerInputProvider InputProvider;
+		public PlatformerInputProvider InputProvider;
 
 		public int GetPriority() => (int)MiddlewarePriority.OVERRIDE;
 
@@ -44,11 +44,7 @@ namespace Thuleanx.Interaction.Core {
 		}
 
 		public InputState Process(InputState state) {
-			PlayerInputState PIS = (PlayerInputState)state;
-			PIS.Movement = Vector2.zero;
-			PIS.Jump = false;
-			PIS.JumpReleased = false;
-			return PIS;
+			return InputProvider.BlankState();
 		}
 
 		public void Review(InputFeedback feedback) { }

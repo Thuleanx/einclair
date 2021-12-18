@@ -24,7 +24,6 @@ namespace Thuleanx.Effects.Particles {
 				system.Stop();
 				system.Clear();
 				system.Play();
-				Debug.Log("HI");
 			}
 		}
 		public void Stop() {

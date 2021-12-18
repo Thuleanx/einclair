@@ -7,7 +7,7 @@ using Thuleanx.Input.Core;
 
 namespace Thuleanx.Interaction.Core {
 	public class NavigationClip : PlayableAsset {
-		public PlayerInputProvider InputProvider;
+		public PlatformerInputProvider InputProvider;
 		public Vector2 Offset;
 
 		public override Playable CreatePlayable(PlayableGraph graph, GameObject owner) {
