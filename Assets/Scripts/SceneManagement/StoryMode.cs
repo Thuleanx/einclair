@@ -50,12 +50,15 @@ namespace Thuleanx.SceneManagement.Core {
 		}
 		public IEnumerator TransitionThrough(Passage passageTo) {
 			if (passageTo.From == CurrentRoom || passageTo.To == CurrentRoom) {
+				int health = Context.ReferenceManager.Player.Health;
+
 				Room room = passageTo.GetOther(CurrentRoom);
 
 				// CurrentRoom = room;
 				// activeRooms = nextActiveRooms;
 				CurrentRoom = room;
 				yield return CurrentRoom.Scene.LoadSceneAsync(LoadSceneMode.Single);
+				Context.ReferenceManager.Player._NoCall_SetHealth(health);
 				LoadAdjacents(CurrentRoom);
 
 				// Find Player and places him in the correct place.

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 125478325a61a4567bcabda38f5ab5e3, type: 3}
   m_Name: ExplodingMonkey
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 8381784851285515047, guid: c74dd238a816143a4834af1a2156aa27, type: 3}

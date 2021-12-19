@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 920664568}
   - component: {fileID: 920664570}
   - component: {fileID: 920664569}
+  - component: {fileID: 2013952705}
   m_Layer: 3
   m_Name: Ground
   m_TagString: Untagged
@@ -2601,7 +2602,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: 9a3a0ad5d93e14f87bf06835d8a95d54, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2619,8 +2620,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2072012367
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -2715,6 +2716,18 @@ CompositeCollider2D:
       - {x: -17.999971, y: -6}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
+--- !u!114 &2013952705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920664564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faa46a2d2a5fc409e91af47ad75bd15c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5850462497970580214
 GameObject:
   m_ObjectHideFlags: 0

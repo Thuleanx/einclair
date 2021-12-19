@@ -21,8 +21,8 @@ namespace Thuleanx.Effects.Particles {
 			if (burstSystems == null) RegisterSystem();
 
 			foreach (ParticleSystem system in burstSystems) {
-				system.Stop();
 				system.Clear();
+				system.Stop();
 				system.Play();
 			}
 		}
@@ -30,8 +30,8 @@ namespace Thuleanx.Effects.Particles {
 			if (burstSystems == null) RegisterSystem();
 
 			foreach (ParticleSystem system in burstSystems) {
-				system.Stop();
 				system.Clear();
+				system.Stop();
 			}
 		}
 	}

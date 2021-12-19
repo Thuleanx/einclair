@@ -51,15 +51,10 @@ namespace Thuleanx.Optimization {
 			bubble.gameObject.transform.rotation = rotation;
 			bubble.gameObject.SetActive(true);
 
-			bool foundParent = false;
-			foreach (var gameObject in scene.GetRootGameObjects()) {
-				if (gameObject.name == "_Dynamic") {
-					Debug.Log("DYN");
-					foundParent = true;
+			foreach (var gameObject in scene.GetRootGameObjects())
+				if (gameObject.name == "_Dynamic")
 					bubble.gameObject.transform.SetParent(gameObject.transform);
-				}
-			}
-			if (!foundParent)
+			if (bubble.gameObject.transform.parent == null)
 				SceneManager.MoveGameObjectToScene(bubble.gameObject, scene);
 			bubble.InPool = false;
 			bubble.scene = scene;
@@ -79,6 +74,7 @@ namespace Thuleanx.Optimization {
 			}
 		}
 		public void CollectsAll(Scene scene) {
+			Debug.Log("Collecting all from " + scene.name);
 			foreach (Bubble bubble in Ledger[scene.name])
 				if (!bubble.InPool)
 					Collects(bubble, false);

@@ -13,6 +13,8 @@ namespace Thuleanx.Engine {
 		private List<PolygonCollider2D> shadowPolygons = new List<PolygonCollider2D>();
 		private List<ShadowCaster2D> shadowCasterComponents = new List<ShadowCaster2D>();
 
+		public bool SelfShadow = true;
+
 		private bool doReset = false;
 		public SortingLayer SortingLayer;
 
@@ -54,7 +56,7 @@ namespace Thuleanx.Engine {
 				//    Destroy(shadowCaster.GetComponent<ShadowCaster2D>());
 				ShadowCaster2D shadowCasterComponent = shadowCaster.AddComponent<ShadowCaster2D>();
 				shadowCasterComponents.Add(shadowCasterComponent);
-				shadowCasterComponent.selfShadows = true;
+				shadowCasterComponent.selfShadows = SelfShadow;
 			}
 		}
 

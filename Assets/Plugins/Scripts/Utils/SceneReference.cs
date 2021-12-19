@@ -50,9 +50,9 @@ namespace Thuleanx.Utils {
 
 		public bool Validated() {
 			#if UNITY_EDITOR
-				return !string.IsNullOrEmpty(SceneName);
-			#else
 				return Scene || !string.IsNullOrEmpty(SceneName);
+			#else
+				return !string.IsNullOrEmpty(SceneName);
 			#endif
 		}
 

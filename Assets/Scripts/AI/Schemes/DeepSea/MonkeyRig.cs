@@ -41,14 +41,21 @@ namespace Thuleanx.AI.Core {
 			base.ObjectSetup();
 			_originalParent = transform.parent;
 			if (Provider == null) Provider = ScriptableObject.CreateInstance<AttackerInputProvider>();
-			OnDeath.AddListener(() => {
-				if (CorpsePool) {
-					GameObject obj = CorpsePool.Borrow(gameObject.scene, transform.position);
-					obj.transform.localScale = gameObject.transform.localScale;
-					// obj.GetComponent<PhysicsObject>().Knockback(Body.Velocity * Body.Mass);
-				}
-				General.TryDispose(gameObject);
-			});
+			OnDeath.AddListener(_OnDeathCallback);
+		}
+
+		void OnDisable() {
+			OnDeath.RemoveListener(_OnDeathCallback);
+		}
+
+		void _OnDeathCallback() {
+			if (CorpsePool) {
+				GameObject obj = CorpsePool.Borrow(gameObject.scene, transform.position);
+				obj.transform.localScale = gameObject.transform.localScale;
+				Debug.Log("HI " + gameObject);
+				// obj.GetComponent<PhysicsObject>().Knockback(Body.Velocity * Body.Mass);
+			}
+			General.TryDispose(gameObject);
 		}
 
 		public override void Update() {

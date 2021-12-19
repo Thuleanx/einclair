@@ -13,8 +13,10 @@ namespace Thuleanx.Interaction {
 		}
 
 		void OnTriggerEnter2D(Collider2D other) {
-			if (!Once || !triggered) Trigger?.Invoke();
-			triggered = true;
+			if (other.gameObject.tag == "Player") {
+				if (!Once || !triggered) Trigger?.Invoke();
+				triggered = true;
+			}
 		}
 	}
 }

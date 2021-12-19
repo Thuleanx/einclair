@@ -15,7 +15,10 @@ namespace Thuleanx.SceneManagement.Core {
 			set {
 				_active = value;
 				Collider.enabled = value;
-				if (value) Combo.Activate();
+				if (value) {
+					Debug.Log("HI");
+					Combo.Activate();
+				}
 				else Combo.Stop();
 			}
 		}

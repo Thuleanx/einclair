@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 6122192079788252080, guid: 465f1e2e1e3cd4ceb96412de4c38d1e0, type: 3}
+    - target: {fileID: 7627070222888605168, guid: c4c6056241864400189f906374337c2f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f696e4014926c4fda889ac309078b59e, type: 2}
     - target: {fileID: 7627070224062030560, guid: c4c6056241864400189f906374337c2f, type: 3}
       propertyPath: m_Name
       value: ExplodingMonkey
@@ -29,7 +33,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7627070224062030565, guid: c4c6056241864400189f906374337c2f, type: 3}
       propertyPath: MaxDecel
-      value: 8
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 7627070224062030567, guid: c4c6056241864400189f906374337c2f, type: 3}
       propertyPath: m_RootOrder

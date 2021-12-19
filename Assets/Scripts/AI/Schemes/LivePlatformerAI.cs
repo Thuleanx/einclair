@@ -24,6 +24,10 @@ namespace Thuleanx.AI.Core {
 			Health = MaxHealth;
 		}
 
+		public void _NoCall_SetHealth(int health) {
+			Health = health;
+		}
+
 		public void _Nocall_TakeDamage(int value) {
 			Health -= value;
 			if (Health == 0) OnDeath?.Invoke();
