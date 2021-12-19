@@ -92,6 +92,9 @@ TextureImporter:
   - first:
       213: -6087425619873452366
     second: Decoration_31
+  - first:
+      213: -4206819594563279181
+    second: Decoration_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -187,7 +190,7 @@ TextureImporter:
         x: 80
         y: 560
         width: 16
-        height: 48
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -806,6 +809,27 @@ TextureImporter:
       bones: []
       spriteID: 2bea4dab6ae158ba0800000000000000
       internalID: -6087425619873452366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Decoration_1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 592
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b627ef0edf5e95c0800000000000000
+      internalID: -4206819594563279181
       vertices: []
       indices: 
       edges: []

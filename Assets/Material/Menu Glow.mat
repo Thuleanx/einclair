@@ -7,20 +7,20 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Post Processing
-  m_Shader: {fileID: -6465566751694194690, guid: 63aa00040400141649054ca82bf7b368, type: 3}
+  m_Name: Menu Glow
+  m_Shader: {fileID: -6465566751694194690, guid: 19b3720e83c7542c49eaaa13a1d268c3, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Crack_Texture:
-        m_Texture: {fileID: 2800000, guid: 57e5a25f79bef4aba9e98de83b988496, type: 3}
+    - _Emission:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -40,26 +40,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats:
-    - Crack: 1
-    - Crack_Ease: 2.74
-    - Density: 1
-    - Distortion: 0.005
-    - Focal_Point: 0
-    - M_PI: 3.14159
-    - Noise_Intensity: -0.87
-    - Noise_Speed: 0
-    - PixelOffset: 0
-    - Ring_Magnitude: -0.1
-    - Ring_Range: 20
-    - Ring_Size: 0.5
-    - Ring_Speed: 5
-    - Ripple_Active: 1
-    - Time_Offset: 11.902048
-    - _Crack: 0.0069444776
+    m_Floats: []
     m_Colors:
-    - Focal_Point: {r: 67.56559, g: 79.337494, b: 0, a: 0}
-    - Noise_Direction: {r: 0, g: 0, b: 0, a: 0}
-    - Noise_Velocity: {r: 0.2, g: 0.4, b: 0, a: 0}
-    - _Color: {r: 0.7830189, g: 0.2770114, b: 0.2770114, a: 1}
+    - BloomColor: {r: 5.992157, g: 0.627451, b: 0.627451, a: 0}
   m_BuildTextureStacks: []

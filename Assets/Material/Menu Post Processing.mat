@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Post Processing
+  m_Name: Menu Post Processing
   m_Shader: {fileID: -6465566751694194690, guid: 63aa00040400141649054ca82bf7b368, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -54,11 +54,11 @@ Material:
     - Ring_Range: 20
     - Ring_Size: 0.5
     - Ring_Speed: 5
-    - Ripple_Active: 1
-    - Time_Offset: 11.902048
-    - _Crack: 0.0069444776
+    - Ripple_Active: 0
+    - Time_Offset: 19.2121
+    - _Crack: 0
     m_Colors:
-    - Focal_Point: {r: 67.56559, g: 79.337494, b: 0, a: 0}
+    - Focal_Point: {r: 64.61455, g: 88.91358, b: 0, a: 0}
     - Noise_Direction: {r: 0, g: 0, b: 0, a: 0}
     - Noise_Velocity: {r: 0.2, g: 0.4, b: 0, a: 0}
     - _Color: {r: 0.7830189, g: 0.2770114, b: 0.2770114, a: 1}
