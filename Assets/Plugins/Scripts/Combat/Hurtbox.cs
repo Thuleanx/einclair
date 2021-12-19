@@ -10,7 +10,7 @@ namespace Thuleanx.Combat {
 
 		void Awake() {
 			Box = GetComponent<BoxCollider2D>();
-			NextID = ID++;
+			ID = NextID++;
 		}
 		public abstract void ApplyHit(IHit hit);
 		public abstract bool CanTakeHit();

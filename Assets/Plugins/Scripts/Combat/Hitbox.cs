@@ -48,9 +48,11 @@ namespace Thuleanx.Combat {
 				ContactFilter2D filter = new ContactFilter2D();
 				filter.layerMask = Physics2D.GetLayerCollisionMask(gameObject.layer);
 				Physics2D.OverlapCollider(Collider, filter, collisions);
+				int cnt = 0;
 				foreach (var other in collisions) {
 					Hurtbox hurtbox = other.gameObject.GetComponent<Hurtbox>();
 					if (hurtbox != null && hurtbox.CanTakeHit() && CanCollide(hurtbox) && TimedOut(hurtbox.ID)) {
+						cnt++;
 						hurtbox.ApplyHit(generateHit(other));
 						Refresh(hurtbox.ID);
 					}

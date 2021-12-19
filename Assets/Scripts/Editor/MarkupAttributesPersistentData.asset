@@ -105,4 +105,8 @@ MonoBehaviour:
     value: 1
   - key: Thuleanx.AI.Core.ExplodingMonkeyRig/Attack
     value: 1
+  - key: Thuleanx.UI.Core.HealthBar/Health bar
+    value: 1
+  - key: Thuleanx.UI.Core.HealthBar/Crack
+    value: 1
   serializedIntEntries: []

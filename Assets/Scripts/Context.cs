@@ -16,6 +16,7 @@ namespace Thuleanx {
 
 		void Awake() {
 			if (_ReferenceManager == null) _ReferenceManager = GetComponentInChildren<ReferenceManager>();
+			if (_RespawnManager == null) _RespawnManager = GetComponentInChildren<RespawnManager>();
 		}
 
 		void OnEnable() {
