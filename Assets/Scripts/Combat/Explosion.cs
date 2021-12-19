@@ -1,4 +1,5 @@
 using UnityEngine;
+using Cinemachine;
 
 using Thuleanx.Effects.Particles;
 using Thuleanx.Utils;
@@ -15,6 +16,7 @@ namespace Thuleanx.Combat.Core {
 			_damaging = new Timer(DamageDuration);
 			_damaging.Start();
 			GetComponent<ParticleCombo>().Activate();
+			GetComponent<CinemachineImpulseSource>()?.GenerateImpulse();
 		}
 		void Update() {
 			if (!_damaging && Hitbox.Active) {

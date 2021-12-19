@@ -45,12 +45,20 @@ Material:
     - Crack_Ease: 2.74
     - Density: 1
     - Distortion: 0.005
+    - Focal_Point: 0
     - M_PI: 3.14159
     - Noise_Intensity: -0.87
     - Noise_Speed: 0
     - PixelOffset: 0
+    - Ring_Magnitude: -0.2
+    - Ring_Range: 20
+    - Ring_Size: 0.5
+    - Ring_Speed: 2
+    - Ripple_Active: 0
+    - Time_Offset: 17.019184
     - _Crack: 0
     m_Colors:
+    - Focal_Point: {r: 77.31407, g: 88.85, b: 0, a: 0}
     - Noise_Direction: {r: 0, g: 0, b: 0, a: 0}
     - Noise_Velocity: {r: 0.2, g: 0.4, b: 0, a: 0}
     - _Color: {r: 0.7830189, g: 0.2770114, b: 0.2770114, a: 1}

@@ -21,6 +21,9 @@ namespace Thuleanx.Optimization {
 
 		void OnEnable() {
 			_Activated = false;
+			Ledger.Clear();
+			Pool.Clear();
+			Borrowed.Clear();
 		}
 
 		void BeforeSceneUnload(Scene scene) {

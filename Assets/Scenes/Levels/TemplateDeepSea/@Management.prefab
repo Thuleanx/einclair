@@ -264,7 +264,7 @@ MonoBehaviour:
   m_ImpulseDefinition:
     m_ImpulseChannel: 1
     m_RawSignal: {fileID: 11400000, guid: 34b0941095c4c45ebb0590280fa35517, type: 2}
-    m_AmplitudeGain: 0.3
+    m_AmplitudeGain: 1
     m_FrequencyGain: 1
     m_RepeatMode: 0
     m_Randomize: 1
@@ -319,7 +319,7 @@ MonoBehaviour:
         m_RotationOrder: 4
       m_AttackTime: 0
       m_SustainTime: 0
-      m_DecayTime: 0.3
+      m_DecayTime: 0.2
       m_ScaleWithImpact: 0
       m_HoldForever: 0
     m_ImpactRadius: 100
@@ -1031,7 +1031,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7893840257267197986, guid: ad3721dae316c48ad8af2b3708b63e2e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.25
+      value: -10.01
       objectReference: {fileID: 0}
     - target: {fileID: 7893840257267197986, guid: ad3721dae316c48ad8af2b3708b63e2e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1074,6 +1074,10 @@ PrefabInstance:
       value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 7893840257267197990, guid: ad3721dae316c48ad8af2b3708b63e2e, type: 3}
+      propertyPath: Slam_ShockwaveOffset.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7893840257267197990, guid: ad3721dae316c48ad8af2b3708b63e2e, type: 3}
       propertyPath: OnHit.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -1106,11 +1110,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7893840257267197992, guid: ad3721dae316c48ad8af2b3708b63e2e, type: 3}
-      propertyPath: EventTriggers.Array.data[1].m_PersistentCalls.m_Calls.Array.size
+      propertyPath: EventTriggers.Array.data[0].m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7893840257267197992, guid: ad3721dae316c48ad8af2b3708b63e2e, type: 3}
+      propertyPath: EventTriggers.Array.data[1].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7893840257267197992, guid: ad3721dae316c48ad8af2b3708b63e2e, type: 3}
       propertyPath: EventTriggers.Array.data[4].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7893840257267197992, guid: ad3721dae316c48ad8af2b3708b63e2e, type: 3}
+      propertyPath: EventTriggers.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7893840257267197992, guid: ad3721dae316c48ad8af2b3708b63e2e, type: 3}
@@ -1119,8 +1131,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7893840257267197992, guid: ad3721dae316c48ad8af2b3708b63e2e, type: 3}
       propertyPath: EventTriggers.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7893840257267197992, guid: ad3721dae316c48ad8af2b3708b63e2e, type: 3}
+      propertyPath: EventTriggers.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1566313500}
     - target: {fileID: 7893840257267197992, guid: ad3721dae316c48ad8af2b3708b63e2e, type: 3}
       propertyPath: EventTriggers.Array.data[1].m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -1130,6 +1146,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1566313500}
     - target: {fileID: 7893840257267197992, guid: ad3721dae316c48ad8af2b3708b63e2e, type: 3}
+      propertyPath: EventTriggers.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7893840257267197992, guid: ad3721dae316c48ad8af2b3708b63e2e, type: 3}
       propertyPath: EventTriggers.Array.data[1].m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -1138,12 +1158,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7893840257267197992, guid: ad3721dae316c48ad8af2b3708b63e2e, type: 3}
+      propertyPath: EventTriggers.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: GenerateImpulse
+      objectReference: {fileID: 0}
+    - target: {fileID: 7893840257267197992, guid: ad3721dae316c48ad8af2b3708b63e2e, type: 3}
       propertyPath: EventTriggers.Array.data[1].m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: GenerateImpulse
       objectReference: {fileID: 0}
     - target: {fileID: 7893840257267197992, guid: ad3721dae316c48ad8af2b3708b63e2e, type: 3}
       propertyPath: EventTriggers.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: GenerateImpulse
+      objectReference: {fileID: 0}
+    - target: {fileID: 7893840257267197992, guid: ad3721dae316c48ad8af2b3708b63e2e, type: 3}
+      propertyPath: EventTriggers.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Cinemachine.CinemachineImpulseSource, Cinemachine
       objectReference: {fileID: 0}
     - target: {fileID: 7893840257267197992, guid: ad3721dae316c48ad8af2b3708b63e2e, type: 3}
       propertyPath: EventTriggers.Array.data[1].m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -1155,7 +1183,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7893840257267197992, guid: ad3721dae316c48ad8af2b3708b63e2e, type: 3}
       propertyPath: EventTriggers.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7893840257267197992, guid: ad3721dae316c48ad8af2b3708b63e2e, type: 3}
+      propertyPath: EventTriggers.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7893840257267197992, guid: ad3721dae316c48ad8af2b3708b63e2e, type: 3}
       propertyPath: EventTriggers.Array.data[1].m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName

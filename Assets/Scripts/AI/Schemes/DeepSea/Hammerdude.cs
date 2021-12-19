@@ -6,6 +6,8 @@ using Thuleanx.Input;
 using Thuleanx.Input.Core;
 using Thuleanx.Manager.Core;
 
+using Thuleanx.Effects.Core;
+
 using Thuleanx.Combat.Core;
 
 using MarkupAttributes;
@@ -112,6 +114,7 @@ namespace Thuleanx.AI.Core {
 		[Box("Slam")]
 		[Min(0f)] public float Slam_ForwardPush;
 		public PlatformerHitbox SlamHitbox;
+		public Vector2 Slam_ShockwaveOffset;
 		[EndGroup("Slam")]
 
 		bool _attackEnded;
@@ -133,6 +136,9 @@ namespace Thuleanx.AI.Core {
 			SlamHitbox?.stopCheckingCollision();
 		}
 		public void _Animation_OnAttack() {
+			Vector2 offset = Slam_ShockwaveOffset;
+			if (!IsRightFacing) offset.x *= -1;
+			PostProcessingUnit.Instance.StartShockwave(offset + (Vector2) transform.position);
 			Body.Knockback(new Vector2(Slam_ForwardPush * (IsRightFacing ? 1 : -1), 0));
 		}
 		public void _Animation_OnAttackEnd() {

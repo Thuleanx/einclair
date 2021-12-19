@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Intensity: 0.3
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 71d78745e3d9007b4f66807b7382f73d0126fbdbd94de1d2
+  m_ApplyToSortingLayers: 71d78745e3d9007b4f66807b7382f73d0126fbdbd94de1d2b9a68a32
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -227,4 +227,4 @@ MonoBehaviour:
   priority: 2
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 03ea0405276b64160b6180a57dd57ef8, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 87ea5381e70d14c2aa9e890e174eeed1, type: 2}
