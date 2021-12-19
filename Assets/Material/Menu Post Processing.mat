@@ -44,7 +44,7 @@ Material:
     - Crack: 1
     - Crack_Ease: 2.74
     - Density: 1
-    - Distortion: 0.005
+    - Distortion: 0.001
     - Focal_Point: 0
     - M_PI: 3.14159
     - Noise_Intensity: -0.87
