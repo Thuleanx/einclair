@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2634959740252676091}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.5, y: 2.5, z: 0}
-  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_LocalScale: {x: 1, y: 10, z: 1}
   m_Children:
   - {fileID: 2634959740975615664}
   - {fileID: 5632871326397788335}
@@ -73,6 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71b41ef4c6f0943eeb5a305e0cf09ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Once: 0
   Trigger:
     m_PersistentCalls:
       m_Calls:
@@ -101,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StoryMode: {fileID: 11400000, guid: 845fcea4bc70b417888e15d514c82b59, type: 2}
-  Passage: {fileID: 0}
+  Passage: {fileID: -1319320654887190278, guid: 623664182d33a4dd2baa1e10306be527, type: 2}
 --- !u!1 &2634959740975615631
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,7 +153,7 @@ PlayableDirector:
   - key: {fileID: -4590266412224766202, guid: fc9a53d23602e48ce902fed4ce4f28ac, type: 2}
     value: {fileID: 5632871326397788334}
   - key: {fileID: -443347537662459119, guid: cb7bfa96465554f269f3c57480b9428d, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 5632871326397788334}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &2634959740975615666

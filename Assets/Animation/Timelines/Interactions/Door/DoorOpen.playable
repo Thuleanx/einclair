@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Name: NavigationClip
   m_EditorClassIdentifier: 
   InputProvider: {fileID: 11400000, guid: 146bb8d93354c40079fc59fc2221203e, type: 2}
-  Offset: {x: 5, y: 0}
+  Offset: {x: 4, y: 0}
   PauseTillDone: 0
 --- !u!114 &11400000
 MonoBehaviour:

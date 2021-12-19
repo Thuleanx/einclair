@@ -57,6 +57,8 @@ namespace Thuleanx.Combat {
 						Refresh(hurtbox.ID);
 					}
 				}
+				if (cnt > 0)
+					Debug.Log(cnt);
 			}
 		}
 

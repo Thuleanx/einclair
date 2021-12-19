@@ -33,12 +33,13 @@ namespace Thuleanx.SceneManagement.Core {
 					HandleStartRequested(GameModes[0]);
 					break;
 				case 1:
+				case 2:
 					_current_mode = GameModes[0];
 					StartCoroutine(_current_mode.OnStart());
 					break;
 				default:
 					_current_mode = GameModes[1];
-					StartCoroutine(_current_mode.OnStart());
+					_current_mode.OnEditorStart();
 					break;
 			}
 		}
@@ -57,6 +58,11 @@ namespace Thuleanx.SceneManagement.Core {
 		}
 
 		void HandleStartRequested(GameMode mode) {
+			StartCoroutine(mode.OnStart());
+		}
+
+		public void HandleSwitch(int mode) {
+			StartCoroutine(SwitchMode(GameModes[mode]));
 		}
 	}
 }

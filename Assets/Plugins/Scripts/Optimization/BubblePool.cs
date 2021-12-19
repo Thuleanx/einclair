@@ -19,6 +19,10 @@ namespace Thuleanx.Optimization {
 			_Activated = false;
 		}
 
+		void OnEnable() {
+			_Activated = false;
+		}
+
 		void BeforeSceneUnload(Scene scene) {
 			CollectsAll(scene);
 		}
@@ -46,10 +50,16 @@ namespace Thuleanx.Optimization {
 			bubble.gameObject.transform.position = position;
 			bubble.gameObject.transform.rotation = rotation;
 			bubble.gameObject.SetActive(true);
-			foreach (var gameObject in scene.GetRootGameObjects())
-				if (gameObject.name == "_Dynamic")
+
+			bool foundParent = false;
+			foreach (var gameObject in scene.GetRootGameObjects()) {
+				if (gameObject.name == "_Dynamic") {
+					Debug.Log("DYN");
+					foundParent = true;
 					bubble.gameObject.transform.SetParent(gameObject.transform);
-			if (!bubble.gameObject.transform.parent)
+				}
+			}
+			if (!foundParent)
 				SceneManager.MoveGameObjectToScene(bubble.gameObject, scene);
 			bubble.InPool = false;
 			bubble.scene = scene;
@@ -85,7 +95,7 @@ namespace Thuleanx.Optimization {
 					Collects(bubble);
 				} catch {
 					// Give up and pop the bubble forever
-					if (Ledger.ContainsKey(bubble.gameObject.scene.name))
+					if (bubble && Ledger.ContainsKey(bubble.gameObject.scene.name))
 						Ledger[bubble.gameObject.scene.name].Remove(bubble);
 				}
 			}

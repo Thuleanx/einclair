@@ -15,28 +15,28 @@ namespace Thuleanx.SceneManagement.Core {
 
 		public Room CurrentRoom {  get; private set;  }
 
+		public override void OnEditorStart() {
+			_state = GameMode.State.Starting;
+			string _activeSceneName = SceneManager.GetActiveScene().name;
+			foreach (var node in Map.nodes) 
+				if (node is Room && (node as Room).Scene.SceneName == _activeSceneName)
+					CurrentRoom = node as Room;
+			LoadAdjacents(CurrentRoom);
+			_state = GameMode.State.Started;
+		}
+
 		public override IEnumerator OnStart() {
 			Pause();
-			if (App.Instance.IsEditor) {
-				_state = GameMode.State.Starting;
-				string _activeSceneName = SceneManager.GetActiveScene().name;
-				foreach (var node in Map.nodes) 
-					if (node is Room && (node as Room).Scene.SceneName == _activeSceneName)
-						CurrentRoom = node as Room;
-				LoadAdjacents(CurrentRoom);
-				_state = GameMode.State.Started;
-			} else {
-				if (_state != GameMode.State.Ended && _state != GameMode.State.Loading)
-					yield break;
-				_state = GameMode.State.Starting;
+			if (_state != GameMode.State.Ended && _state != GameMode.State.Loading)
+				yield break;
+			_state = GameMode.State.Starting;
 
-				CurrentRoom = Map.RootNode;
-				yield return App.Instance.DirectLoadAsync(CurrentRoom.Scene.SceneName, LoadSceneMode.Single);
-				// Load adjacent scenes
-				LoadAdjacents(CurrentRoom);
+			CurrentRoom = Map.RootNode;
+			yield return App.Instance.DirectLoadAsync(CurrentRoom.Scene.SceneName, LoadSceneMode.Single);
+			// Load adjacent scenes
+			LoadAdjacents(CurrentRoom);
 
-				_state = GameMode.State.Started;
-			}
+			_state = GameMode.State.Started;
 			Resume();
 			yield return null;
 		}

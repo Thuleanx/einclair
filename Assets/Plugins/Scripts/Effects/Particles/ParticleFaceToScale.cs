@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Thuleanx.Effects.Particle {
+namespace Thuleanx.Effects.Particles {
 	[ExecuteAlways]
 	public class ParticleFaceToScale : MonoBehaviour {
 		void OnWillRenderObject() {

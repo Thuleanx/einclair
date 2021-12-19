@@ -14,7 +14,16 @@ namespace Thuleanx.SceneManagement {
 		}
 		[HideInInspector]
 		public State _state = State.Loading;
+
+		public void Awake() {
+			_state = State.Loading;
+		}
+
+		public void OnEnable() {
+			_state = State.Loading;
+		}
 		
+		public virtual void OnEditorStart() {}
 		public virtual IEnumerator OnStart() { yield return null; }
 		public virtual IEnumerator OnEnd() { yield return null; }
 

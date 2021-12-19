@@ -9,13 +9,13 @@ namespace Thuleanx.AI {
 		public virtual void Awake() {
 			Body = GetComponent<PhysicsObject>();
 			StateMachineSetup();
-			ObjectSetup();
 		}
 
 		public virtual void StateMachineSetup() {}
 		public virtual void ObjectSetup() {}
 
 		void OnEnable() {
+			ObjectSetup();
 			StateMachine?.Init();
 		}
 

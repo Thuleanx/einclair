@@ -161,7 +161,7 @@ MonoBehaviour:
   - {fileID: 8867356758014190951}
   - {fileID: -8152665258079512691}
   - {fileID: 361516814947376205}
-  RootNode: {fileID: 0}
+  RootNode: {fileID: 4442735133851817563}
 --- !u!114 &361516814947376205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,10 +204,10 @@ MonoBehaviour:
       _dynamic: 0
   name: Ending
   Scene:
-    Scene: {fileID: 0}
-    SceneName: 
-    sceneIndex: -1
-    sceneEnabled: 0
+    Scene: {fileID: 102900000, guid: e765acf2b14c04744a904ebdbc962f51, type: 3}
+    SceneName: DeepSea5
+    sceneIndex: 7
+    sceneEnabled: 1
   In: 0
   Out: 0
 --- !u!114 &1437915085375405031
@@ -255,10 +255,10 @@ MonoBehaviour:
       _dynamic: 0
   name: DeepSea2
   Scene:
-    Scene: {fileID: 0}
-    SceneName: 
-    sceneIndex: -1
-    sceneEnabled: 0
+    Scene: {fileID: 102900000, guid: 747addcd898ec7642bd8880bb1cbd531, type: 3}
+    SceneName: DeepSea3
+    sceneIndex: 5
+    sceneEnabled: 1
   In: 0
   Out: 0
 --- !u!114 &4442735133851817563
@@ -303,10 +303,10 @@ MonoBehaviour:
       _dynamic: 0
   name: Outside
   Scene:
-    Scene: {fileID: 0}
-    SceneName: 
-    sceneIndex: -1
-    sceneEnabled: 0
+    Scene: {fileID: 102900000, guid: b15ccbc3b1be34adf89ad72b4dffbe9e, type: 3}
+    SceneName: DeepSea2
+    sceneIndex: 4
+    sceneEnabled: 1
   In: 0
   Out: 0
 --- !u!114 &8867356758014190951
@@ -354,9 +354,9 @@ MonoBehaviour:
       _dynamic: 0
   name: DeepSea3
   Scene:
-    Scene: {fileID: 0}
-    SceneName: 
-    sceneIndex: -1
-    sceneEnabled: 0
+    Scene: {fileID: 102900000, guid: 6379e54e08770824192491b610b7eb12, type: 3}
+    SceneName: DeepSea4
+    sceneIndex: 6
+    sceneEnabled: 1
   In: 0
   Out: 0

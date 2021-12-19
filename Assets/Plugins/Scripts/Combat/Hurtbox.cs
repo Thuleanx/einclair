@@ -5,7 +5,7 @@ namespace Thuleanx.Combat {
 	public abstract class Hurtbox : MonoBehaviour, IHurtable {
 		public static long NextID = 0;
 
-		[HideInInspector] public long ID;
+		public long ID;
 		public Collider2D Box { get; private set; }
 
 		void Awake() {
