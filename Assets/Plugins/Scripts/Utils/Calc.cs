@@ -17,7 +17,7 @@ namespace Thuleanx.Utils {
 			=> (float) Random.NextDouble() * (b-a) + a;
 
 		public static int RandomRange(int a, int b)
-			=> (int) (Random.NextDouble() * (b-a+1)) + a;
+			=> (int) (Random.Next(a,b));
 
 		public static float Approach(float cur, float target, float distance) {
 			float amt = Mathf.Clamp(target - cur, -distance, distance);

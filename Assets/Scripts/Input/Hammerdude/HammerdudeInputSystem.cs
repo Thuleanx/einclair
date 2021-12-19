@@ -38,7 +38,7 @@ namespace Thuleanx.Input.Core {
 			}
 		}
 		public void OnBash(InputAction.CallbackContext ctx) {
-			if (ctx.started) Bash.Start();
+			if (ctx.performed) Bash.Start();
 		}
 
 		public override InputState Process(InputState state) {

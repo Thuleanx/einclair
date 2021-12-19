@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 125478325a61a4567bcabda38f5ab5e3, type: 3}
   m_Name: Monkey
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 7627070224062030560, guid: c4c6056241864400189f906374337c2f, type: 3}

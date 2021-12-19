@@ -49,7 +49,7 @@ Material:
     - Noise_Intensity: -0.87
     - Noise_Speed: 0
     - PixelOffset: 0
-    - _Crack: 0.0625
+    - _Crack: 0
     m_Colors:
     - Noise_Direction: {r: 0, g: 0, b: 0, a: 0}
     - Noise_Velocity: {r: 0.2, g: 0.4, b: 0, a: 0}

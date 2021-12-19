@@ -901,6 +901,7 @@ MonoBehaviour:
   Slam_ForwardPush: 30
   SlamHitbox: {fileID: 5858484163402181779}
   Bash_ForwardPush: 130
+  BashCooldownTime: 1.2
   BashHitbox: {fileID: 5858484163056863994}
 --- !u!114 &5858484164848590011
 MonoBehaviour:

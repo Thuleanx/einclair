@@ -54,6 +54,7 @@ namespace Thuleanx.AI.Core {
 			OnDeath.AddListener(() => {
 				StateMachine.State = (int) State.Dead;
 			});
+			BashCooldown = new Timer(BashCooldownTime);
 		}
 
 		public override void Update() {
@@ -89,7 +90,7 @@ namespace Thuleanx.AI.Core {
 				CorrectTurn();
 			}
 
-			if (InputState.Bash) {
+			if (InputState.Bash && !BashCooldown) {
 				(Provider.Feedback as HammerdudeInputFeedback).AttackExecuted = true;
 				return (int) State.Bash;
 			}
@@ -120,7 +121,7 @@ namespace Thuleanx.AI.Core {
 		int _State_SlamTransition() => _attackEnded ? (int) State.Normal : -1;
 		int _State_SlamUpdate() {
 			Body.AccelerateTowards(new Vector2(0, Body.Velocity.y));
-			if (InputState.Bash) {
+			if (InputState.Bash && !BashCooldown) {
 				// Turn into the right direction
 				CorrectTurn();
 				(Provider.Feedback as HammerdudeInputFeedback).AttackExecuted = true;
@@ -142,15 +143,18 @@ namespace Thuleanx.AI.Core {
 		#region Bash
 		[Box("Bash")]
 		public float Bash_ForwardPush;
+		public float BashCooldownTime = 3f;
 		public PlatformerHitbox BashHitbox;
 		[EndGroup("Bash")]
 
 		bool _bashEnd;
+		public Timer BashCooldown;
 
 		int _State_BashTransition() {
 			return _bashEnd ? (int) State.Normal : -1;
 		}
 		void _State_BashEnter() {
+			BashCooldown.Start();
 			_bashEnd = false;
 			Body.Knockback(new Vector2(Bash_ForwardPush * (IsRightFacing ? 1 : -1), 0));
 		}
