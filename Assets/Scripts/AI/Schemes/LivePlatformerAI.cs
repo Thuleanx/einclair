@@ -40,5 +40,9 @@ namespace Thuleanx.AI.Core {
 			if (Health == 0)
 				OnDeath?.Invoke();
 		}
+
+		public void _FullHeal() {
+			Health = MaxHealth;
+		}
 	}
 }

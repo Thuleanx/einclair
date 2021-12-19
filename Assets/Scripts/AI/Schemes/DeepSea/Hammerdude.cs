@@ -172,6 +172,7 @@ namespace Thuleanx.AI.Core {
 		}
 		void _State_DeadEnter() {
 			Body.Stop();
+			Context.RespawnManager?.Respawn();
 		}
 		#endregion
 

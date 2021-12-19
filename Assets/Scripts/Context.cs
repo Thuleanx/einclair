@@ -10,7 +10,9 @@ namespace Thuleanx {
 		static List<Context> ctxs = new List<Context>();
 		
 		[SerializeField] ReferenceManager _ReferenceManager;
+		[SerializeField] RespawnManager _RespawnManager;
 		public static ReferenceManager ReferenceManager => Instance._ReferenceManager;
+		public static RespawnManager RespawnManager => Instance._RespawnManager;
 
 		void Awake() {
 			if (_ReferenceManager == null) _ReferenceManager = GetComponentInChildren<ReferenceManager>();
