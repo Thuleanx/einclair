@@ -13,8 +13,48 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7161292596391190820, guid: ca81e09e9e0f94c43bd8612e4003ae81, type: 3}
       propertyPath: m_InstanceId
-      value: -967432
+      value: -119092
       objectReference: {fileID: 0}
+    - target: {fileID: 7161292596391190820, guid: ca81e09e9e0f94c43bd8612e4003ae81, type: 3}
+      propertyPath: m_ShapePathHash
+      value: -32153850
+      objectReference: {fileID: 0}
+    - target: {fileID: 7161292596391190820, guid: ca81e09e9e0f94c43bd8612e4003ae81, type: 3}
+      propertyPath: m_ShapePath.Array.data[0].x
+      value: 0.47386983
+      objectReference: {fileID: 0}
+    - target: {fileID: 7161292596391190820, guid: ca81e09e9e0f94c43bd8612e4003ae81, type: 3}
+      propertyPath: m_ShapePath.Array.data[0].y
+      value: 0.43628216
+      objectReference: {fileID: 0}
+    - target: {fileID: 7161292596391190820, guid: ca81e09e9e0f94c43bd8612e4003ae81, type: 3}
+      propertyPath: m_ShapePath.Array.data[1].x
+      value: 0.48220208
+      objectReference: {fileID: 0}
+    - target: {fileID: 7161292596391190820, guid: ca81e09e9e0f94c43bd8612e4003ae81, type: 3}
+      propertyPath: m_ShapePath.Array.data[1].y
+      value: -0.44186258
+      objectReference: {fileID: 0}
+    - target: {fileID: 7161292596391190820, guid: ca81e09e9e0f94c43bd8612e4003ae81, type: 3}
+      propertyPath: m_ShapePath.Array.data[2].x
+      value: -0.40456435
+      objectReference: {fileID: 0}
+    - target: {fileID: 7161292596391190820, guid: ca81e09e9e0f94c43bd8612e4003ae81, type: 3}
+      propertyPath: m_ShapePath.Array.data[2].y
+      value: -0.43561536
+      objectReference: {fileID: 0}
+    - target: {fileID: 7161292596391190820, guid: ca81e09e9e0f94c43bd8612e4003ae81, type: 3}
+      propertyPath: m_ShapePath.Array.data[3].x
+      value: -0.41608787
+      objectReference: {fileID: 0}
+    - target: {fileID: 7161292596391190820, guid: ca81e09e9e0f94c43bd8612e4003ae81, type: 3}
+      propertyPath: m_ShapePath.Array.data[3].y
+      value: 0.4409996
+      objectReference: {fileID: 0}
+    - target: {fileID: 7161292596391190821, guid: ca81e09e9e0f94c43bd8612e4003ae81, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -5957907480768474131, guid: ca34fc76bea0f4cf3910bcf33504e1ff, type: 3}
     - target: {fileID: 7161292596391190821, guid: ca81e09e9e0f94c43bd8612e4003ae81, type: 3}
       propertyPath: m_SortingLayer
       value: 8
