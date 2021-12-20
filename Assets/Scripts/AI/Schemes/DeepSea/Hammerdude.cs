@@ -7,6 +7,7 @@ using Thuleanx.Input.Core;
 using Thuleanx.Manager.Core;
 
 using Thuleanx.Effects.Core;
+using Thuleanx.Effects.Particles;
 
 using Thuleanx.Combat.Core;
 
@@ -151,6 +152,7 @@ namespace Thuleanx.AI.Core {
 		public float Bash_ForwardPush;
 		public float BashCooldownTime = 3f;
 		public PlatformerHitbox BashHitbox;
+		public ParticleCombo BashCombo;
 		[EndGroup("Bash")]
 
 		bool _bashEnd;
@@ -170,6 +172,7 @@ namespace Thuleanx.AI.Core {
 		}
 		void _State_BashExit() {
 			BashHitbox?.stopCheckingCollision();
+			BashCombo?.StopProducing();
 		}
 		public void _Animation_OnBashEnd() {
 			_bashEnd = true;

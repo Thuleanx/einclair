@@ -21,12 +21,17 @@ namespace Thuleanx.Effects.Core {
 		}
 
 		public void StartShockwave(Vector2 position) {
-			PostProcessingMaterial.SetFloat(_ripple_active, 1f);
 			PostProcessingMaterial.SetFloat(_time_offset, Time.time);
 			worldFocalPoint = position;
+			UpdateShockwavePosition();
+			PostProcessingMaterial.SetFloat(_ripple_active, 1f);
 		}
 
 		void Update() {
+			UpdateShockwavePosition();
+		}
+
+		public void UpdateShockwavePosition() {
 			PostProcessingMaterial.SetVector(_focal_point, 
 				(Vector2) transform.position + (worldFocalPoint - (Vector2) RealCamera.transform.position) 
 					* CurrentCamera.orthographicSize / RealCamera.orthographicSize);

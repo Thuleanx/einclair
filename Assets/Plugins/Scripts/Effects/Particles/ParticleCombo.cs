@@ -34,5 +34,12 @@ namespace Thuleanx.Effects.Particles {
 				system.Stop();
 			}
 		}
+		public void StopProducing() {
+			if (burstSystems == null) RegisterSystem();
+
+			foreach (ParticleSystem system in burstSystems) {
+				system.Stop();
+			}
+		}
 	}
 }
