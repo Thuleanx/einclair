@@ -35,7 +35,6 @@ namespace Thuleanx.Optimization {
 					BubbleManager.Instance.ActivePools.Add(this);
 					App.BeforeSceneUnload.AddListener(BeforeSceneUnload);
 				} catch {
-					Debug.Log("Bubble is loaded");
 				}
 			} 
 			_Activated = true;

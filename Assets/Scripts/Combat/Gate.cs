@@ -6,6 +6,7 @@ using Thuleanx.AI.Core;
 namespace Thuleanx.SceneManagement.Core {
 	[RequireComponent(typeof(Collider2D))]
 	[RequireComponent(typeof(ParticleCombo))]
+	[RequireComponent(typeof(SpriteRenderer))]
 	public class Gate : MonoBehaviour {
 		public int NumFrames = 10;
 		int _frame = 0;
@@ -15,8 +16,8 @@ namespace Thuleanx.SceneManagement.Core {
 			set {
 				_active = value;
 				Collider.enabled = value;
+				Renderer.enabled = value;
 				if (value) {
-					Debug.Log("HI");
 					Combo.Activate();
 				}
 				else Combo.Stop();
@@ -24,11 +25,13 @@ namespace Thuleanx.SceneManagement.Core {
 		}
 
 		public Collider2D Collider {get; private set; }
+		public SpriteRenderer Renderer {get; private set; }
 		public ParticleCombo Combo {get; private set; }
 
 		void Awake() {
 			Collider = GetComponent<Collider2D>();
 			Combo = GetComponent<ParticleCombo>();
+			Renderer = GetComponent<SpriteRenderer>();
 
 			Active = false;
 		}

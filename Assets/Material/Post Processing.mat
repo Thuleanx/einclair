@@ -54,11 +54,11 @@ Material:
     - Ring_Range: 20
     - Ring_Size: 1
     - Ring_Speed: 5
-    - Ripple_Active: 1
-    - Time_Offset: 25.92764
+    - Ripple_Active: 0
+    - Time_Offset: 78.79637
     - _Crack: 0
     m_Colors:
-    - Focal_Point: {r: 66.67985, g: 88.9136, b: 0, a: 0}
+    - Focal_Point: {r: 6.5740128, g: 79.274, b: 0, a: 0}
     - Noise_Direction: {r: 0, g: 0, b: 0, a: 0}
     - Noise_Velocity: {r: 0.2, g: 0.4, b: 0, a: 0}
     - _Color: {r: 0.7830189, g: 0.2770114, b: 0.2770114, a: 1}

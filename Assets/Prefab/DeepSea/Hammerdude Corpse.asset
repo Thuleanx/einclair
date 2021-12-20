@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 125478325a61a4567bcabda38f5ab5e3, type: 3}
+  m_Name: Hammerdude Corpse
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4153012624631782518, guid: 1ed3bb7030f0a4514b5632015bbdb153, type: 3}

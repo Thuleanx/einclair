@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4961121620683194274
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8431569843275436886, guid: 58641a1c5c80a44078083fbcb8626132, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8331513071762735151, guid: b1ae5159d35f84277b1eb249860d7d0b, type: 3}
+    - target: {fileID: 8431569844247536705, guid: 58641a1c5c80a44078083fbcb8626132, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8431569844247536705, guid: 58641a1c5c80a44078083fbcb8626132, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 8431569844247536705, guid: 58641a1c5c80a44078083fbcb8626132, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8431569844247536705, guid: 58641a1c5c80a44078083fbcb8626132, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8431569844247536705, guid: 58641a1c5c80a44078083fbcb8626132, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8431569844247536705, guid: 58641a1c5c80a44078083fbcb8626132, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8431569844247536705, guid: 58641a1c5c80a44078083fbcb8626132, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8431569844247536705, guid: 58641a1c5c80a44078083fbcb8626132, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8431569844247536705, guid: 58641a1c5c80a44078083fbcb8626132, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8431569844247536705, guid: 58641a1c5c80a44078083fbcb8626132, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8431569844247536705, guid: 58641a1c5c80a44078083fbcb8626132, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8431569844247536710, guid: 58641a1c5c80a44078083fbcb8626132, type: 3}
+      propertyPath: m_Name
+      value: Bow Monkey
+      objectReference: {fileID: 0}
+    - target: {fileID: 8431569844247536719, guid: 58641a1c5c80a44078083fbcb8626132, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 1ec94591cd4a242c99aaee5a44010944, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 58641a1c5c80a44078083fbcb8626132, type: 3}

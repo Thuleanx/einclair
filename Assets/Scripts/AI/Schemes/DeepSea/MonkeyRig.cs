@@ -52,7 +52,6 @@ namespace Thuleanx.AI.Core {
 			if (CorpsePool) {
 				GameObject obj = CorpsePool.Borrow(gameObject.scene, transform.position);
 				obj.transform.localScale = gameObject.transform.localScale;
-				Debug.Log("HI " + gameObject);
 				// obj.GetComponent<PhysicsObject>().Knockback(Body.Velocity * Body.Mass);
 			}
 			General.TryDispose(gameObject);

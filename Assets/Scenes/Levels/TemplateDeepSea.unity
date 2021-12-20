@@ -329,14 +329,6 @@ PrefabInstance:
       propertyPath: m_ApplyToSortingLayers.Array.data[6]
       value: 847947449
       objectReference: {fileID: 0}
-    - target: {fileID: 4377790942335311267, guid: 676ac710d49bb462b920eb21973eca69, type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4377790942335311267, guid: 676ac710d49bb462b920eb21973eca69, type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.data[6]
-      value: 847947449
-      objectReference: {fileID: 0}
     - target: {fileID: 5858484163608043968, guid: 676ac710d49bb462b920eb21973eca69, type: 3}
       propertyPath: m_RootOrder
       value: 0
