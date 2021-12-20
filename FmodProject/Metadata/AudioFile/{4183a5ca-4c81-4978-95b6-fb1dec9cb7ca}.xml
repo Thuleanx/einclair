@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{4183a5ca-4c81-4978-95b6-fb1dec9cb7ca}">
+		<property name="assetPath">
+			<value>impsplat/impactsplat03.mp3.flac</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.96759637188208614</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{325ce905-895b-45ba-8c9b-692471116c42}</destination>
+		</relationship>
+	</object>
+</objects>

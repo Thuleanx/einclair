@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{d33f91a7-109b-4d30-a2cc-58325428d898}">
+		<property name="assetPath">
+			<value>water-splash-slime-sfx/slime_04.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.47233333333333333</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{325ce905-895b-45ba-8c9b-692471116c42}</destination>
+		</relationship>
+	</object>
+</objects>

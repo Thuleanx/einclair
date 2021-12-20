@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="EncodableAsset" id="{e9f9cbf9-2961-46c9-ba83-f314e10680bb}">
+		<property name="assetPath">
+			<value>Interface/Confirm_tones/style1/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{325ce905-895b-45ba-8c9b-692471116c42}</destination>
+		</relationship>
+	</object>
+</objects>

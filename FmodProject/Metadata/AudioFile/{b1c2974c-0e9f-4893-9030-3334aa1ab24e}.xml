@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{b1c2974c-0e9f-4893-9030-3334aa1ab24e}">
+		<property name="assetPath">
+			<value>wet_towel_on_body/wet_towel_on_body-14.flac</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.3506575963718821</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{325ce905-895b-45ba-8c9b-692471116c42}</destination>
+		</relationship>
+	</object>
+</objects>
