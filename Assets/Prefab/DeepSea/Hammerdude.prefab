@@ -666,6 +666,7 @@ GameObject:
   - component: {fileID: 7256960645619685578}
   - component: {fileID: 2958069114840946733}
   - component: {fileID: 2317614911000077646}
+  - component: {fileID: 2726954969721969046}
   m_Layer: 6
   m_Name: Blood Fog
   m_TagString: Untagged
@@ -5544,6 +5545,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5d3ef5e619244bacb6e5136c3d2a522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2726954969721969046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611834356765627971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/Hammerdude/Death
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &1432501686896126050
 GameObject:
   m_ObjectHideFlags: 0
@@ -15338,6 +15362,7 @@ GameObject:
   - component: {fileID: 1409615255192194940}
   - component: {fileID: 1817514282665071360}
   - component: {fileID: 2611055035655763820}
+  - component: {fileID: 4191078847831192065}
   m_Layer: 6
   m_Name: Bubbles (01)
   m_TagString: Untagged
@@ -20203,6 +20228,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5d3ef5e619244bacb6e5136c3d2a522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4191078847831192065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676098760354131114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/Hammerdude/BubbleSustained
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &2433774257965480648
 GameObject:
   m_ObjectHideFlags: 0
@@ -20214,6 +20262,7 @@ GameObject:
   - component: {fileID: 408524635088224817}
   - component: {fileID: 3007003388756408739}
   - component: {fileID: 2790926439993097635}
+  - component: {fileID: 7439374394878720106}
   m_Layer: 6
   m_Name: Death Kneel
   m_TagString: Untagged
@@ -25067,6 +25116,29 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &7439374394878720106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2433774257965480648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/Hammerdude/Death Hit Ground
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &2662256133808459163
 GameObject:
   m_ObjectHideFlags: 0
@@ -29967,6 +30039,7 @@ GameObject:
   m_Component:
   - component: {fileID: 82197535015256120}
   - component: {fileID: 4128443490594824936}
+  - component: {fileID: 990451244006561239}
   m_Layer: 6
   m_Name: True Bleed
   m_TagString: Untagged
@@ -30002,6 +30075,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ad9ed21c8ac4f479826ecd5c1de5c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &990451244006561239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2934375818786706517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/Ending/TrueDeath
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &3282918028403704595
 GameObject:
   m_ObjectHideFlags: 0
@@ -30012,6 +30108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8192376965209820289}
   - component: {fileID: 1151133375663957050}
+  - component: {fileID: 425555133032472900}
   m_Layer: 6
   m_Name: Bash Combo
   m_TagString: Untagged
@@ -30047,6 +30144,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ad9ed21c8ac4f479826ecd5c1de5c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &425555133032472900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3282918028403704595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/Hammerdude/Bash
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &4367927759506332753
 GameObject:
   m_ObjectHideFlags: 0
@@ -44740,6 +44860,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2318809456597319032}
   - component: {fileID: 6034624716314364607}
+  - component: {fileID: 6568989598878425113}
   m_Layer: 6
   m_Name: Slam Combo
   m_TagString: Untagged
@@ -44775,6 +44896,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ad9ed21c8ac4f479826ecd5c1de5c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6568989598878425113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5551537529949911709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/Hammerdude/Slam
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &6336118712951753932
 GameObject:
   m_ObjectHideFlags: 0
@@ -54571,6 +54715,7 @@ GameObject:
   - component: {fileID: 6096212706212765469}
   - component: {fileID: 3880671042311484539}
   - component: {fileID: 1389902449397086634}
+  - component: {fileID: 7391245068815478999}
   m_Layer: 6
   m_Name: Slash Hit
   m_TagString: Untagged
@@ -59441,6 +59586,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5d3ef5e619244bacb6e5136c3d2a522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7391245068815478999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7029969849615101697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/Hammerdude/Hurt
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &7893840257267197985
 GameObject:
   m_ObjectHideFlags: 0
@@ -59638,6 +59806,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7391245068815478999}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -59703,6 +59883,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6568989598878425113}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7893840259040761856}
@@ -59743,6 +59935,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4191078847831192065}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 425555133032472900}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7893840259234561641}
@@ -59760,6 +59976,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1151133375663957050}
         m_TargetAssemblyTypeName: Thuleanx.Effects.Particles.ParticleCombo, Assembly-CSharp-firstpass
         m_MethodName: StopProducing
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4191078847831192065}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Stop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -59835,11 +60063,47 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2726954969721969046}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4128443490594824936}
         m_TargetAssemblyTypeName: Thuleanx.Effects.Particles.ParticleCombo, Assembly-CSharp-firstpass
         m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2726954969721969046}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 990451244006561239}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -59867,6 +60131,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3007003388756408739}
         m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7439374394878720106}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:

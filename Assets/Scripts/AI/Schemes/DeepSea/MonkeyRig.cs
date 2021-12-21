@@ -108,12 +108,14 @@ namespace Thuleanx.AI.Core {
 		public PlatformerHitbox AttackHitbox;
 		public BubblePool CorpsePool;
 		public UnityEvent OnAttack;
+		public UnityEvent OnAttackStart;
 		[EndGroup("Attack")]
 
 		bool _attackEnded;
 		bool _attackExecuted;
 
 		protected virtual void _State_AttackEnter() { 
+			OnAttackStart?.Invoke();
 			_attackEnded = false;
 			_attackExecuted = false;
 		}

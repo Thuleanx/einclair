@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 0
+    m_Start: 2.0166666666666666
     m_ClipIn: 0
     m_Asset: {fileID: 8266424836111198876}
     m_Duration: 2
@@ -133,11 +133,11 @@ MonoBehaviour:
     m_Recordable: 0
     m_PostExtrapolationMode: 1
     m_PreExtrapolationMode: 1
-    m_PostExtrapolationTime: 0.016666666666666607
-    m_PreExtrapolationTime: 0
+    m_PostExtrapolationTime: 0.01666666666666483
+    m_PreExtrapolationTime: 2.0166666666666666
     m_DisplayName: FadeOut
   - m_Version: 1
-    m_Start: 2.0166666666666666
+    m_Start: 4.033333333333331
     m_ClipIn: 0
     m_Asset: {fileID: -958816803570306830}
     m_Duration: 2
@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 2.0166666666666666
+  m_Time: 4.033333333333331
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 7a9f4fcd392af400a996a79c823db657, type: 2}
