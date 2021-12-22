@@ -45,9 +45,7 @@ namespace Thuleanx.Optimization {
 			TryInit();
 			if (!Ledger.ContainsKey(scene.name))
 				Ledger[scene.name] = new HashSet<Bubble>();
-
 			if (Pool.Count == 0) Expand();
-
 			Bubble bubble = Pool.Dequeue();
 			bubble.gameObject.transform.position = position;
 			bubble.gameObject.transform.rotation = rotation;
@@ -62,6 +60,7 @@ namespace Thuleanx.Optimization {
 			bubble.scene = scene;
 
 			Ledger[scene.name].Add(bubble);
+			
 
 			return bubble.gameObject;
 		}
@@ -72,15 +71,17 @@ namespace Thuleanx.Optimization {
 				Pool.Enqueue(bubble);
 				DontDestroyOnLoad(bubble.gameObject);
 				bubble.InPool = true;
-				if (remove) Ledger[bubble.scene.name].Remove(bubble);
+				if (remove && Ledger.ContainsKey(bubble.scene.name)) Ledger[bubble.scene.name].Remove(bubble);
 			}
 		}
 		public void CollectsAll(Scene scene) {
 			Debug.Log("Collecting all from " + scene.name);
-			foreach (Bubble bubble in Ledger[scene.name])
-				if (!bubble.InPool)
-					Collects(bubble, false);
-			Ledger.Remove(scene.name);
+			if (Ledger.ContainsKey(scene.name)) {
+				foreach (Bubble bubble in Ledger[scene.name])
+					if (!bubble.InPool)
+						Collects(bubble, false);
+				Ledger.Remove(scene.name);
+			}
 		}
 		public void BubbleLoss(Bubble bubble) {
 			if (BubbleManager.Instance != null)

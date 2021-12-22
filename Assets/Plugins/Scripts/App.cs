@@ -20,6 +20,8 @@ namespace Thuleanx {
 			SceneManager.sceneLoaded += (scene, loadmode) => {
 				AfterSceneLoad?.Invoke(scene, loadmode);
 			};
+			AfterSceneLoad = new UnityEvent<Scene, LoadSceneMode>();
+			BeforeSceneUnload = new UnityEvent<Scene>();
 		}
 
 		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]

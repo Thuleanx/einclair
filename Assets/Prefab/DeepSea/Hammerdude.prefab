@@ -59624,7 +59624,7 @@ GameObject:
   - component: {fileID: 7893840257267197991}
   - component: {fileID: 7893840257267197990}
   - component: {fileID: 7893840257267197992}
-  - component: {fileID: 181706961786914325}
+  - component: {fileID: 7694237315784673555}
   m_Layer: 6
   m_Name: Hammerdude
   m_TagString: Player
@@ -60153,7 +60153,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &181706961786914325
+--- !u!114 &7694237315784673555
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
