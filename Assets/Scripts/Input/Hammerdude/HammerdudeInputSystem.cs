@@ -55,7 +55,6 @@ namespace Thuleanx.Input.Core {
 			if (InputFeedback.BashExecuted) Bash.Stop();
 		}
 
-
 		public override int GetPriority() => (int) MiddlewarePriority.INPUT;
 	}
 }

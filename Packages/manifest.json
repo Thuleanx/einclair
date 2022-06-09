@@ -20,6 +20,7 @@
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.5.7",
     "com.unity.toolchain.macos-x86_64-linux-x86_64": "0.1.22-preview",
+    "com.unity.toolchain.win-x86_64-linux-x86_64": "0.1.21-preview",
     "com.unity.ugui": "1.0.0",
     "com.wooshii.foldericons": "https://github.com/WooshiiDev/Unity-Folder-Icons.git",
     "dev.yarnspinner.unity": "https://github.com/YarnSpinnerTool/YarnSpinner-Unity.git",
