@@ -23,7 +23,7 @@ namespace Thuleanx.Engine {
 		public void AccelerateTowards(Vector2 targetVelocity) {
 			var velocity = Body.velocity;
 			var deltaV = targetVelocity - velocity;
-			var accel = deltaV / Time.deltaTime;
+			var accel = deltaV; // / Time.deltaTime
 			var limit = Vector2.Dot(deltaV, velocity) > 0f ?  MaxAccel: MaxDecel;
 			var force = Body.mass * Vector2.ClampMagnitude(accel, limit);
 			Body.AddForce(force, ForceMode2D.Force);
